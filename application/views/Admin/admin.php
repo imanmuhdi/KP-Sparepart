@@ -29,18 +29,18 @@
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
-						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahKonfirm/").'">Konfirmasi</a>';
+						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
 						echo $calon;
 					?>
 				</li>
 				<li class="nav-item">
 					<?php
-						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahCalon/").'">Calon</a>';
+						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
 						echo $calon;
 					?>
 				</li>
 				<li>
-					<a href="<?php echo site_url('User')?>" class="nav-link">Coblos</a>
+					<a href="<?php echo site_url('User')?>" class="nav-link">Grafik</a>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
