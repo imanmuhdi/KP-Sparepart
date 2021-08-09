@@ -1,7 +1,7 @@
 <?php
 class Admin extends CI_Controller{
     public function index(){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $data['nama'] = $this->session->userdata('nama');
