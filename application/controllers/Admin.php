@@ -1,7 +1,7 @@
 <?php
 class Admin extends CI_Controller{
     public function index(){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $data['nama'] = $this->session->userdata('nama');
@@ -47,7 +47,7 @@ class Admin extends CI_Controller{
     }
 
     public function terima($NIK){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $this->load->model('UserModel',"",TRUE);
@@ -78,27 +78,46 @@ class Admin extends CI_Controller{
         $this->session->sess_destroy();
         redirect('Home');
     }
-	
+	/*
 	public function pindahCalon(){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $this->load->model('CalonModel',"",TRUE);
         $data['calon'] = $this->CalonModel->getCalon();
         $this->load->view("admin/calon",$data);
     }
-
+    */
+    /*
     public function pindahKonfirm(){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $this->load->model('UserModel',"",TRUE);
         $data['user'] = $this->UserModel->getUserNoAkses();
         $this->load->view("admin/konfirmasi",$data);
     }
+    */
+    public function pindahSparepart(){
+        if(!$this->session->userdata('admin')){
+            redirect("Home");
+        }
+        $this->load->model('SparepartModel',"",TRUE);
+        $data['tb_sparepart'] = $this->SparepartModel->getSparepart();
+        $this->load->view("admin/sparepart",$data);
+    }
+        
+    public function pindahMesin(){
+        if(!$this->session->userdata('admin')){
+            redirect("Home");
+        }
+        $this->load->model('MesinModel',"",TRUE);
+        $data['tb_mesin'] = $this->MesinModel->getMesin();
+        $this->load->view("admin/mesin",$data);
+    }
 
     public function tambahCalon(){
-        if(!$this->session->userdata('Admin')){
+        if(!$this->session->userdata('admin')){
             redirect("Home");
         }
         $this->load->view("admin/tambah");
