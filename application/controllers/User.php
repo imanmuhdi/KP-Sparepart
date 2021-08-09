@@ -4,9 +4,8 @@ class User extends CI_Controller{
         if(!$this->session->userdata('User')){
             redirect('Home');
         }
-		$data['nama'] = $this->session->userdata('Nama');
-        $data['nik'] = $this->session->userdata('NIK');
-        $data['email'] = $this->session->userdata('Email');
+		$data['nama'] = $this->session->userdata('nama');
+        $data['username'] = $this->session->userdata('username');
         if($this->session->userdata('Admin'))
             $data['admin'] = $this->session->userdata('Admin');
         else

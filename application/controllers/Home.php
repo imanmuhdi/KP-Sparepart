@@ -17,40 +17,29 @@ class Home extends CI_Controller{
 
     public function proseslogin(){
         $this->load->model('UserModel',"",TRUE);
-        $email= $this->input->post('username');
+        $username= $this->input->post('username');
         $password = md5($this->input->post('password'));
-        $query = $this->UserModel->getUser($email,$password);
+        $query = $this->UserModel->getUser($username,$password);
         if($query->num_rows()>0){
             $row = $query->row();
             if($row->admin == 1){
                 $arr = array(
-                    "Admin" => True,
-                    "User" => True,
-                    "Nama" => $row->Nama,
-                    "NIK" => $row->NIK,
-                    "Email" => $row->Email,
-                    "Vote" => $row->Vote
+                    "admin" => True,
+                    "user" => True,
+                    "nama" => $row->nama,
+                    "username" => $row->username
                 );
                 $this->session->set_userdata($arr);
                 redirect('Admin');
-            }else{
-                if($row->Akses == 0){
-                    $arr = array(
-                        "NoAkses" => True
-                    );
-                    echo "Tidak Memiliki Akses";
                 }else{
                     $arr = array(
                         "User" => True,
-						"Nama" => $row->Nama,
-                        "NIK" => $row->NIK,
-                        "Email" => $row->Email,
-                        "Vote" => $row->Vote
+						"nama" => $row->nama,
+                        "username" => $row->username
                     );
                     $this->session->set_userdata($arr);
                     redirect('User');
                 }
-            }
         }else{
             redirect(site_url('home'));
         }

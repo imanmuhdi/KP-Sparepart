@@ -96,20 +96,19 @@
 <body class="d-flex flex-row">
     <div class="card login">
         <h4>Masuk</h4>
-        <p>Bagi kamu yang sudah terdaftar, silahkan masuk</p>
+        <p>Silahkan masukkan username dan password Anda!</p>
         <form action="<?php echo site_url('home/proseslogin')?>" method="post">
-            <label>Email</label>
-            <input type="email" class="form-control" name="username" required>
+            <label>Username</label>
+            <input type="name" class="form-control" name="username" required>
             <label>Password</label>
             <input type="password" class="form-control" name="password" required>
             <div class="tombol">
                 <input type="submit" class="btn btn-login" value="Masuk">
-                <a href="<?php echo site_url('home/daftar')?>" class="btn btn-daftar">Daftar</a>
             </div>
         </form>
     </div>
     <div class="card">
-       <img src="<?php echo site_url('../assets/image/login-background.jpg')?>">
+       <img src="<?php echo site_url('../assets/image/bg_login.png')?>">
     </div>
     <div class="about">
         <a href="<?php echo site_url('Home/aboutus')?>" class="btn btn-primary">Hubungi Kami</a>

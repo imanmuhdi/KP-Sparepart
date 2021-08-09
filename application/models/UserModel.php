@@ -4,10 +4,10 @@ class UserModel extends CI_Model{
 		return $this->db->insert('user',$user);
     }
 
-	function getUser($email = null, $password = null){
-		if(!empty($email) && !empty($password)){
-			$this->db->where("Email",$email);
-			$this->db->where("Password",$password);
+	function getUser($username = null, $password = null){
+		if(!empty($username) && !empty($password)){
+			$this->db->where("username",$username);
+			$this->db->where("password",$password);
 			return $this->db->get("user");
 		}
 		return $this->db->get("user");
@@ -21,8 +21,8 @@ class UserModel extends CI_Model{
 		return false;
 	}
 
-	function isEmailExist($email){
-		$this->db->where("Email",$email);
+	function isEmailExist($username){
+		$this->db->where("username",$username);
 		if($this->db->get("user")->num_rows()>0){
 			return true;
 		}
@@ -48,7 +48,7 @@ class UserModel extends CI_Model{
 	}
 
 	function getEmail($NIK){
-		$this->db->select('Email');
+		$this->db->select('username');
 		$this->db->where("NIK",$NIK);
 		return $this->db->get("user");
 	}

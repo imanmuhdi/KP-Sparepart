@@ -4,7 +4,7 @@ class Admin extends CI_Controller{
         if(!$this->session->userdata('Admin')){
             redirect("Home");
         }
-        $data['nama'] = $this->session->userdata('Nama');
+        $data['nama'] = $this->session->userdata('nama');
         $this->load->view("admin/admin",$data);
     }
 
