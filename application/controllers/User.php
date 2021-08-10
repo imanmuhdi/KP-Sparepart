@@ -17,5 +17,12 @@ class User extends CI_Controller{
         $this->session->sess_destroy();
         redirect('Home');
     }
+
+    public function perbaikanMesin1(){
+        if(!$this->session->userdata('User')){
+            redirect("Home");
+        }
+        $this->load->view("user/perbaikanMesin1");
+    }
 }
 ?>

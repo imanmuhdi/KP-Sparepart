@@ -135,37 +135,16 @@
 			</li>
 		</ul>
 	</nav>
-
 	<main>
 		<div class="display-flex">
-			<div><h1>Data Sparepart</h1></div>
+			<div><h1>Perbaikan Mesin</h1></div>
 		</div>
-		<div class="container" style="padding-left: 1050px; padding-right: 160px">
-      		<a class="btn oke" href="<?php echo site_url('User/tambahSparepart');?>">Tambah Sparepart</a>
+		<div class="container" style="padding-top: 100px; padding-left: 600px; padding-right: 600px">
+      		<a class="btn oke" href="<?php echo site_url('User/perbaikanMesin1');?>">Perbaikan Dengan Sparepart</a>
    		</div>
-		<div class="content-wrapper">
-   		<div class="container">
-      		<?php
-				$template = array( 
-					'table_open' => '<table id="myTable" border=1>' 
-				);
-				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Aksi");
-				foreach($tb_sparepart->result() as $r){
-					$edit = '<a href="'.site_url("tb_sparepart/update/".$r->kd_part).'" class="btn1 oke">Edit</a>';
-					$hapus = '<a href="'.site_url("tb_sparepart/hapus/".$r->kd_part).'" class="btn2 oke">Hapus</a>';
-					$aksi = $edit.$hapus;
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$aksi);
-				}
-				echo $this->table->generate();
-			?>
+   		<div class="container" style="padding-left: 600px; padding-right: 600px">
+      		<a class="btn oke" href="<?php echo site_url('User/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
    		</div>
-	</div>
 	</main>
 </body>
-<script>
-	$(document).ready(function() {
-		$('#myTable').DataTable(); 
-	});
-</script>
 </html>

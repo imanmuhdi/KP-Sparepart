@@ -1,5 +1,5 @@
 <?php
-class Sparepart extends CI_Controller{
+class Perbaikan extends CI_Controller{
     public function index(){
         if(!$this->session->userdata('User')){
             redirect("Home");
@@ -9,11 +9,11 @@ class Sparepart extends CI_Controller{
         else
             $data['admin'] = false;
 
-        $this->load->model("SparepartModel","",TRUE);
+        $this->load->model("PerbaikanModel","",TRUE);
 
-        $data['tb_sparepart'] = $this->SparepartModel->getSparepart();
-        $data['sparepart'] = $this->session->userdata('Sparepart');
-        $this->load->view("User/sparepart",$data);
+        $data['tb_sparepart'] = $this->PerbaikanModel->getPerbaikan();
+        $data['perbaikan'] = $this->session->userdata('perbaikan');
+        $this->load->view("User/perbaikan",$data);
     }
 }
 ?>
