@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User : Data Sparepart</title>
+    <title>User : Data Mesin</title>
 	<link rel="stylesheet" href="<?php echo site_url('../assets/css/style/user.css')?>">
 
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -138,18 +138,18 @@
 
 	<main>
 		<div class="display-flex">
-			<div><h1>Data Sparepart</h1></div>
+			<div><h1>Data Mesin</h1></div>
 		</div>
 		<div class="content-wrapper">
    		<div class="container" style="padding-bottom: 50px">
       		<?php
-				$template = array(
-					'table_open' => '<table id="myTable" border=1>' 
+				$template = array( 
+					'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan");
-				foreach($tb_sparepart->result() as $r){
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan);
+				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
+				foreach($tb_mesin->result() as $r){
+					$this->table->add_row($r->id_mesin,$r->jam_op,$r->down_time,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
 				}
 				echo $this->table->generate();
 			?>

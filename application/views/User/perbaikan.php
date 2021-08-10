@@ -135,31 +135,16 @@
 			</li>
 		</ul>
 	</nav>
-
 	<main>
 		<div class="display-flex">
-			<div><h1>Data Sparepart</h1></div>
+			<div><h1>Perbaikan Mesin</h1></div>
 		</div>
-		<div class="content-wrapper">
-   		<div class="container" style="padding-bottom: 50px">
-      		<?php
-				$template = array(
-					'table_open' => '<table id="myTable" border=1>' 
-				);
-				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan");
-				foreach($tb_sparepart->result() as $r){
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan);
-				}
-				echo $this->table->generate();
-			?>
+		<div class="container" style="padding-top: 100px; padding-left: 600px; padding-right: 600px">
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin1');?>">Perbaikan Dengan Sparepart</a>
    		</div>
-	</div>
+   		<div class="container" style="padding-left: 600px; padding-right: 600px">
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
+   		</div>
 	</main>
 </body>
-<script>
-	$(document).ready(function() {
-		$('#myTable').DataTable(); 
-	});
-</script>
 </html>

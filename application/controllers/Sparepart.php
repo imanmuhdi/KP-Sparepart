@@ -12,7 +12,7 @@ class Sparepart extends CI_Controller{
         $this->load->model("SparepartModel","",TRUE);
 
         $data['tb_sparepart'] = $this->SparepartModel->getSparepart();
-        $data['sparepart'] = $this->session->userdata('Vote');
+        $data['sparepart'] = $this->session->userdata('Sparepart');
         $this->load->view("User/sparepart",$data);
     }
 
