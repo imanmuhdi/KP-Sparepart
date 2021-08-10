@@ -67,7 +67,7 @@ class Admin extends CI_Controller{
         $this->email->to($to_email);
         $this->email->subject('Akses Diterima');
         $this->email->message('Hallo, Selamat! Anda berhasil terdaftar di website coblos online!');
-            
+        
         if($this->email->send()){
             $this->load->view("message/berhasilkonfirm");
         }else
@@ -122,5 +122,13 @@ class Admin extends CI_Controller{
         }
         $this->load->view("admin/tambah");
     }
+
+    public function tambahSparepart(){
+        if(!$this->session->userdata('admin')){
+            redirect("Home");
+        }
+        $this->load->view("admin/tambahsparepart");
+    }
+
 }
 ?>
