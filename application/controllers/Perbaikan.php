@@ -15,5 +15,19 @@ class Perbaikan extends CI_Controller{
         $data['perbaikan'] = $this->session->userdata('perbaikan');
         $this->load->view("User/perbaikan",$data);
     }
+
+    public function perbaikanMesin1(){
+        if(!$this->session->userdata('User')){
+            redirect("Home");
+        }
+        $this->load->view("user/perbaikanMesin1");
+    }
+
+    public function perbaikanMesin2(){
+        if(!$this->session->userdata('User')){
+            redirect("Home");
+        }
+        $this->load->view("user/perbaikanMesin2");
+    }
 }
 ?>

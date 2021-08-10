@@ -140,10 +140,10 @@
 			<div><h1>Perbaikan Mesin</h1></div>
 		</div>
 		<div class="container" style="padding-top: 100px; padding-left: 600px; padding-right: 600px">
-      		<a class="btn oke" href="<?php echo site_url('User/perbaikanMesin1');?>">Perbaikan Dengan Sparepart</a>
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin1');?>">Perbaikan Dengan Sparepart</a>
    		</div>
    		<div class="container" style="padding-left: 600px; padding-right: 600px">
-      		<a class="btn oke" href="<?php echo site_url('User/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
    		</div>
 	</main>
 </body>

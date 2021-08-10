@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perbaikan Mesin Dengan Sparepart</title>
+    <title>Perbaikan Mesin Tanpa Sparepart</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="container" style="padding:40px 0; text-align: center;">
-        <h3>Perbaikan Mesin Dengan Sparepart</h3>
+        <h3>Perbaikan Mesin Tanpa Sparepart</h3>
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('mesin/perbaikan1'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('mesin/perbaikan2'); ?>" method="post" enctype="multipart/form-data">
                 <table align="center">
                     <tr>
                         <td>
@@ -30,13 +30,8 @@
 
                     <tr>
                         <td colspan="2">
-                            <label>Kode Sparepart</label>
-                            <select name="kd_part">
-                                <option value='' disabled selected>Pilih Sparepart</option>";
-                                <?php foreach($tb_sparepart as $tbs) : ?>
-                                <option value="<?php echo $tbs->kd_part;?>"> <?php echo $tbs->kd_part; ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            <label>Nama Instansi</label>
+                            <input type="text" name="nama" required="Nama Instansi">
                         </td>
                     </tr>
 

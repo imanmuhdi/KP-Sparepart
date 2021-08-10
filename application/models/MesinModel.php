@@ -3,12 +3,12 @@ class MesinModel extends CI_Model {
 	function getMesin() {
 		return $this->db->get("tb_mesin");
 	}
-	function insertMesin($tb_sparepart) {
+	function insertMesin($tb_mesin) {
 		return $this->db->insert('Mesin',$tb_mesin);
 	}
-	function getSparepartByKd($kd) {
-		$this->db->where("kd_part",$kd);
-		return $this->db->get('Sparepart');
+	function getMesinById($id) {
+		$this->db->where("id_mesin",$id);
+		return $this->db->get('Mesin');
 	}
 	function updateMesin($tb_mesin) {
 		$update = array(
@@ -21,12 +21,12 @@ class MesinModel extends CI_Model {
 			"stock_minimal" => $tb_sparepart["stock_minimal"],
 			"keterangan" => $tb_sparepart["keterangan"]
 		);
-		$this->db->where("kd_part",$tb_sparepart['kd_part']);
-		return $this->db->update("Sparepart",$update);
+		$this->db->where("id_mesin",$tb_mesin['id_mesin']);
+		return $this->db->update("Mesin",$update);
 	}
-	function deleteMesin($kd) {
-		$this->db->where("kd_part",$kd);
-		return $this->db->delete("Sparepart");
+	function deleteMesin($id) {
+		$this->db->where("id_mesin",$id);
+		return $this->db->delete("Mesin");
 	}
 }
 ?>
