@@ -78,15 +78,14 @@
 					'table_open' => '<table id="myTable" border=1>' 
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan"); 
+				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Aksi"); 
 				foreach($tb_sparepart->result() as $r){
-					/*
-					$edit = '<a href="'.site_url("calon/update/".$r->id_calon).'" class="btn btn-primary">Edit</a>';
-					$hapus = '<a href="'.site_url("calon/hapus/".$r->id_calon).'" class="btn btn-danger">Hapus</a>';
+					$kode = urldecode($r->kd_part);
+					$edit = '<a href="'.site_url("sparepart/update/".$kode).'" class="btn btn-primary">Edit</a>';
+					$hapus = '<a href="'.site_url("sparepart/hapus/".$kode).'" class="btn btn-danger">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$foto = '<img src="'.$r->foto.'">';
-					*/
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan);
+					
+					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$aksi);
 				}
 				echo $this->table->generate();
 			?>

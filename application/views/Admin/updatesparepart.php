@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Sparepart</title>
+    <title>Edit Sparepart</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
@@ -46,11 +46,11 @@
 </head>
 <body>
     <div class="container" style="padding:40px 0; text-align: center;">
-        <h3>Tambah Sparepart</h3>
+        <h3>Edit Sparepart</h3>
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('sparepart/prosestambah'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('sparepart/prosesupdate'); ?>" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td>
@@ -60,7 +60,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="kodesp" required="Kode Sparepart">
+                            <input type="text" name="kodesp" required="Kode Sparepart" value="<?php echo $tb_sparepart->kd_part?>">
                         </td>
                     </tr>
 
@@ -72,7 +72,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="namasp" required="Nama Sparepart">
+                            <input type="text" name="namasp" required="Nama Sparepart" value="<?php echo $tb_sparepart->nama_part?>">
                         </td>
                     </tr>
 
@@ -84,7 +84,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="tipesp" required>
+                            <input type="text" name="tipesp" required value="<?php echo $tb_sparepart->type?>">
                         </td>
                     </tr>
 
@@ -95,7 +95,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoawal" required>
+                            <input type="number" name="saldoawal" required value="<?php echo $tb_sparepart->saldo_awal?>">
                         </td>
                     </tr>
 
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="masuk" required>
+                            <input type="number" name="masuk" required value="<?php echo $tb_sparepart->masuk?>">
                         </td>
                     </tr>
 
@@ -117,7 +117,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="keluar" required>
+                            <input type="number" name="keluar" required value="<?php echo $tb_sparepart->keluar?>">
                         </td>
                     </tr>
 
@@ -128,7 +128,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoakhir" required">
+                            <input type="number" name="saldoakhir" required" value="<?php echo $tb_sparepart->saldo_akhir?>">
                         </td>
                     </tr>
 
@@ -139,7 +139,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="minimal" required>
+                            <input type="number" name="minimal" required value="<?php echo $tb_sparepart->stock_minimal?>">
                         </td>
                     </tr>
 
@@ -156,7 +156,7 @@
 
                     <tr>
                         <td>
-                            <input type="submit" value="Tambah Sparepart" class="btn btn-success">
+                            <input type="submit" value="Edit Sparepart" class="btn btn-success">
                         </td>
                         <td>
                             <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>

@@ -17,31 +17,71 @@ class Sparepart extends CI_Controller{
     }
 
     public function prosesTambah() {
+        $this->load->model("SparepartModel","",TRUE);
         $sparepart = array(
-            "id_calon" => "",
-            "nama_calon" => $this->input->post("kodesp")
+            "kd_part" => $this->input->post("kodesp"),
+            "nama_part" => $this->input->post("namasp"),
+            "type" => $this->input->post("tipesp"),
+            "saldo_awal" => $this->input->post("saldoawal"),
+            "masuk" => $this->input->post("masuk"),
+            "keluar" => $this->input->post("keluar"),
+            "saldo_akhir" => $this->input->post("saldoakhir"),
+            "stock_minimal" => $this->input->post("minimal")
         );
 
-        $config['upload_path'] = './assets/image/calon';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = $this->input->post("nama");
-
-        $this->load->library('upload',$config);
-        if(!$this->upload->do_upload('foto')){
-            redirect(site_url('admin/pindahCalon?GagalTambahCalon'));
+        if($this->input->post("minimal") > $this->input->post("saldoakhir")){
+            $sparepart['keterangan'] = "OK";
         }else{
-            $upload_data = $this->upload->data();
-            $sparepart['foto'] = base_url('assets/image/calon/').$upload_data['file_name'];
-            $sparepart['visi'] = $this->input->post('visi');
-            $sparepart['misi'] = $this->input->post('misi');
-            $sparepart['suara'] = 0;
+            $sparepart['keterangan'] = "PESAN ULANG";
         }
-
-        if($this->CalonModel->insertCalon($sparepart)) {
+        
+        if($this->SparepartModel->insertSparepart($sparepart)) {
             redirect(site_url("admin/pindahSparepart"));
         } else {
-            redirect(site_url('admin/pindahCalon?GagalTambahCalon'));
+            redirect(site_url('admin/pindahSparepart'));
         }
     }
-}
+
+    public function hapus($kode) {
+        echo $kode;
+        $this->load->model("SparepartModel","",TRUE);
+        $this->SparepartModel->deleteSparepart($kode);
+        redirect(site_url("admin/pindahSparepart"));
+    }
+
+    public function update($kode) {
+        $this->load->model('SparepartModel');
+        $data['tb_sparepart'] = $this->SparepartModel->getSparepartByKd($kode)->row();
+        $this->load->view("Admin/updatesparepart",$data);
+    }
+
+    public function prosesUpdate() {
+        $this->load->model("SparepartModel","",TRUE);
+
+        $sparepart = array(
+            "kd_part" => $this->input->post("kodesp"),
+            "nama_part" => $this->input->post("namasp"),
+            "type" => $this->input->post("tipesp"),
+            "saldo_awal" => $this->input->post("saldoawal"),
+            "masuk" => $this->input->post("masuk"),
+            "keluar" => $this->input->post("keluar"),
+            "saldo_akhir" => $this->input->post("saldoakhir"),
+            "stock_minimal" => $this->input->post("minimal")
+        );
+
+        if($this->input->post("minimal") < $this->input->post("saldoakhir")){
+            $sparepart['keterangan'] = "OK";
+        }else{
+            $sparepart['keterangan'] = "PESAN ULANG";
+        }
+          
+        if($this->SparepartModel->updateSparepart($sparepart)) {
+            redirect(site_url("admin/pindahSparepart"));
+        }else{
+            redirect(site_url('admin/pindahSparepart'));
+        }
+            
+        }
+    }
+
 ?>
