@@ -44,14 +44,14 @@
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
-					$calon1 = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
-					echo $calon1;
+					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
+					echo $admin;
 					?>
 				</li>
 				<li class="nav-item">
 				<?php
-					$calon1 = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
-					echo $calon1;
+					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
+					echo $admin;
 					?>
 				</li>
 				<li>
