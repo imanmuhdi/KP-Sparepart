@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Calon</title>
+    <title>Edit Mesin</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
@@ -46,59 +46,106 @@
 </head>
 <body>
     <div class="container" style="padding:40px 0; text-align: center;">
-        <h3>Tambah Calon</h3>
+        <h3>Edit Mesin</h3>
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('calon/prosesupdate/'.$calon->id_calon); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('mesin/prosesupdate'); ?>" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td>
-                            <label>Nama Calon Presiden dan Wakil Presiden</label>
+                            <label>ID Mesin</label>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="nama" required="Nama Calon" value="<?php echo $calon->nama_calon?>">
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <label class="pad">Foto Pasangan Calon</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="file" name="foto" required>
+                            <input type="text" name="idm" required="Kode Sparepart" value="<?php echo $tb_mesin->id_mesin?>">
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label class="pad">Visi</label>
+                            <label>Jam Operasi</label>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
-                            <textarea rows="10" cols="100" name="visi" required="Visi"><?php echo $calon->visi?></textarea>
+                            <input type="number" name="jom" required="Nama Sparepart" value="<?php echo $tb_mesin->jam_op?>">
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label class="pad">Misi</label>
+                            <label>Down Time</label>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
-                            <textarea rows="10" cols="100" name="misi" required="Misi"><?php echo $calon->misi?></textarea>
+                            <input type="number" name="dtm" required value="<?php echo $tb_mesin->down_time?>">
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <input type="submit" value="Update Calon" class="btn btn-success">
+                            <label>Target Down</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" name="tdm" required value="<?php echo $tb_mesin->target_down?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Tipe Mesin</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="tmm" required value="<?php echo $tb_mesin->type_m?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Merk Mesin</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="mmm" required value="<?php echo $tb_mesin->merk_m?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>No Mesin</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="nmm" required" value="<?php echo $tb_mesin->no_m?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Tahun</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" name="tm" required value="<?php echo $tb_mesin->tahun?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="submit" value="Edit Mesin" class="btn btn-success" >
                         </td>
                         <td>
                             <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>

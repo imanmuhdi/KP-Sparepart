@@ -14,7 +14,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding-top: 40px;
+			padding-top: 10px;
 		}
 		.logout{
 			color: grey;
@@ -30,6 +30,7 @@
 		td{
 			text-align: center;
 		}
+		
 	</style>
 </head>
 <body>
@@ -44,18 +45,21 @@
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
-					$calon1 = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
-					echo $calon1;
+					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
+					echo $admin;
 					?>
 				</li>
 				<li class="nav-item">
 				<?php
-					$calon1 = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
-					echo $calon1;
+					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
+					echo $admin;
 					?>
 				</li>
 				<li>
-					<a href="<?php echo site_url('User')?>" class="nav-link">Grafik</a>
+					<?php
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
+						echo $admin;
+					?>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
@@ -68,7 +72,7 @@
 		</div>
 	</nav>
 	<div class="container" style="padding-top:20px; padding-left: 999px">
-      		<a class="btn btn-primary" href="<?php echo site_url('Admin/tambahSparepart');?>">Tambah Mesin</a>
+      		<a class="btn btn-primary" href="<?php echo site_url('Admin/tambahMesin');?>">Tambah Mesin</a>
    	</div>
 	<div class="content-wrapper">
    		<div class="container">
@@ -78,15 +82,14 @@
 					'table_open' => '<table id="myTable" border=1>' 
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun"); 
+				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun","Aksi"); 
 				foreach($tb_mesin->result() as $r){
-					/*
-					$edit = '<a href="'.site_url("calon/update/".$r->id_calon).'" class="btn btn-primary">Edit</a>';
-					$hapus = '<a href="'.site_url("calon/hapus/".$r->id_calon).'" class="btn btn-danger">Hapus</a>';
+					$id = urldecode($r->id_mesin);
+					$edit = '<a href="'.site_url("mesin/update/".$id).'" class="btn btn-primary">Edit</a>';
+					$hapus = '<a href="'.site_url("mesin/hapus/".$id).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Mesin dengan Id : ".$id."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$foto = '<img src="'.$r->foto.'">';
-					*/
-					$this->table->add_row($r->id_mesin,$r->jam_op,$r->down_time,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
+					
+					$this->table->add_row($r->id_mesin,$r->jam_op,$r->down_time,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun,$aksi);
 				}
 				echo $this->table->generate();
 			?>

@@ -29,18 +29,21 @@
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
-						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
-						echo $calon;
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
+						echo $admin;
 					?>
 				</li>
 				<li class="nav-item">
 					<?php
-						$calon = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
-						echo $calon;
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
+						echo $admin;
 					?>
 				</li>
 				<li>
-					<a href="<?php echo site_url('User')?>" class="nav-link">Grafik</a>
+					<?php
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
+						echo $admin;
+					?>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">

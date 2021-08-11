@@ -17,29 +17,51 @@ class Mesin extends CI_Controller{
 
     public function prosesTambah() {
         $mesin = array(
-            "id_calon" => "",
-            "nama_calon" => $this->input->post("kodesp")
+            "id_mesin" => $this->input->post("idm"),
+            "jam_op" => $this->input->post("jom"),
+            "down_time" => $this->input->post("dtm"),
+            "target_down" => $this->input->post("tdm"),
+            "type_m" => $this->input->post("tmm"),
+            "merk_m" => $this->input->post("mmm"),
+            "no_m" => $this->input->post("nmm"),
+            "tahun" => $this->input->post("tm")
         );
-
-        $config['upload_path'] = './assets/image/calon';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = $this->input->post("nama");
-
-        $this->load->library('upload',$config);
-        if(!$this->upload->do_upload('foto')){
-            redirect(site_url('admin/pindahCalon?GagalTambahCalon'));
-        }else{
-            $upload_data = $this->upload->data();
-            $mesin['foto'] = base_url('assets/image/calon/').$upload_data['file_name'];
-            $mesin['visi'] = $this->input->post('visi');
-            $mesin['misi'] = $this->input->post('misi');
-            $mesin['suara'] = 0;
-        }
-
-        if($this->CalonModel->insertCalon($mesin)) {
-            redirect(site_url("admin/pindahSparepart"));
+        
+        if($this->MesinModel->insertMesin($mesin)) {
+            redirect(site_url("admin/pindahMesin"));
         } else {
-            redirect(site_url('admin/pindahCalon?GagalTambahCalon'));
+            redirect(site_url('admin/pindahMesin'));
+        }
+    }
+
+    public function hapus($id) {
+        echo $id;
+        $this->MesinModel->deleteMesin($id);
+        redirect(site_url("admin/pindahMesin"));
+    }
+
+    public function update($id) {
+        $this->load->model('SparepartModel');
+        $data['tb_mesin'] = $this->MesinModel->getMesinById($id)->row();
+        $this->load->view("Admin/updatemesin",$data);
+    }
+
+    public function prosesUpdate() {
+        $mesin = array(
+            "id_mesin" => $this->input->post("idm"),
+            "jam_op" => $this->input->post("jom"),
+            "down_time" => $this->input->post("dtm"),
+            "target_down" => $this->input->post("tdm"),
+            "type_m" => $this->input->post("tmm"),
+            "merk_m" => $this->input->post("mmm"),
+            "no_m" => $this->input->post("nmm"),
+            "tahun" => $this->input->post("tm")
+        );
+        
+        if($this->MesinModel->updateMesin($mesin)) {
+            redirect(site_url("admin/pindahMesin"));
+        } else {
+            redirect(site_url('admin/pindahMesin'));
         }
     }
 }
