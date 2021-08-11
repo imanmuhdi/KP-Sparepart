@@ -31,6 +31,13 @@ class Admin extends CI_Controller{
         $this->load->view("admin/mesin",$data);
     }
 
+    public function pindahGrafik(){
+        if(!$this->session->userdata('admin')){
+            redirect("Home");
+        }
+        $this->load->view("admin/grafik");
+    }
+
     public function tambahSparepart(){
         if(!$this->session->userdata('admin')){
             redirect("Home");

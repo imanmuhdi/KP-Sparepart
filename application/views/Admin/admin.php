@@ -40,7 +40,10 @@
 					?>
 				</li>
 				<li>
-					<a href="<?php echo site_url('User')?>" class="nav-link">Grafik</a>
+					<?php
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
+						echo $admin;
+					?>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">

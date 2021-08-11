@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Sparepart</title>
+    <title>Daftar Mesin</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -70,27 +70,9 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container" style="padding-top:20px; padding-left: 999px">
-      		<a class="btn btn-primary btn1" href="<?php echo site_url('Admin/tambahSparepart');?>">Tambah Sparepart</a>
-   	</div>
 	<div class="content-wrapper">
    		<div class="container">
-      		<h3>Daftar Sparepart</h3>
-      		<?php
-				$template = array( 
-					'table_open' => '<table id="myTable" border=1>' 
-				);
-				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Aksi"); 
-				foreach($tb_sparepart->result() as $r){
-					$kode = urldecode($r->kd_part);
-					$edit = '<a href="'.site_url("sparepart/update/".$kode).'" class="btn btn-primary" >Edit</a>';
-					$hapus = '<a href="'.site_url("sparepart/hapus/".$kode).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Sparepart dengan kode : ".$kode."'".');">Hapus</a>';
-					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$aksi);
-				}
-				echo $this->table->generate();
-			?>
+      		<h3>Belum Selesai</h3>
    		</div>
 	</div>
 </body>

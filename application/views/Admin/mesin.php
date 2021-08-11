@@ -14,7 +14,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding-top: 40px;
+			padding-top: 10px;
 		}
 		.logout{
 			color: grey;
@@ -30,6 +30,7 @@
 		td{
 			text-align: center;
 		}
+		
 	</style>
 </head>
 <body>
@@ -55,7 +56,10 @@
 					?>
 				</li>
 				<li>
-					<a href="<?php echo site_url('User')?>" class="nav-link">Grafik</a>
+					<?php
+						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
+						echo $admin;
+					?>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
@@ -82,7 +86,7 @@
 				foreach($tb_mesin->result() as $r){
 					$id = urldecode($r->id_mesin);
 					$edit = '<a href="'.site_url("mesin/update/".$id).'" class="btn btn-primary">Edit</a>';
-					$hapus = '<a href="'.site_url("mesin/hapus/".$id).'" class="btn btn-danger">Hapus</a>';
+					$hapus = '<a href="'.site_url("mesin/hapus/".$id).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Mesin dengan Id : ".$id."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
 					
 					$this->table->add_row($r->id_mesin,$r->jam_op,$r->down_time,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun,$aksi);
