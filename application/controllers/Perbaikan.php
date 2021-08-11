@@ -1,5 +1,5 @@
 <?php
-class Perbaikan extends CI_Controller{
+class Perbaikan extends CI_Controller {
     public function index(){
         if(!$this->session->userdata('User')){
             redirect("Home");
@@ -11,8 +11,8 @@ class Perbaikan extends CI_Controller{
 
         $this->load->model("PerbaikanModel","",TRUE);
 
-        $data['tb_sparepart'] = $this->PerbaikanModel->getPerbaikan();
-        $data['perbaikan'] = $this->session->userdata('perbaikan');
+        $data['tb_sparepart'] = $this->PerbaikanModel->getPerbaikan1();
+        $data['tb_mesin'] = $this->PerbaikanModel->getPerbaikan2();
         $this->load->view("User/perbaikan",$data);
     }
 
@@ -20,14 +20,36 @@ class Perbaikan extends CI_Controller{
         if(!$this->session->userdata('User')){
             redirect("Home");
         }
-        $this->load->view("user/perbaikanMesin1");
+        $this->load->model("PerbaikanModel","",TRUE);
+
+        $data['tb_sparepart'] = $this->PerbaikanModel->getPerbaikan1();
+        $data['tb_mesin'] = $this->PerbaikanModel->getPerbaikan2();
+        $this->load->view("user/perbaikanMesin1",$data);
     }
 
     public function perbaikanMesin2(){
         if(!$this->session->userdata('User')){
             redirect("Home");
         }
-        $this->load->view("user/perbaikanMesin2");
+        $this->load->model("PerbaikanModel","",TRUE);
+
+        $data['tb_sparepart'] = $this->PerbaikanModel->getPerbaikan1();
+        $data['tb_mesin'] = $this->PerbaikanModel->getPerbaikan2();
+        $this->load->view("user/perbaikanMesin2",$data);
+    }
+
+    public function prosesTambah() {
+        $this->load->model("PerbaikanModel","",TRUE);
+        $perbaikan = array(
+            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin"),
+            "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part"),
+            "deskripsi" => $this->input->post("deskripsi")
+        );
+        if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
+            redirect(site_url("Perbaikan/perbaikanMesin1"));
+        } else {
+            redirect(site_url('Perbaikan/perbaikanMesin1'));
+        }
     }
 }
 ?>

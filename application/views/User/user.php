@@ -67,7 +67,7 @@
 
 	<main>
 		<br>
-		<h1 align="center">Selamat Datang!</h1>
+		<h1 align="center" style="padding-top: 40px">Selamat Datang!</h1>
 		<br>
 		<?php
 		echo "<center><h2>".$nama."<br>";

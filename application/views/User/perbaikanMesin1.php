@@ -14,15 +14,15 @@
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('mesin/perbaikan1'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('perbaikan/prosestambah'); ?>" method="post" enctype="multipart/form-data">
                 <table align="center">
                     <tr>
                         <td>
                             <label>ID Mesin</label>
-                            <select name="id_mesin">
-                                <option value='' disabled selected>Pilih Mesin</option>";
-                                <?php foreach($tb_mesin as $tbm) : ?>
-                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->mesin_name; ?></option>
+                            <select name="id">
+                                <option value='' disabled selected>Pilih Mesin</option>
+                                <?php foreach($tb_mesin->result() as $tbm) : ?>
+                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->id_mesin; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
@@ -31,9 +31,9 @@
                     <tr>
                         <td colspan="2">
                             <label>Kode Sparepart</label>
-                            <select name="kd_part">
-                                <option value='' disabled selected>Pilih Sparepart</option>";
-                                <?php foreach($tb_sparepart as $tbs) : ?>
+                            <select name="kd">
+                                <option value='' disabled selected>Pilih Sparepart</option>
+                                <?php foreach($tb_sparepart->result() as $tbs) : ?>
                                 <option value="<?php echo $tbs->kd_part;?>"> <?php echo $tbs->kd_part; ?></option>
                                 <?php endforeach; ?>
                             </select>

@@ -12,13 +12,7 @@ class Mesin extends CI_Controller{
         $this->load->model("MesinModel","",TRUE);
 
         $data['tb_mesin'] = $this->MesinModel->getMesin();
-        $data['mesin'] = $this->session->userdata('Mesin');
         $this->load->view("User/mesin",$data);
-    }
-
-    public function __construct() {
-        parent::__construct();
-        $this->load->model("MesinModel","",TRUE);
     }
 
     public function prosesTambah() {

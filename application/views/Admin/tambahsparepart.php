@@ -128,7 +128,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoakhir" required">
+                            <input type="number" name="saldoakhir" required>
                         </td>
                     </tr>
 

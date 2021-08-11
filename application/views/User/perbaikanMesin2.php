@@ -14,15 +14,15 @@
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('mesin/perbaikan2'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('perbaikan/prosestambah'); ?>" method="post" enctype="multipart/form-data">
                 <table align="center">
                     <tr>
                         <td>
                             <label>ID Mesin</label>
-                            <select name="id_mesin">
+                            <select name="id">
                                 <option value='' disabled selected>Pilih Mesin</option>";
-                                <?php foreach($tb_mesin as $tbm) : ?>
-                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->mesin_name; ?></option>
+                                <?php foreach($tb_mesin->result() as $tbm) : ?>
+                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->id_mesin; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
