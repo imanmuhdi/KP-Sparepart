@@ -3,30 +3,30 @@ class MesinModel extends CI_Model {
 	function getMesin() {
 		return $this->db->get("tb_mesin");
 	}
-	function insertMesin($tb_mesin) {
-		return $this->db->insert('Mesin',$tb_mesin);
+	function insertMesin($mesin) {
+		return $this->db->insert('tb_mesin',$mesin);
 	}
 	function getMesinById($id) {
 		$this->db->where("id_mesin",$id);
-		return $this->db->get('Mesin');
+		return $this->db->get('tb_mesin');
 	}
 	function updateMesin($tb_mesin) {
 		$update = array(
-			"nama_part" => $tb_sparepart['nama_part'],
-			"type" => $tb_sparepart['foto'],
-			"saldo_awal" => $tb_sparepart['visi'],
-			"masuk" => $tb_sparepart["masuk"],
-			"keluar" => $tb_sparepart["keluar"],
-			"saldo_akhir" => $tb_sparepart["saldo_akhir"],
-			"stock_minimal" => $tb_sparepart["stock_minimal"],
-			"keterangan" => $tb_sparepart["keterangan"]
+			"id_mesin" => $tb_mesin['id_mesin'],
+			"jam_op" => $tb_mesin['jam_op'],
+			"down_time" => $tb_mesin['down_time'],
+			"target_down" => $tb_mesin["target_down"],
+			"type_m" => $tb_mesin["type_m"],
+			"merk_m" => $tb_mesin["merk_m"],
+			"no_m" => $tb_mesin["no_m"],
+			"tahun" => $tb_mesin["tahun"]
 		);
 		$this->db->where("id_mesin",$tb_mesin['id_mesin']);
-		return $this->db->update("Mesin",$update);
+		return $this->db->update("tb_mesin",$update);
 	}
 	function deleteMesin($id) {
 		$this->db->where("id_mesin",$id);
-		return $this->db->delete("Mesin");
+		return $this->db->delete("tb_mesin");
 	}
 }
 ?>

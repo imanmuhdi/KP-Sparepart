@@ -130,5 +130,11 @@ class Admin extends CI_Controller{
         $this->load->view("admin/tambahsparepart");
     }
 
+    public function tambahMesin(){
+        if(!$this->session->userdata('admin')){
+            redirect("Home");
+        }
+        $this->load->view("admin/tambahmesin");
+    }
 }
 ?>
