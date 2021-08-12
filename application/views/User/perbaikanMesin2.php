@@ -21,9 +21,11 @@
                             <label>ID Mesin</label>
                             <select name="id">
                                 <option value='' disabled selected>Pilih Mesin</option>";
-                                <?php foreach($tb_mesin->result() as $tbm) : ?>
-                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->id_mesin; ?></option>
-                                <?php endforeach; ?>
+                                <?php
+                                foreach ($tb_mesin->result() as $tbm) {
+                                    echo '<option value="'.$tbm->id_mesin.'">'.$tbm->id_mesin.'</option>';
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>

@@ -41,14 +41,14 @@ class Perbaikan extends CI_Controller {
     public function prosesTambah() {
         $this->load->model("PerbaikanModel","",TRUE);
         $perbaikan = array(
-            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin"),
-            "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part"),
+            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row()->id_mesin,
+            "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row()->kd_part,
             "deskripsi" => $this->input->post("deskripsi")
         );
         if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
-            redirect(site_url("Perbaikan/perbaikanMesin1"));
+            redirect(site_url("user/perbaikan"));
         } else {
-            redirect(site_url('Perbaikan/perbaikanMesin1'));
+            redirect(site_url('user/perbaikan'));
         }
     }
 }

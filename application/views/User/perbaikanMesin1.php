@@ -21,9 +21,11 @@
                             <label>ID Mesin</label>
                             <select name="id">
                                 <option value='' disabled selected>Pilih Mesin</option>
-                                <?php foreach($tb_mesin->result() as $tbm) : ?>
-                                <option value="<?php echo $tbm->id_mesin;?>"> <?php echo $tbm->id_mesin; ?></option>
-                                <?php endforeach; ?>
+                                <?php
+                                foreach ($tb_mesin->result() as $tbm) {
+                                    echo '<option value="'.$tbm->id_mesin.'">'.$tbm->id_mesin.'</option>';
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -33,9 +35,11 @@
                             <label>Kode Sparepart</label>
                             <select name="kd">
                                 <option value='' disabled selected>Pilih Sparepart</option>
-                                <?php foreach($tb_sparepart->result() as $tbs) : ?>
-                                <option value="<?php echo $tbs->kd_part;?>"> <?php echo $tbs->kd_part; ?></option>
-                                <?php endforeach; ?>
+                                <?php
+                                foreach ($tb_sparepart->result() as $tbs) {
+                                    echo '<option value="'.$tbs->kd_part.'">'.$tbs->kd_part.'</option>';
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>

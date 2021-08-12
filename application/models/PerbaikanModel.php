@@ -6,16 +6,16 @@ class PerbaikanModel extends CI_Model {
 	function getPerbaikan2() {
 		return $this->db->get("tb_mesin");
 	}
-	function insertPerbaikan() {
-		$perbaikan = array (
-			"id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin"),
-			"kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part"),
-			"deskripsi" => $this->input->post("deskripsi")
-		);
+	function insertPerbaikan($perbaikan) {
+		var_dump($perbaikan);
 		return $this->db->insert('tb_perbaikan1',$perbaikan);
 	}
 	function getPerbaikanByKd($kd) {
 		$this->db->where("kd_part",$kd);
+		return $this->db->get('tb_perbaikan1');
+	}
+	function getPerbaikanById($id) {
+		$this->db->where("id_mesin",$id);
 		return $this->db->get('tb_perbaikan1');
 	}
 	function updatePerbaikan($tb_sparepart) {
