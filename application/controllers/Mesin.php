@@ -1,5 +1,11 @@
 <?php
 class Mesin extends CI_Controller{
+    public function __construct()
+        {
+                parent::__construct();
+                $this->load->model("MesinModel","",TRUE);
+        }
+
     public function index(){
         if(!$this->session->userdata('User')){
             redirect("Home");

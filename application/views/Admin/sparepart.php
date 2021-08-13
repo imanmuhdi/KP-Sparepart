@@ -41,7 +41,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
 
-				<ul class="navbar-nav mr-auto">
+				<ul class="navbar-nav mr-auto ">
 				<li>
 					<?php
 					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahSparepart/").'">Sparepart</a>';
@@ -78,7 +78,7 @@
       		<h3>Daftar Sparepart</h3>
       		<?php
 				$template = array( 
-					'table_open' => '<table id="myTable" border=1>' 
+					'table_open' => '<table id="myTable" border=1 >' 
 				);
 				$this->table->set_template($template); 
 				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Aksi"); 

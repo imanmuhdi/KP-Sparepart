@@ -43,7 +43,6 @@ class Sparepart extends CI_Controller{
     }
 
     public function hapus($kode) {
-        echo $kode;
         $this->load->model("SparepartModel","",TRUE);
         $this->SparepartModel->deleteSparepart($kode);
         redirect(site_url("admin/pindahSparepart"));

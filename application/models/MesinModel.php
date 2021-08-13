@@ -10,6 +10,7 @@ class MesinModel extends CI_Model {
 		$this->db->where("id_mesin",$id);
 		return $this->db->get('tb_mesin');
 	}
+
 	function updateMesin($tb_mesin) {
 		$update = array(
 			"id_mesin" => $tb_mesin['id_mesin'],
