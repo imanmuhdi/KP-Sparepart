@@ -61,9 +61,9 @@ class Perbaikan extends CI_Controller {
             "deskripsi" => $this->input->post("deskripsi")
         );
         if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
-            redirect(site_url("user/perbaikan"));
+            redirect(site_url("user/pindahPerbaikan1"));
         } else {
-            redirect(site_url('user/perbaikan'));
+            redirect(site_url('user/pindahPerbaikan1'));
         }
     }
 }
