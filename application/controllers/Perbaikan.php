@@ -66,5 +66,28 @@ class Perbaikan extends CI_Controller {
             redirect(site_url('user/pindahPerbaikan1'));
         }
     }
+
+    public function prosesTambah2() {
+        $this->load->model("PerbaikanModel","",TRUE);
+        $loop = false;
+        $row1 = 0;
+        while($loop != TRUE){
+            if($this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin == $this->input->post("id")){
+                    $loop = TRUE;
+                }else{
+                    $row1 = $row1 + 1;
+                }
+        }
+        $perbaikan = array(
+            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
+            "instansi" => $this->input->post("nama"),
+            "deskripsi" => $this->input->post("deskripsi")
+        );
+        if($this->PerbaikanModel->insertPerbaikan2($perbaikan)) {
+            redirect(site_url("user/pindahPerbaikan1"));
+        } else {
+            redirect(site_url('user/pindahPerbaikan1'));
+        }
+    }
 }
 ?>

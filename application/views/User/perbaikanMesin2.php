@@ -14,7 +14,7 @@
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('perbaikan/prosestambah'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('perbaikan/prosestambah2'); ?>" method="post" enctype="multipart/form-data">
                 <table align="center">
                     <tr>
                         <td>
