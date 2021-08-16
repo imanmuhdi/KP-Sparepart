@@ -21,7 +21,8 @@ class SparepartModel extends CI_Model {
 			"keluar" => $tb_sparepart["keluar"],
 			"saldo_akhir" => $tb_sparepart["saldo_akhir"],
 			"stock_minimal" => $tb_sparepart["stock_minimal"],
-			"keterangan" => $tb_sparepart["keterangan"]
+			"keterangan" => $tb_sparepart["keterangan"],
+			"foto" => $tb_sparepart["foto"]
 		);
 		$this->db->where("kd_part",$tb_sparepart['kd_part']);
 		return $this->db->update("tb_sparepart",$update);

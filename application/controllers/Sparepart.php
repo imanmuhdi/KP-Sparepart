@@ -28,7 +28,21 @@ class Sparepart extends CI_Controller{
             "saldo_akhir" => $this->input->post("saldoakhir"),
             "stock_minimal" => $this->input->post("minimal")
         );
+        //foto
+        
+        $config['upload_path'] = './assets/image/sparepart'; //lokasi penyimpanan foto
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = $this->input->post("namasp");
 
+        $this->load->library('upload',$config);
+        if(!$this->upload->do_upload('foto')){
+            redirect(site_url('admin/pindahSparepart'));
+        }else{
+            $upload_data = $this->upload->data();
+            $sparepart['foto'] = base_url('assets/image/sparepart/').$upload_data['file_name'];
+        }
+        
+        //akhir foto
         if($this->input->post("minimal") > $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "OK";
         }else{
@@ -67,6 +81,22 @@ class Sparepart extends CI_Controller{
             "saldo_akhir" => $this->input->post("saldoakhir"),
             "stock_minimal" => $this->input->post("minimal")
         );
+
+        //foto
+        
+        $config['upload_path'] = './assets/image/sparepart'; //lokasi penyimpanan foto
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = $this->input->post("namasp");
+
+        $this->load->library('upload',$config);
+        if(!$this->upload->do_upload('foto')){
+            redirect(site_url('admin/pindahSparepart'));
+        }else{
+            $upload_data = $this->upload->data();
+            $sparepart['foto'] = base_url('assets/image/sparepart/').$upload_data['file_name'];
+        }
+        
+        //akhir foto
 
         if($this->input->post("minimal") < $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "OK";

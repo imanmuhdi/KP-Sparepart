@@ -78,17 +78,27 @@
       		<h3>Daftar Sparepart</h3>
       		<?php
 				$template = array( 
-					'table_open' => '<table id="myTable" border=1 >' 
+					'table_open' => '<table id="myTable" border=1 >'
 				);
-				$this->table->set_template($template); 
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Aksi"); 
+				$count = 0;
+				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Foto","Aksi"); 
 				foreach($tb_sparepart->result() as $r){
+					if($r->keterangan != "OK"){
+						$count = $count + 1;
+					}
 					$kode = urldecode($r->kd_part);
 					$edit = '<a href="'.site_url("sparepart/update/".$kode).'" class="btn btn-primary" >Edit</a>';
 					$hapus = '<a href="'.site_url("sparepart/hapus/".$kode).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Sparepart dengan kode : ".$kode."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$aksi);
+					$foto = '<img src="'.$r->foto.'">';
+					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$foto,$aksi);
+
 				}
+				if($count != 0){
+					echo "Terdapat ".$count." Sparepart yang perlu dipesan ulang";	
+				}
+				
+				$this->table->set_template($template); 
 				echo $this->table->generate();
 			?>
    		</div>
