@@ -46,12 +46,23 @@
 
                     <tr>
                         <td>
+                            <label>Jumlah Sparepart</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="number" name="jml_part" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label class="pad">Deskripsi</label>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <textarea rows="10" cols="100" name="deskripsi" required="Deskripsi"></textarea>
+                            <textarea rows="10" cols="100" name="deskripsi" required></textarea>
                         </td>
                     </tr>
 

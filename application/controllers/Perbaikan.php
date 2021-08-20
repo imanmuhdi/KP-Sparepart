@@ -58,6 +58,7 @@ class Perbaikan extends CI_Controller {
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
             "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part,
+            "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi")
         );
         if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
