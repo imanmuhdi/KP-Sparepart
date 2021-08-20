@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Agu 2021 pada 09.10
--- Versi Server: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Waktu pembuatan: 20 Agu 2021 pada 11.12
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -73,6 +74,7 @@ CREATE TABLE `tb_perbaikan1` (
   `no` int(11) NOT NULL,
   `id_mesin` char(3) NOT NULL,
   `kd_part` char(7) NOT NULL,
+  `jml_part` int(11) NOT NULL,
   `deskripsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -80,8 +82,28 @@ CREATE TABLE `tb_perbaikan1` (
 -- Dumping data untuk tabel `tb_perbaikan1`
 --
 
-INSERT INTO `tb_perbaikan1` (`no`, `id_mesin`, `kd_part`, `deskripsi`) VALUES
-(1, 'A3', 'BER-001', 'perbaikan tanggal ...');
+INSERT INTO `tb_perbaikan1` (`no`, `id_mesin`, `kd_part`, `jml_part`, `deskripsi`) VALUES
+(1, 'A3', 'BER-001', 0, 'perbaikan tanggal ...'),
+(5, 'A1', 'ACC-001', 1, 'abc'),
+(6, 'A1', 'ACC-001', 1, 'bca'),
+(7, 'A1', 'ACC-001', 1, 'f'),
+(8, 'A1', 'ACC-001', 5, 'w');
+
+--
+-- Trigger `tb_perbaikan1`
+--
+DELIMITER $$
+CREATE TRIGGER `perbaikan1` AFTER INSERT ON `tb_perbaikan1` FOR EACH ROW BEGIN
+   UPDATE tb_sparepart
+   SET saldo_akhir = saldo_akhir - NEW.jml_part
+   WHERE kd_part = NEW.kd_part;
+   
+   UPDATE tb_sparepart
+   SET keluar = keluar + NEW.jml_part
+   WHERE kd_part = NEW.kd_part;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -127,7 +149,7 @@ CREATE TABLE `tb_sparepart` (
 --
 
 INSERT INTO `tb_sparepart` (`kd_part`, `nama_part`, `type`, `saldo_awal`, `masuk`, `keluar`, `saldo_akhir`, `stock_minimal`, `keterangan`, `foto`) VALUES
-('ACC-001', 'Accumulator', 'AT00354', 10, 16, 12, 13, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/1.png'),
+('ACC-001', 'Accumulator', 'AT00354', 10, 16, 20, 5, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/1.png'),
 ('BER-001', 'Bearing', '6203zz', 12, 12, 15, 9, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/2.png'),
 ('CRD-001', 'Cable rebound', 'R00012', 10, 5, 5, 10, 3, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Cable_rebound.png'),
 ('DRP-001', 'Gun / Dropper', 'G453t', 100, 120, 145, 75, 3, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Gun_Dropper.png'),
@@ -171,13 +193,13 @@ INSERT INTO `user` (`nama`, `username`, `password`, `admin`, `user`) VALUES
 --
 
 --
--- Indexes for table `tb_mesin`
+-- Indeks untuk tabel `tb_mesin`
 --
 ALTER TABLE `tb_mesin`
   ADD PRIMARY KEY (`id_mesin`);
 
 --
--- Indexes for table `tb_perbaikan1`
+-- Indeks untuk tabel `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan1`
   ADD PRIMARY KEY (`no`),
@@ -185,38 +207,40 @@ ALTER TABLE `tb_perbaikan1`
   ADD KEY `kd_part` (`kd_part`) USING BTREE;
 
 --
--- Indexes for table `tb_perbaikan2`
+-- Indeks untuk tabel `tb_perbaikan2`
 --
 ALTER TABLE `tb_perbaikan2`
   ADD PRIMARY KEY (`no`),
   ADD KEY `id_mesin` (`id_mesin`) USING BTREE;
 
 --
--- Indexes for table `tb_sparepart`
+-- Indeks untuk tabel `tb_sparepart`
 --
 ALTER TABLE `tb_sparepart`
   ADD PRIMARY KEY (`kd_part`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_perbaikan1`
+-- AUTO_INCREMENT untuk tabel `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan1`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `tb_perbaikan2`
+-- AUTO_INCREMENT untuk tabel `tb_perbaikan2`
 --
 ALTER TABLE `tb_perbaikan2`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -233,6 +257,7 @@ ALTER TABLE `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan2`
   ADD CONSTRAINT `tb_perbaikan2_ibfk_1` FOREIGN KEY (`id_mesin`) REFERENCES `tb_mesin` (`id_mesin`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
