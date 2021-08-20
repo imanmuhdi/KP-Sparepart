@@ -41,11 +41,11 @@ class Sparepart extends CI_Controller{
             $upload_data = $this->upload->data();
             $sparepart['foto'] = base_url('assets/image/sparepart/').$upload_data['file_name'];
         }
-        
         //akhir foto
-        if($this->input->post("minimal") > $this->input->post("saldoakhir")){
+
+        if($this->input->post("minimal") <= $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "OK";
-        }else{
+        }else {
             $sparepart['keterangan'] = "PESAN ULANG";
         }
         
@@ -83,30 +83,32 @@ class Sparepart extends CI_Controller{
         );
 
         //foto
-        
-        $config['upload_path'] = './assets/image/sparepart'; //lokasi penyimpanan foto
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = $this->input->post("namasp");
+        if(!empty($_FILES['foto'])){
+            $config['upload_path'] = './assets/image/sparepart'; //lokasi penyimpanan foto
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['file_name'] = $this->input->post("namasp");
 
-        $this->load->library('upload',$config);
-        if(!$this->upload->do_upload('foto')){
-            redirect(site_url('admin/pindahSparepart'));
-        }else{
-            $upload_data = $this->upload->data();
-            $sparepart['foto'] = base_url('assets/image/sparepart/').$upload_data['file_name'];
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('foto')){
+                redirect(site_url('admin/pindahSparepart'));
+            }else{
+                $upload_data = $this->upload->data();
+                $sparepart['foto'] = base_url('assets/image/sparepart/').$upload_data['file_name'];
+            }
+        }else if(empty($_FILES['foto'])){
+            $sparepart['foto'] = $this->SparepartModel->getFoto($this->input->post("kodesp"));
         }
-        
         //akhir foto
-
-        if($this->input->post("minimal") < $this->input->post("saldoakhir")){
+        if($this->input->post("minimal") <= $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "OK";
-        }else{
+        }else if($this->input->post("minimal") > $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "PESAN ULANG";
         }
           
         if($this->SparepartModel->updateSparepart($sparepart)) {
             redirect(site_url("admin/pindahSparepart"));
         }else{
+            echo "GAGAL UPDATE";
             redirect(site_url('admin/pindahSparepart'));
         }
             

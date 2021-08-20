@@ -51,6 +51,7 @@
     <div class="container">
         <div class="content">
             <form action="<?php echo site_url('sparepart/prosesupdate'); ?>" method="post" enctype="multipart/form-data">
+
                 <table>
                     <tr>
                         <td>
@@ -150,7 +151,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="foto" >
+                            <input type="file" name="foto">
                         </td>
                     </tr>
 

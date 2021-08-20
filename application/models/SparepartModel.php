@@ -31,5 +31,13 @@ class SparepartModel extends CI_Model {
 		$this->db->where("kd_part",$kd);
 		return $this->db->delete("tb_sparepart");
 	}
+
+	function getFoto($kd){
+		$this->db->select('foto');
+  		$this->db->where("kd_part", $kd);
+  		$this->db->limit(1);
+  		$query = $this->db->get('tb_sparepart');
+  		return $query->row()->foto;
+	}
 }
 ?>

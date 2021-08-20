@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Agu 2021 pada 11.12
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.11
+-- Generation Time: 20 Agu 2021 pada 12.35
+-- Versi Server: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -87,7 +86,9 @@ INSERT INTO `tb_perbaikan1` (`no`, `id_mesin`, `kd_part`, `jml_part`, `deskripsi
 (5, 'A1', 'ACC-001', 1, 'abc'),
 (6, 'A1', 'ACC-001', 1, 'bca'),
 (7, 'A1', 'ACC-001', 1, 'f'),
-(8, 'A1', 'ACC-001', 5, 'w');
+(8, 'A1', 'ACC-001', 5, 'w'),
+(9, 'A2', 'ACC-001', 2, 'asdas'),
+(10, 'A2', 'ACC-001', 2, 'asdasd');
 
 --
 -- Trigger `tb_perbaikan1`
@@ -149,22 +150,22 @@ CREATE TABLE `tb_sparepart` (
 --
 
 INSERT INTO `tb_sparepart` (`kd_part`, `nama_part`, `type`, `saldo_awal`, `masuk`, `keluar`, `saldo_akhir`, `stock_minimal`, `keterangan`, `foto`) VALUES
-('ACC-001', 'Accumulator', 'AT00354', 10, 16, 20, 5, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/1.png'),
+('ACC-001', 'Accumulator', 'AT00354', 10, 16, 24, 1, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/1.png'),
 ('BER-001', 'Bearing', '6203zz', 12, 12, 15, 9, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/2.png'),
-('CRD-001', 'Cable rebound', 'R00012', 10, 5, 5, 10, 3, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Cable_rebound.png'),
-('DRP-001', 'Gun / Dropper', 'G453t', 100, 120, 145, 75, 3, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Gun_Dropper.png'),
-('GRP-001', 'Gripper', 'GT0321', 15, 12, 18, 9, 3, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Gripper.png'),
-('HRS-001', 'Tali harness', 'H00021', 150, 100, 220, 30, 25, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Tali_harness.png'),
-('MOD-001', 'MODUL', 'Mo 3442', 17, 12, 18, 11, 8, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/MODUL.png'),
-('OGB-001', 'Oli gear box', 'SAE 40', 200, 200, 120, 280, 50, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Oli_gear_box.png'),
-('OMC-001', 'Oli mesin', 'SAE 20', 200, 200, 250, 150, 50, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Oli_mesin.png'),
-('PUL-001', 'Pulley modul', 'LX342', 20, 10, 25, 5, 4, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Pulley_modul.png'),
+('CRD-001', 'Cable rebound', 'R00012', 10, 5, 5, 10, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Cable_rebound1.png'),
+('DRP-001', 'Gun / Dropper', 'G453t', 100, 120, 145, 75, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Gun_Dropper.png'),
+('GRP-001', 'Gripper', 'GT0321', 15, 12, 18, 9, 3, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Gripper.png'),
+('HRS-001', 'Tali harness', 'H00021', 150, 100, 220, 30, 25, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Tali_harness.png'),
+('MOD-001', 'MODUL', 'Mo 3442', 17, 12, 18, 11, 8, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/MODUL.png'),
+('OGB-001', 'Oli gear box', 'SAE 40', 200, 200, 120, 280, 50, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Oli_gear_box.png'),
+('OMC-001', 'Oli mesin', 'SAE 20', 200, 200, 250, 150, 50, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Oli_mesin.png'),
+('PUL-001', 'Pulley modul', 'LX342', 20, 10, 25, 5, 4, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Pulley_modul.png'),
 ('RED-001', 'Reed (Sisir)', 'EX45re', 13, 10, 15, 8, 10, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/3.png'),
-('RPT-001', 'Rapier tape', 'R02124', 12, 21, 20, 13, 10, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Rapier_tape.png'),
-('RRO-001', 'Rubber band ( karet roll)', 'Rb 1342', 15, 15, 15, 15, 10, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Rubber_band_(_karet_roll).png'),
+('RPT-001', 'Rapier tape', 'R02124', 12, 21, 20, 13, 10, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Rapier_tape.png'),
+('RRO-001', 'Rubber band ( karet roll)', 'Rb 1342', 15, 15, 15, 15, 10, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Rubber_band_(_karet_roll).png'),
 ('SPR-001', 'Spring (peer) gun', 'Sp7773', 21, 2, 23, 0, 5, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Spring_(peer)_gun1.png'),
-('VBL-001', 'Vanbelt', 'VBL 023', 15, 17, 20, 12, 5, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Vanbelt.png'),
-('WBC-002', 'Waste cutter blade', 'Wtc8i12', 13, 4, 10, 7, 5, 'PESAN ULANG', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Waste_cutter_blade.png');
+('VBL-001', 'Vanbelt', 'VBL 023', 15, 17, 20, 12, 5, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Vanbelt.png'),
+('WBC-002', 'Waste cutter blade', 'Wtc8i12', 13, 4, 10, 7, 5, 'OK', 'http://[::1]/KP-Sparepart/assets/image/sparepart/Waste_cutter_blade.png');
 
 -- --------------------------------------------------------
 
@@ -193,13 +194,13 @@ INSERT INTO `user` (`nama`, `username`, `password`, `admin`, `user`) VALUES
 --
 
 --
--- Indeks untuk tabel `tb_mesin`
+-- Indexes for table `tb_mesin`
 --
 ALTER TABLE `tb_mesin`
   ADD PRIMARY KEY (`id_mesin`);
 
 --
--- Indeks untuk tabel `tb_perbaikan1`
+-- Indexes for table `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan1`
   ADD PRIMARY KEY (`no`),
@@ -207,40 +208,38 @@ ALTER TABLE `tb_perbaikan1`
   ADD KEY `kd_part` (`kd_part`) USING BTREE;
 
 --
--- Indeks untuk tabel `tb_perbaikan2`
+-- Indexes for table `tb_perbaikan2`
 --
 ALTER TABLE `tb_perbaikan2`
   ADD PRIMARY KEY (`no`),
   ADD KEY `id_mesin` (`id_mesin`) USING BTREE;
 
 --
--- Indeks untuk tabel `tb_sparepart`
+-- Indexes for table `tb_sparepart`
 --
 ALTER TABLE `tb_sparepart`
   ADD PRIMARY KEY (`kd_part`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_perbaikan1`
+-- AUTO_INCREMENT for table `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan1`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT untuk tabel `tb_perbaikan2`
+-- AUTO_INCREMENT for table `tb_perbaikan2`
 --
 ALTER TABLE `tb_perbaikan2`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -257,7 +256,6 @@ ALTER TABLE `tb_perbaikan1`
 --
 ALTER TABLE `tb_perbaikan2`
   ADD CONSTRAINT `tb_perbaikan2_ibfk_1` FOREIGN KEY (`id_mesin`) REFERENCES `tb_mesin` (`id_mesin`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
