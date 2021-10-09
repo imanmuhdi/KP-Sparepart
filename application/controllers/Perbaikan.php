@@ -94,7 +94,7 @@ class Perbaikan extends CI_Controller {
         $this->load->model("PerbaikanModel","",TRUE);
         $this->load->library('dompdf_gen');
 
-        $data['tb_perbaikan1'] = $this->PerbaikanModel->getPerbaikan('tb_perbaikan1')->result();
+        $data['tb_perbaikan1'] = $this->PerbaikanModel->getPerbaikanSparepart('tb_perbaikan1')->result();
 
         $this->load->view('laporan_pdf',$data);
 
@@ -106,6 +106,24 @@ class Perbaikan extends CI_Controller {
         $this->dompdf->load_html($html);
         $this->dompdf->render();
         $this->dompdf->stream("laporan_perbaikan.pdf", array('Attachment' =>0));
+    }
+
+    public function pdf2(){
+        $this->load->model("PerbaikanModel","",TRUE);
+        $this->load->library('dompdf_gen');
+
+        $data['tb_perbaikan2'] = $this->PerbaikanModel->getPerbaikanTanpaSparepart('tb_perbaikan2')->result();
+
+        $this->load->view('laporan_pdf2',$data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("laporan_perbaikan_Tanpa_sparepart.pdf", array('Attachment' =>0));
     }
 }
 ?>
