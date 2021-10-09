@@ -132,14 +132,11 @@
 		<div class="display-flex">
 			<div><h1>Perbaikan Mesin</h1></div>
 		</div>
-		<div class="container" style="padding-top: 100px; padding-left: 600px; padding-right: 600px">
+		<div class="container" style="padding-top: 100px; padding-left: 40%; padding-right: 40%">
       		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin1');?>">Perbaikan Dengan Sparepart</a>
    		</div>
-   		<div class="container" style="padding-left: 600px; padding-right: 600px">
+   		<div class="container" style="padding-left: 40%; padding-right: 40%">
       		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
-   		</div>
-   		<div class="container" style="padding-left: 600px; padding-right: 600px">
-      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf');?>">Export PDF</a>
    		</div>
 	</main>
 </body>

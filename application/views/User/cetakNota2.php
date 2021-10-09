@@ -37,9 +37,13 @@
 					'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template);
-				$this->table->set_heading("Nomor","ID Mesin","Instansi","Deskripsi");
+				$this->table->set_heading("Nomor","ID Mesin","Instansi","Deskripsi","Aksi");
 				foreach($tb_perbaikan2->result() as $r){
-					$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->deskripsi);
+					$no = urldecode($r->no);
+					$edit = '<a href="'.site_url("Nota/update2/".$no).'" class="btn btn-primary">Edit</a>';
+					$hapus = '<a href="'.site_url("Nota/hapus2/".$no).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Nota dengan Nomor : ".$no."'".');">Hapus</a>';
+					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
+					$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->deskripsi,$aksi);
 				}
 				echo $this->table->generate();
 			?>

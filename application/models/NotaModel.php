@@ -22,6 +22,25 @@ class NotaModel extends CI_Model {
 		$this->db->where("no",$no);
 		return $this->db->get('tb_perbaikan2');
 	}
+	function updateNota1($tb_perbaikan1) {
+		$update = array(
+			"id_mesin" => $tb_perbaikan1["id_mesin"],
+			"kd_part" => $tb_perbaikan1["kd_part"],
+			"jml_part" => $tb_perbaikan1["jml_part"],
+			"deskripsi" => $tb_perbaikan1["deskripsi"]
+		);
+		$this->db->where("no",$tb_perbaikan1['no']);
+		return $this->db->update("tb_perbaikan1",$update);
+	}
+	function updateNota2($tb_perbaikan2) {
+		$update = array(
+			"id_mesin" => $tb_perbaikan2["id_mesin"],
+			"instansi" => $tb_perbaikan2["instansi"],
+			"deskripsi" => $tb_perbaikan2["deskripsi"]
+		);
+		$this->db->where("no",$tb_perbaikan2['no']);
+		return $this->db->update("tb_perbaikan2",$update);
+	}
 	function deleteNota1($no) {
 		$this->db->where("no",$no);
 		return $this->db->delete("tb_perbaikan1");
