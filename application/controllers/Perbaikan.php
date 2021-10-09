@@ -90,5 +90,22 @@ class Perbaikan extends CI_Controller {
             redirect(site_url('user/pindahPerbaikan1'));
         }
     }
+    public function pdf(){
+        $this->load->model("PerbaikanModel","",TRUE);
+        $this->load->library('dompdf_gen');
+
+        $data['tb_perbaikan1'] = $this->PerbaikanModel->getPerbaikan('tb_perbaikan1')->result();
+
+        $this->load->view('laporan_pdf',$data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("laporan_perbaikan.pdf", array('Attachment' =>0));
+    }
 }
 ?>

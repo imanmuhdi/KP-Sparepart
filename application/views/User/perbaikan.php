@@ -138,6 +138,9 @@
    		<div class="container" style="padding-left: 600px; padding-right: 600px">
       		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
    		</div>
+   		<div class="container" style="padding-left: 600px; padding-right: 600px">
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf');?>">Export PDF</a>
+   		</div>
 	</main>
 </body>
 </html>

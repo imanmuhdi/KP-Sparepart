@@ -1,5 +1,8 @@
 <?php
 class PerbaikanModel extends CI_Model {
+	function getPerbaikan(){
+		return $this->db->get('tb_perbaikan1');
+	}
 	function getPerbaikan1() {
 		return $this->db->get("tb_sparepart");
 	}
