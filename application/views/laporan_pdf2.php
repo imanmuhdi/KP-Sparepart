@@ -6,9 +6,9 @@
 				'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("No","Id Mesin","Kode Part","Jumlah Part", "Deskripsi");
-				foreach($tb_perbaikan1 as $r){
-				$this->table->add_row($r->no,$r->id_mesin,$r->kd_part,$r->jml_part,$r->deskripsi);
+				$this->table->set_heading("No","Id Mesin","Instansi","Deskripsi");
+				foreach($tb_perbaikan2 as $r){
+				$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->deskripsi);
 				}
 				echo $this->table->generate();
 				
