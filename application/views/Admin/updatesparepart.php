@@ -151,7 +151,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="foto">
+                            <input type="file" name="foto" required>
                         </td>
                     </tr>
 
