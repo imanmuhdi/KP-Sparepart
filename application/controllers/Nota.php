@@ -40,6 +40,6 @@ class Nota extends CI_Controller {
     public function hapus($no) {
         $this->load->model("NotaModel","",TRUE);
         $this->NotaModel->deleteNota1($no);
-        redirect(site_url("user/cetakNota1"));
+        redirect(site_url("Nota/cetakNota1"));
     }
 }

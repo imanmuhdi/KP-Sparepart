@@ -36,7 +36,7 @@
 				$template = array( 
 					'table_open' => '<table id="myTable" border=1>'
 				);
-				$this->table->set_template($template); 
+				$this->table->set_template($template);
 				$this->table->set_heading("Nomor","ID Mesin","Instansi","Deskripsi");
 				foreach($tb_perbaikan2->result() as $r){
 					$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->deskripsi);
@@ -44,7 +44,7 @@
 				echo $this->table->generate();
 			?>
 			<br>
-			<button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
+			<button type="button" onclick="window.location='http://[::1]/KP-Sparepart/index.php/Nota'" class="btn btn-danger float-right">Kembali</button>
    		</div>
 	</div>
 	</main>
