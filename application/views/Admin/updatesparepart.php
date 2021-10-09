@@ -129,7 +129,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoakhir" required" value="<?php echo $tb_sparepart->saldo_akhir?>">
+                            <input type="number" name="saldoakhir" required value="<?php echo $tb_sparepart->saldo_akhir?>">
                         </td>
                     </tr>
 
@@ -151,7 +151,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="foto">
+                            <input type="file" name="foto" required>
                         </td>
                     </tr>
 

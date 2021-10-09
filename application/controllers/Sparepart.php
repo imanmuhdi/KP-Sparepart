@@ -1,7 +1,7 @@
 <?php
-class Sparepart extends CI_Controller{
-    public function index(){
-        if(!$this->session->userdata('User')){
+class Sparepart extends CI_Controller {
+    public function index() {
+        if(!$this->session->userdata('User')) {
             redirect("Home");
         }
         if($this->session->userdata('Admin'))
@@ -10,7 +10,7 @@ class Sparepart extends CI_Controller{
             $data['admin'] = false;
 
         $this->load->model("SparepartModel","",TRUE);
-
+        
         $data['tb_sparepart'] = $this->SparepartModel->getSparepart();
         $data['sparepart'] = $this->session->userdata('Sparepart');
         $this->load->view("User/sparepart",$data);
@@ -104,15 +104,12 @@ class Sparepart extends CI_Controller{
         }else if($this->input->post("minimal") > $this->input->post("saldoakhir")){
             $sparepart['keterangan'] = "PESAN ULANG";
         }
-          
         if($this->SparepartModel->updateSparepart($sparepart)) {
             redirect(site_url("admin/pindahSparepart"));
         }else{
             echo "GAGAL UPDATE";
             redirect(site_url('admin/pindahSparepart'));
         }
-            
-        }
     }
-
+}
 ?>

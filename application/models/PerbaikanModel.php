@@ -10,7 +10,6 @@ class PerbaikanModel extends CI_Model {
 		var_dump($perbaikan);
 		return $this->db->insert('tb_perbaikan1',$perbaikan);
 	}
-
 	function insertPerbaikan2($perbaikan) {
 		var_dump($perbaikan);
 		return $this->db->insert('tb_perbaikan2',$perbaikan);
