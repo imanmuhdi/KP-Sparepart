@@ -3,7 +3,7 @@
 <main>
 			<?php 
 				$template = array( 
-				'table_open' => '<table id="myTable" border=1>'
+				'table_open' => '<table id="myTable" border=1 width="100%">'
 				);
 				$this->table->set_template($template); 
 				$this->table->set_heading("No","Id Mesin","Kode Part","Jumlah Part", "Deskripsi");
