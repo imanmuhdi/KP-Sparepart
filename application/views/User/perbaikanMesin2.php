@@ -113,20 +113,6 @@
                             <input type="text" name="pelaksana" >
                         </td>
                     </tr> 
-
-                    <tr>
-                        <td>
-                            <label class="pad">Deskripsi Tambahan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <textarea rows="10" cols="100" name="deskripsi"></textarea>
-                        </td>
-                    </tr>
-
-
-
                     <tr>
                         <td>
                             <input type="submit" value="Submit" class="btn btn-success">

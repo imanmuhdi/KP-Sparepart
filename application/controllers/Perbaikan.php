@@ -124,7 +124,6 @@ class Perbaikan extends CI_Controller {
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
             "instansi" => $this->input->post("nama"),
-            "deskripsi" => $this->input->post("deskripsi"),
             "tanggal" => $this->input->post("tanggal"),
             "pengaju" => $this->input->post("pengaju"),
             "merk_m" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->merk_m,
