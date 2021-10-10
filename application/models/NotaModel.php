@@ -36,7 +36,7 @@ class NotaModel extends CI_Model {
             "tgl" => $tb_perbaikan1["tgl"],
             "mulai" => $tb_perbaikan1["mulai"],
             "selesai" => $tb_perbaikan1["selesai"],
-            "d_time" => $tb_perbaikan1["$d_time"],
+            "d_time" => $tb_perbaikan1["d_time"],
             "penyetuju" => $tb_perbaikan1["penyetuju"],
             "pelaksana" => $tb_perbaikan1["pelaksana"]
 		);
