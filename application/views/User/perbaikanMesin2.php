@@ -112,12 +112,9 @@
                             <label>Dilaksanakan Oleh</label>
                             <input type="text" name="pelaksana" >
                         </td>
-<<<<<<< HEAD
                     </tr>
 
-=======
                     </tr> 
->>>>>>> 49ac74b5d9c18bb150d45e59b07df00ccf487aae
                     <tr>
                         <td>
                             <input type="submit" value="Submit" class="btn btn-success">
