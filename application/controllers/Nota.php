@@ -51,7 +51,13 @@ class Nota extends CI_Controller {
             "id_mesin" => $this->input->post("id_mesin"),
             "kd_part" => $this->input->post("kd_part"),
             "jml_part" => $this->input->post("jml_part"),
-            "deskripsi" => $this->input->post("deskripsi")
+            "deskripsi" => $this->input->post("deskripsi"),
+            "deskripsi2" => $this->input->post("deskripsi2"),
+            "lokasi" => $this->input->post("lokasi"),
+            "oleh" => $this->input->post("oleh"),
+            "tgl" => $this->input->post("tgl"),
+            "mulai" => $this->input->post("mulai"),
+            "selesai" => $this->input->post("selesai")
         );
         if($this->NotaModel->updatenota1($nota1)) {
             redirect(site_url("Nota/cetakNota1"));

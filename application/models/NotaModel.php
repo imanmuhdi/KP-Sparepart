@@ -27,7 +27,13 @@ class NotaModel extends CI_Model {
 			"id_mesin" => $tb_perbaikan1["id_mesin"],
 			"kd_part" => $tb_perbaikan1["kd_part"],
 			"jml_part" => $tb_perbaikan1["jml_part"],
-			"deskripsi" => $tb_perbaikan1["deskripsi"]
+			"deskripsi" => $tb_perbaikan1["deskripsi"],
+			"deskripsi2" => $tb_perbaikan1["deskripsi2"],
+            "lokasi" => $tb_perbaikan1["lokasi"],
+            "oleh" => $tb_perbaikan1["oleh"],
+            "tgl" => $tb_perbaikan1["tgl"],
+            "mulai" => $tb_perbaikan1["mulai"],
+            "selesai" => $tb_perbaikan1["selesai"]
 		);
 		$this->db->where("no",$tb_perbaikan1['no']);
 		return $this->db->update("tb_perbaikan1",$update);

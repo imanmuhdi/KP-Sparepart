@@ -102,13 +102,79 @@
 
                     <tr>
                         <td>
-                            <label>Deskripsi</label>
+                            <label>Kerusakan Masalah</label>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan1->deskripsi?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="pad">Penyebab Kerusakan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="deskripsi2" required value="<?php echo $tb_perbaikan1->deskripsi2?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Lokasi</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="lokasi" required value="<?php echo $tb_perbaikan1->lokasi?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Diajukan Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="oleh" required value="<?php echo $tb_perbaikan1->oleh?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Tanggal</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="date" name="tgl" required value="<?php echo $tb_perbaikan1->tgl?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Mulai Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="time" name="mulai" required value="<?php echo $tb_perbaikan1->mulai?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Selesai Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="time" name="selesai" required value="<?php echo $tb_perbaikan1->selesai?>">
                         </td>
                     </tr>
 
