@@ -79,6 +79,28 @@
 
                     <tr>
                         <td>
+                            <label>Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea rows="3" cols="80" name="perbaikan" required></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Hasil Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="hasil" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>Lokasi</label>
                         </td>
                     </tr>
@@ -129,6 +151,28 @@
                     <tr>
                         <td colspan="2">
                             <input type="time" name="selesai" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Disetujui Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="penyetuju" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Dilaksanakan Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="pelaksana" required>
                         </td>
                     </tr>
 

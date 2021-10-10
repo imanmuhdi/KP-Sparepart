@@ -102,7 +102,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <label>Disetujui</label>
+                            <label>Disetujui Oleh</label>
                             <input type="text" name="penyetuju" >
                         </td>
                     </tr> 
@@ -112,20 +112,7 @@
                             <label>Dilaksanakan Oleh</label>
                             <input type="text" name="pelaksana" >
                         </td>
-                    </tr> 
-
-                    <tr>
-                        <td>
-                            <label class="pad">Deskripsi Tambahan</label>
-                        </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <textarea rows="10" cols="100" name="deskripsi"></textarea>
-                        </td>
-                    </tr>
-
-
 
                     <tr>
                         <td>

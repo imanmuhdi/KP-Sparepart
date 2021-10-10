@@ -180,6 +180,28 @@
 
                     <tr>
                         <td>
+                            <label>Disetujui Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan1->penyetuju?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Dilaksanakan Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="pelaksana" required value="<?php echo $tb_perbaikan1->pelaksana?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <input type="submit" value="Edit Mesin" class="btn btn-success" >
                         </td>
                         <td>

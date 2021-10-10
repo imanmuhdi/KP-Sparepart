@@ -43,7 +43,7 @@
 					$edit = '<a href="'.site_url("Nota/update2/".$no).'" class="btn btn-primary">Edit</a>';
 					$hapus = '<a href="'.site_url("Nota/hapus2/".$no).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Nota dengan Nomor : ".$no."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->deskripsi,$aksi);
+					$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->d_kerusakan,$aksi);
 				}
 				echo $this->table->generate();
 			?>

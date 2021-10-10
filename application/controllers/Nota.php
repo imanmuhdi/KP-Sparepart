@@ -44,8 +44,20 @@ class Nota extends CI_Controller {
         $data['tb_perbaikan2'] = $this->NotaModel->getNota2ByNo($no)->row();
         $this->load->view("user/updatenota2",$data);
     }
+    public function ambilmenit($jam){
+        $waktu = $jam;
+        $timestamp = strtotime($waktu);
+        $menit = (float) date('i', $timestamp);
+        return $menit;
+    }
     public function prosesUpdate1() {
         $this->load->model("NotaModel","",TRUE);
+        $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
+        $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
+        $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
+        if($d_time <= 0){ //supaya jam tidak mines
+            $d_time = $d_time+24;
+        }
         $nota1 = array(
             "no" => $this->input->post("no"),
             "id_mesin" => $this->input->post("id_mesin"),
@@ -53,11 +65,16 @@ class Nota extends CI_Controller {
             "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi"),
             "deskripsi2" => $this->input->post("deskripsi2"),
+            "perbaikan" => $this->input->post("perbaikan"),
+            "hasil" => $this->input->post("hasil"),
             "lokasi" => $this->input->post("lokasi"),
             "oleh" => $this->input->post("oleh"),
             "tgl" => $this->input->post("tgl"),
             "mulai" => $this->input->post("mulai"),
-            "selesai" => $this->input->post("selesai")
+            "selesai" => $this->input->post("selesai"),
+            "d_time" => $d_time,
+            "penyetuju" => $this->input->post("penyetuju"),
+            "pelaksana" => $this->input->post("pelaksana")
         );
         if($this->NotaModel->updatenota1($nota1)) {
             redirect(site_url("Nota/cetakNota1"));

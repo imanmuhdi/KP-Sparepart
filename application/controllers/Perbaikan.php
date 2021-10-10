@@ -55,17 +55,28 @@ class Perbaikan extends CI_Controller {
                     $row2 = $row2 + 1;
                 }
         }
+        $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
+        $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
+        $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
+        if($d_time <= 0){ //supaya jam tidak mines
+            $d_time = $d_time+24;
+        }
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
             "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part,
             "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi"),
             "deskripsi2" => $this->input->post("deskripsi2"),
+            "perbaikan" => $this->input->post("perbaikan"),
+            "hasil" => $this->input->post("hasil"),
             "lokasi" => $this->input->post("lokasi"),
             "oleh" => $this->input->post("oleh"),
             "tgl" => $this->input->post("tgl"),
             "mulai" => $this->input->post("mulai"),
-            "selesai" => $this->input->post("selesai")
+            "selesai" => $this->input->post("selesai"),
+            "d_time" => $d_time,
+            "penyetuju" => $this->input->post("penyetuju"),
+            "pelaksana" => $this->input->post("pelaksana")
         );
         if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
             redirect(site_url("user/pindahPerbaikan1"));
@@ -124,7 +135,6 @@ class Perbaikan extends CI_Controller {
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
             "instansi" => $this->input->post("nama"),
-            "deskripsi" => $this->input->post("deskripsi"),
             "tanggal" => $this->input->post("tanggal"),
             "pengaju" => $this->input->post("pengaju"),
             "merk_m" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->merk_m,
