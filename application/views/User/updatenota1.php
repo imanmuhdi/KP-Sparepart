@@ -125,6 +125,28 @@
 
                     <tr>
                         <td>
+                            <label class="pad">Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="perbaikan" required value="<?php echo $tb_perbaikan1->perbaikan?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="pad">Hasil Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="hasil" required value="<?php echo $tb_perbaikan1->hasil?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>Lokasi</label>
                         </td>
                     </tr>
