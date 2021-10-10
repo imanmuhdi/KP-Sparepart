@@ -31,19 +31,19 @@
 			<div><h1>Data Nota Dengan Sparepart</h1></div>
 		</div>
 		<div class="content-wrapper">
-   		<div class="container" style="padding-bottom: 50px">
+   		<div style="padding-bottom: 50px; padding-right: 50px; padding-left: 50px">
       		<?php
 				$template = array( 
 					'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("Nomor","ID Mesin","Kode Sparepart","Jumlah Sparepart","Deskripsi","Aksi");
+				$this->table->set_heading("Nomor","ID Mesin","Kode Sparepart","Jumlah Sparepart","Kerusakan Masalah","Penyebab Kerusakan","Lokasi","Diajukan Oleh","Tanggal","Mulai Perbaikan","Selesai Perbaikan","Aksi");
 				foreach($tb_perbaikan1->result() as $r){
 					$no = urldecode($r->no);
 					$edit = '<a href="'.site_url("Nota/update/".$no).'" class="btn btn-primary">Edit</a>';
 					$hapus = '<a href="'.site_url("Nota/hapus/".$no).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Nota dengan Nomor : ".$no."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					$this->table->add_row($r->no,$r->id_mesin,$r->kd_part,$r->jml_part,$r->deskripsi,$aksi);
+					$this->table->add_row($r->no,$r->id_mesin,$r->kd_part,$r->jml_part,$r->deskripsi,$r->deskripsi2,$r->lokasi,$r->oleh,$r->tgl,$r->mulai,$r->selesai,$aksi);
 				}
 				echo $this->table->generate();
 			?>

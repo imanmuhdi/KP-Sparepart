@@ -57,24 +57,93 @@
 
                     <tr>
                         <td>
-                            <label class="pad">Deskripsi</label>
+                            <label class="pad">Kerusakan Masalah</label>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <textarea rows="10" cols="100" name="deskripsi" required></textarea>
+                            <textarea rows="3" cols="80" name="deskripsi" required></textarea>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
+                            <label class="pad">Penyebab Kerusakan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea rows="3" cols="80" name="deskripsi2" required></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Lokasi</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="lokasi" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Diajukan Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="oleh" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Tanggal</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="date" name="tgl" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Mulai Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="time" name="mulai" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Selesai Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="time" name="selesai" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <br>
                             <input type="submit" value="Submit" class="btn btn-success">
                         </td>
                         <td>
+                            <br>
                             <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
                         </td>
                     </tr>
                 </table>
+                <br>
             </form>
         </div>
     </div>

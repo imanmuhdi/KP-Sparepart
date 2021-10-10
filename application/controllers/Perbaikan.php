@@ -59,7 +59,13 @@ class Perbaikan extends CI_Controller {
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
             "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part,
             "jml_part" => $this->input->post("jml_part"),
-            "deskripsi" => $this->input->post("deskripsi")
+            "deskripsi" => $this->input->post("deskripsi"),
+            "deskripsi2" => $this->input->post("deskripsi2"),
+            "lokasi" => $this->input->post("lokasi"),
+            "oleh" => $this->input->post("oleh"),
+            "tgl" => $this->input->post("tgl"),
+            "mulai" => $this->input->post("mulai"),
+            "selesai" => $this->input->post("selesai")
         );
         if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
             redirect(site_url("user/pindahPerbaikan1"));
