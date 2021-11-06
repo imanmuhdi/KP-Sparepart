@@ -22,12 +22,12 @@
     </div>
     <div class="container">
         <div class="content">
-            <form action="<?php echo site_url('perbaikan/prosestambah3'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('perbaikan/prosestambah2'); ?>" method="post" enctype="multipart/form-data">
                 <table align="center">
                     <tr>
                         <td>
                             <label>ID Mesin</label>
-                            <select name="id">
+                            <select name="id" required>
                                 <option value='' disabled selected>Pilih Mesin</option>";
                                 <?php
                                 foreach ($tb_mesin->result() as $tbm) {
@@ -39,78 +39,64 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <label>Tanggal</label>
-                            <input type="date" name="tanggal">
+                        <td>
+                            <label>Merk Mesin</label>
+                            <select name="merk" required>
+                                <option value='' disabled selected>Pilih Merk</option>
+                                <option value="Somet">Somet</option>
+                                <option value="Optimax">Optimax</option>
+                                <option value="Picanol">Picanol</option>
+                                <option value="Gama">Gama</option>
+                            </select>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <label>Nama Instansi</label>
-                            <input type="text" name="nama">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <label>Diajukan Oleh</label>
-                            <input type="text" name="pengaju" required="Pengaju">
+                            <input type="text" name="instansi" required>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <label>Kerusakan Masalah</label>
-                            <input type="text" name="d_kerusakan" >
+                            <input type="text" name="d_kerusakan" required>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <label>Penyebab Kerusakan</label>
-                            <input type="text" name="d_penyebab" >
+                            <input type="text" name="d_penyebab" required>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <label>Perbaikan</label>
-                            <input type="text" name="d_perbaikan" >
-                        </td>
-                    </tr> 
-
-                    <tr>
-                        <td colspan="2">
-                            <label>Hasil Perbaikan</label>
-                            <input type="text" name="hasil" >
-                        </td>
-                    </tr> 
-
-                    <tr>
-                        <td colspan="2">
-                            <label>Mulai Perbaikan Pukul</label>
-                            <input type="time" name="mulai" >
+                            <input type="text" name="d_perbaikan" required>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
-                            <label>Selesai Perbaikan Pukul</label>
-                            <input type="time" name="selesai" >
+                            <label>Diajukan Oleh</label>
+                            <input type="text" name="pengaju" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <label>Tanggal</label>
+                            <input type="date" name="tanggal" required>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <label>Disetujui Oleh</label>
-                            <input type="text" name="penyetuju" >
-                        </td>
-                    </tr> 
-
-                    <tr>
-                        <td colspan="2">
-                            <label>Dilaksanakan Oleh</label>
-                            <input type="text" name="pelaksana" >
+                            <input type="text" name="penyetuju" required>
                         </td>
                     </tr>
 

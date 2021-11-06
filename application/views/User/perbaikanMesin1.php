@@ -19,7 +19,7 @@
                     <tr>
                         <td>
                             <label>ID Mesin</label>
-                            <select name="id">
+                            <select name="id" required>
                                 <option value='' disabled selected>Pilih Mesin</option>
                                 <?php
                                 foreach ($tb_mesin->result() as $tbm) {
@@ -33,7 +33,7 @@
                     <tr>
                         <td colspan="2">
                             <label>Kode Sparepart</label>
-                            <select name="kd">
+                            <select name="kd" required>
                                 <option value='' disabled selected>Pilih Sparepart</option>
                                 <?php
                                 foreach ($tb_sparepart->result() as $tbs) {
