@@ -139,10 +139,10 @@
       		<a class="btn oke" href="<?php echo site_url('Perbaikan/perbaikanMesin2');?>">Perbaikan Tanpa Sparepart</a>
    		</div>
    		<div class="container" style="padding-left: 40%; padding-right: 40%">
-      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf');?>">Export PDF Perbaikan Dengan Sparepart</a>
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf3');?>">Export PDF Perbaikan Dengan Sparepart</a>
    		</div>
    		<div class="container" style="padding-left: 40%; padding-right: 40%">
-      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf2');?>">Export PDF Perbaikan Tanpa Sparepart</a>
+      		<a class="btn oke" href="<?php echo site_url('Perbaikan/pdf4');?>">Export PDF Perbaikan Tanpa Sparepart</a>
    		</div>
 	</main>
 </body>
