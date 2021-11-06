@@ -72,7 +72,7 @@ class Nota extends CI_Controller {
             "tgl" => $this->input->post("tgl"),
             "mulai" => $this->input->post("mulai"),
             "selesai" => $this->input->post("selesai"),
-            "d_time" => $this->input->post("selesai")-$this->input->post("mulai"),
+            "d_time" => $d_time,
             "penyetuju" => $this->input->post("penyetuju"),
             "pelaksana" => $this->input->post("pelaksana")
         );

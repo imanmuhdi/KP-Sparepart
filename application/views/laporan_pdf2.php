@@ -1,6 +1,5 @@
 <html><head>
 <style type="text/css">
-	table { page-break-inside:auto }
 </style>
 </head><body>
 <main>
@@ -10,9 +9,9 @@
 				'table_open' => '<table id="myTable" border=1 width=100% >'
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("No","Id Mesin","Instansi","Tanggal","Pengaju","Merk Mesin","Masalah","Penyebab","Perbaikan","Hasil","Jam Mulai","Jam Selesai","Penyetuju","Pelaksana","Down Time");
+				$this->table->set_heading("No","Id Mesin","Instansi","Tanggal","Pengaju","Merk Mesin","Masalah","Penyebab","Perbaikan","Penyetuju");
 				foreach($tb_perbaikan2 as $r){
-				$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->tanggal,$r->pengaju,$r->merk_m,$r->d_kerusakan,$r->d_penyebab,$r->d_perbaikan,$r->hasil,$r->mulai,$r->selesai,$r->penyetuju,$r->pelaksana,$r->d_time);
+				$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->tanggal,$r->pengaju,$r->merk_m,$r->d_kerusakan,$r->d_penyebab,$r->d_perbaikan,$r->penyetuju);
 				}
 				echo $this->table->generate();
 
