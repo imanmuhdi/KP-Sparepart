@@ -78,6 +78,18 @@
 
                     <tr>
                         <td>
+                            <label>Merk Mesin</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="merk" required value="<?php echo $tb_perbaikan1->merk_m?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>Kode Sparepart</label>
                         </td>
                     </tr>
@@ -85,6 +97,18 @@
                     <tr>
                         <td colspan="2">
                             <input type="text" name="kd_part" required value="<?php echo $tb_perbaikan1->kd_part?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Type Sparepart</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="type" required value="<?php echo $tb_perbaikan1->type?>">
                         </td>
                     </tr>
 

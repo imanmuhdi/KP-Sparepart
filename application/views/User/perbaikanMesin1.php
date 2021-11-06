@@ -31,6 +31,19 @@
                     </tr>
 
                     <tr>
+                        <td>
+                            <label>Merk Mesin</label>
+                            <select name="merk" required>
+                                <option value='' disabled selected>Pilih Merk</option>
+                                <option value="Somet">Somet</option>
+                                <option value="Optimax">Optimax</option>
+                                <option value="Picanol">Picanol</option>
+                                <option value="Gama">Gama</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td colspan="2">
                             <label>Kode Sparepart</label>
                             <select name="kd" required>
@@ -38,6 +51,20 @@
                                 <?php
                                 foreach ($tb_sparepart->result() as $tbs) {
                                     echo '<option value="'.$tbs->kd_part.'">'.$tbs->kd_part.'</option>';
+                                }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <label>Type Sparepart</label>
+                            <select name="type" required>
+                                <option value='' disabled selected>Pilih Type</option>
+                                <?php
+                                foreach ($tb_sparepart->result() as $tbs) {
+                                    echo '<option value="'.$tbs->type.'">'.$tbs->type.'</option>';
                                 }
                                 ?>
                             </select>

@@ -43,6 +43,7 @@ class Perbaikan extends CI_Controller {
         $loop2 = false;
         $row1 = 0;
         $row2 = 0;
+        $row3 = 0;
         while($loop != TRUE && $loop2 != TRUE){
             if($this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin == $this->input->post("id")){
                     $loop = TRUE;
@@ -50,6 +51,11 @@ class Perbaikan extends CI_Controller {
                     $row1 = $row1 + 1;
                 }
              if($this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part == $this->input->post("kd")){
+                    $loop2 = TRUE;
+                }else{
+                    $row2 = $row2 + 1;
+                }
+                if($this->PerbaikanModel->getPerbaikan1("type")->row($row3)->type == $this->input->post("type")){
                     $loop2 = TRUE;
                 }else{
                     $row2 = $row2 + 1;
@@ -63,7 +69,9 @@ class Perbaikan extends CI_Controller {
         }
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
+            "merk_m" => $this->input->post("merk"),
             "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part,
+            "type" => $this->PerbaikanModel->getPerbaikan1("type")->row($row3)->type,
             "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi"),
             "deskripsi2" => $this->input->post("deskripsi2"),
