@@ -72,7 +72,7 @@ class Nota extends CI_Controller {
             "tgl" => $this->input->post("tgl"),
             "mulai" => $this->input->post("mulai"),
             "selesai" => $this->input->post("selesai"),
-            "d_time" => $d_time,
+            "d_time" => $this->input->post("selesai")-$this->input->post("mulai"),
             "penyetuju" => $this->input->post("penyetuju"),
             "pelaksana" => $this->input->post("pelaksana")
         );
@@ -107,5 +107,23 @@ class Nota extends CI_Controller {
         $this->load->model("NotaModel","",TRUE);
         $this->NotaModel->deleteNota2($no);
         redirect(site_url("Nota/cetakNota2"));
+    }
+
+        public function bonsparepart1($no){
+        $this->load->model("NotaModel","",TRUE);
+        $this->load->library('dompdf_gen');
+
+        $data['tb_perbaikan1'] = $this->NotaModel->getNota1ByNo($no)->row();
+
+        $this->load->view('bon_pdf1',$data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("bon_perbaikan_sparepart.pdf", array('Attachment' =>0));
     }
 }

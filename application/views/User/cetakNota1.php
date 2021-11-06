@@ -40,9 +40,10 @@
 				$this->table->set_heading("Nomor","ID Mesin","Kode Sparepart","Jumlah Sparepart","Kerusakan Masalah","Penyebab Kerusakan","Perbaikan","Hasil Perbaikan","Lokasi","Diajukan Oleh","Tanggal","Mulai Perbaikan","Selesai Perbaikan","Down Time","Disetujui Oleh","Dilaksanakan Oleh","Aksi");
 				foreach($tb_perbaikan1->result() as $r){
 					$no = urldecode($r->no);
+					$export = '<a href="'.site_url("Nota/bonsparepart1/".$no).'" class="btn btn-success">Unduh</a>';
 					$edit = '<a href="'.site_url("Nota/update/".$no).'" class="btn btn-primary">Edit</a>';
 					$hapus = '<a href="'.site_url("Nota/hapus/".$no).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Nota dengan Nomor : ".$no."'".');">Hapus</a>';
-					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
+					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$export.$edit.$hapus."</div>";
 					$this->table->add_row($r->no,$r->id_mesin,$r->kd_part,$r->jml_part,$r->deskripsi,$r->deskripsi2,$r->perbaikan,$r->hasil,$r->lokasi,$r->oleh,$r->tgl,$r->mulai,$r->selesai,$r->d_time,$r->penyetuju,$r->pelaksana,$aksi);
 				}
 				echo $this->table->generate();

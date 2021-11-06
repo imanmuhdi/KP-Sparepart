@@ -1,24 +1,3 @@
-<html><head>
-<style type="text/css">
-	table { page-break-inside:auto }
-</style>
-</head><body>
-<main>
-			<?php 
-				$count = 0;
-				$template = array( 
-				'table_open' => '<table id="myTable" border=1 width=100% >'
-				);
-				$this->table->set_template($template); 
-				$this->table->set_heading("No","Id Mesin","Instansi","Tanggal","Pengaju","Merk Mesin","Masalah","Penyebab","Perbaikan","Hasil","Jam Mulai","Jam Selesai","Penyetuju","Pelaksana","Down Time");
-				foreach($tb_perbaikan2 as $r){
-				$this->table->add_row($r->no,$r->id_mesin,$r->instansi,$r->tanggal,$r->pengaju,$r->merk_m,$r->d_kerusakan,$r->d_penyebab,$r->d_perbaikan,$r->hasil,$r->mulai,$r->selesai,$r->penyetuju,$r->pelaksana,$r->d_time);
-				}
-				echo $this->table->generate();
-
-			?>
-<?php /*
-Template Tabel Bon
 <html>
 <head>
 </head>
@@ -35,43 +14,43 @@ Template Tabel Bon
 				<center>:</center>
 			</td>
 			<td width=22.5%>
-				(DATA)
+				<?php echo $tb_perbaikan1->id_mesin?>
 			</td>
 		</tr>
 		<tr>
 			<td>Tanggal</td>
 			<td><center>:</center></td>
-			<td>(DATA)</td>
+			<td><?php echo $tb_perbaikan1->tgl?></td>
 		</tr>
 		<tr>
 			<td>Lokasi</td>
 			<td><center>:</center></td>
-			<td>(DATA)</td>
+			<td><?php echo $tb_perbaikan1->lokasi?></td>
 		</tr>
 		<tr>
 			<td>Diajukan Oleh</td>
 			<td><center>:</center></td>
-			<td>(DATA)</td>
+			<td><?php echo $tb_perbaikan1->oleh?></td>
 		</tr>
 		<tr>
 			<td>Merk Mesin</td>
 			<td><center>:</center></td>
-			<td>(DATA)</td>
+			<td>(BELUM ADA DI DATABASE)</td>
 		</tr>
 
 		<tr>
 			<td colspan="4">
-				Kerusakan Masalah : (DATA)
+				Kerusakan Masalah : <?php echo $tb_perbaikan1->deskripsi?>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				Penyebab Kerusakan : (DATA)
+				Penyebab Kerusakan : <?php echo $tb_perbaikan1->deskripsi2?>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="1">
-				Perbaikan : (DATA)
+				Perbaikan : <?php echo $tb_perbaikan1->perbaikan?>
 			</td>
 			<td bgcolor=#FFFD56>
 				<center><b>Down Time (Jam):</b></center>
@@ -80,30 +59,30 @@ Template Tabel Bon
 		</tr>
 		<tr>
 			<td colspan="1">
-				Kode Part : (DATA)
+				Kode Part : <?php echo $tb_perbaikan1->kd_part?>
 			</td>
 			<td rowspan="2" bgcolor=#FFFD56>
-				<center><h3>(DATA)</h3></center>
+				<center><h1><?php echo $tb_perbaikan1->d_time?></h1></center>
 			</td>
 			<td colspan="2"></td>
 		</tr>
 		<tr>
 			<td colspan="1">
-				<b>Type :</b> (DATA)
+				<b>Type :</b> (BELUM ADA DI DATABASE)
 			</td>
 			<td colspan="2"></td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				Perbaikan Mesin : (DATA)
+				Perbaikan Mesin : <?php echo $tb_perbaikan1->perbaikan?>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				Mulai Perbaikan Pukul : (DATA)
+				Mulai Perbaikan Pukul : <?php echo $tb_perbaikan1->mulai?>
 			</td>
 			<td colspan="3">
-				Selesai Perbaikan : (DATA)
+				Selesai Perbaikan : <?php echo $tb_perbaikan1->selesai?>
 			</td>
 		<tr>
 			<td ><center>
@@ -112,7 +91,7 @@ Template Tabel Bon
 				<br>
 				<br>
 				<br>
-				(DATA)<br>
+				<?php echo $tb_perbaikan1->penyetuju?><br>
 				(.................)
 			</center></td>
 			<td colspan="3"><center>				
@@ -121,17 +100,14 @@ Template Tabel Bon
 				<br>
 				<br>
 				<br>
-				(DATA)<br>
+				<?php echo $tb_perbaikan1->pelaksana?><br>
 				(.................)</center></td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				No Bon :
+				No Bon : <?php echo $tb_perbaikan1->no?>
 			</td>
 		</tr>
 	</table>
 </body>
 </html>
-*/?>
-</main>
-</body></html>
