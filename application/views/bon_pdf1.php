@@ -84,6 +84,7 @@
 			<td colspan="3">
 				Selesai Perbaikan : <?php echo $tb_perbaikan1->selesai?>
 			</td>
+		</tr>
 		<tr>
 			<td ><center>
 				Disetujui<br>

@@ -117,7 +117,7 @@ class Nota extends CI_Controller {
         redirect(site_url("Nota/cetakNota2"));
     }
 
-        public function bonsparepart1($no){
+    public function bonsparepart1($no){
         $this->load->model("NotaModel","",TRUE);
         $this->load->library('dompdf_gen');
 
@@ -133,5 +133,23 @@ class Nota extends CI_Controller {
         $this->dompdf->load_html($html);
         $this->dompdf->render();
         $this->dompdf->stream("bon_perbaikan_sparepart.pdf", array('Attachment' =>0));
+    }
+
+    public function bonsparepart2($no){
+        $this->load->model("NotaModel","",TRUE);
+        $this->load->library('dompdf_gen');
+
+        $data['tb_perbaikan2'] = $this->NotaModel->getNota2ByNo($no)->row();
+
+        $this->load->view('bon_pdf2',$data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("bon_tanpa_sparepart.pdf", array('Attachment' =>0));
     }
 }

@@ -163,7 +163,11 @@
                     </tr>
                     <tr>
                         <td colspan="2">
+<<<<<<< HEAD
+                            <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan2->d_penyebab?>">
+=======
                             <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan2->penyetuju?>">
+>>>>>>> 32c8ea247e88daeb05fc1cc3b4e0ea5793ea0a4d
                         </td>
                     </tr>
 
