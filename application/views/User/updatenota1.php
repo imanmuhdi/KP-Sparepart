@@ -60,7 +60,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="no" required value="<?php echo $tb_perbaikan1->no?>">
+                            <input type="text" name="no" required value="<?php echo $tb_perbaikan1->no?>" readonly>
                         </td>
                     </tr>
 

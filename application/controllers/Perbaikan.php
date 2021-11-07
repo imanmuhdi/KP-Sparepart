@@ -107,8 +107,14 @@ class Perbaikan extends CI_Controller {
         }
         $perbaikan = array(
             "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
-            "instansi" => $this->input->post("nama"),
-            "deskripsi" => $this->input->post("deskripsi")
+            "merk_m" => $this->input->post("merk"),
+            "instansi" => $this->input->post("instansi"),
+            "d_kerusakan" => $this->input->post("d_kerusakan"),
+            "d_penyebab" => $this->input->post("d_penyebab"),
+            "d_perbaikan" => $this->input->post("d_perbaikan"),
+            "pengaju" => $this->input->post("pengaju"),
+            "tanggal" => $this->input->post("tanggal"),
+            "penyetuju" => $this->input->post("penyetuju")
         );
         if($this->PerbaikanModel->insertPerbaikan2($perbaikan)) {
             redirect(site_url("user/pindahPerbaikan1"));
@@ -122,50 +128,6 @@ class Perbaikan extends CI_Controller {
         $timestamp = strtotime($waktu);
         $menit = (float) date('i', $timestamp);
         return $menit;
-    }
-
-    public function prosesTambah3() {
-        $this->load->model("PerbaikanModel","",TRUE);
-        $loop = false;
-        $row1 = 0;
-
-        while($loop != TRUE){
-            if($this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin == $this->input->post("id")){
-                    $loop = TRUE;
-                }else{
-                    $row1 = $row1 + 1;
-                }
-        }
-        
-        $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
-        $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
-        $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
-        if($d_time <= 0){ //supaya jam tidak mines
-            $d_time = $d_time+24;
-        }
-        $perbaikan = array(
-            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
-            "instansi" => $this->input->post("nama"),
-            "tanggal" => $this->input->post("tanggal"),
-            "pengaju" => $this->input->post("pengaju"),
-            "merk_m" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->merk_m,
-            "d_kerusakan" => $this->input->post("d_kerusakan"),
-            "d_penyebab" => $this->input->post("d_penyebab"),
-            "d_perbaikan" => $this->input->post("d_perbaikan"),
-            "hasil" => $this->input->post("hasil"),
-            "mulai" => $this->input->post("mulai"),
-            "selesai" => $this->input->post("selesai"),
-            "penyetuju" => $this->input->post("penyetuju"),
-            "pelaksana" => $this->input->post("pelaksana"),
-            "d_time" => $d_time
-        );
-
-
-        if($this->PerbaikanModel->insertPerbaikan2($perbaikan)) {
-            redirect(site_url("user/pindahPerbaikan1"));
-        } else {
-            redirect(site_url('user/pindahPerbaikan1'));
-        }
     }
 /*
     public function pdf(){
