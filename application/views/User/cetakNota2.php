@@ -40,9 +40,10 @@
 				$this->table->set_heading("Nomor","ID Mesin","Merk Mesin","Instansi","Kerusakan Masalah","Penyebab Kerusakan","Perbaikan","Diajukan Oleh","Tanggal","Disetujui Oleh","Aksi");
 				foreach($tb_perbaikan2->result() as $r){
 					$no = urldecode($r->no);
+					$export = '<a href="'.site_url("Nota/bonsparepart2/".$no).'" class="btn btn-success">Unduh</a>';
 					$edit = '<a href="'.site_url("Nota/update2/".$no).'" class="btn btn-primary">Edit</a>';
 					$hapus = '<a href="'.site_url("Nota/hapus2/".$no).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Nota dengan Nomor : ".$no."'".');">Hapus</a>';
-					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
+					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$export.$edit.$hapus."</div>";
 					$this->table->add_row($r->no,$r->id_mesin,$r->merk_m,$r->instansi,$r->d_kerusakan,$r->d_penyebab,$r->d_perbaikan,$r->pengaju,$r->tanggal,$r->penyetuju,$aksi);
 				}
 				echo $this->table->generate();

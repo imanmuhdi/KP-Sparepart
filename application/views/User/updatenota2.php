@@ -96,7 +96,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan2->deskripsi?>">
+                            <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan2->d_penyebab?>">
                         </td>
                     </tr>
 
