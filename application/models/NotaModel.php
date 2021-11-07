@@ -26,6 +26,8 @@ class NotaModel extends CI_Model {
 		$update = array(
 			"id_mesin" => $tb_perbaikan1["id_mesin"],
 			"kd_part" => $tb_perbaikan1["kd_part"],
+			"merk_m" => $tb_perbaikan1['merk_m'],
+			"type" => $tb_perbaikan1['type'],
 			"jml_part" => $tb_perbaikan1["jml_part"],
 			"deskripsi" => $tb_perbaikan1["deskripsi"],
 			"deskripsi2" => $tb_perbaikan1["deskripsi2"],

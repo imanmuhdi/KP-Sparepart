@@ -61,7 +61,9 @@ class Nota extends CI_Controller {
         $nota1 = array(
             "no" => $this->input->post("no"),
             "id_mesin" => $this->input->post("id_mesin"),
+            "merk_m" => $this->input->post("merk"),
             "kd_part" => $this->input->post("kd_part"),
+            "type" => $this->input->post("type"),
             "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi"),
             "deskripsi2" => $this->input->post("deskripsi2"),

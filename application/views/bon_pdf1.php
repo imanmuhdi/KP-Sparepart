@@ -35,7 +35,7 @@
 		<tr>
 			<td>Merk Mesin</td>
 			<td><center>:</center></td>
-			<td>(BELUM ADA DI DATABASE)</td>
+			<td><?php echo $tb_perbaikan1->merk_m?></td>
 		</tr>
 
 		<tr>
@@ -68,7 +68,7 @@
 		</tr>
 		<tr>
 			<td colspan="1">
-				<b>Type :</b> (BELUM ADA DI DATABASE)
+				<b>Type :</b> <?php echo $tb_perbaikan1->type?>
 			</td>
 			<td colspan="2"></td>
 		</tr>
