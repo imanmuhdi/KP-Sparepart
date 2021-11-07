@@ -60,7 +60,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="no" required value="<?php echo $tb_perbaikan2->no?>">
+                            <input type="text" name="no" required value="<?php echo $tb_perbaikan2->no?>" readonly>
                         </td>
                     </tr>
 
@@ -78,6 +78,18 @@
 
                     <tr>
                         <td>
+                            <label>Merk Mesin</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="merk_m" required value="<?php echo $tb_perbaikan2->merk_m?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>Instansi</label>
                         </td>
                     </tr>
@@ -90,13 +102,68 @@
 
                     <tr>
                         <td>
-                            <label>Deskripsi</label>
+                            <label>Kerusakan Masalah</label>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan2->deskripsi?>">
+                            <input type="text" name="d_kerusakan" required value="<?php echo $tb_perbaikan2->d_kerusakan?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="pad">Penyebab Kerusakan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="d_penyebab" required value="<?php echo $tb_perbaikan2->d_penyebab?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="pad">Perbaikan</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="d_perbaikan" required value="<?php echo $tb_perbaikan2->d_perbaikan?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Diajukan Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="pengaju" required value="<?php echo $tb_perbaikan2->pengaju?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Tanggal</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="date" name="tanggal" required value="<?php echo $tb_perbaikan2->tanggal?>">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Disetujui Oleh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan2->penyetuju?>">
                         </td>
                     </tr>
 
