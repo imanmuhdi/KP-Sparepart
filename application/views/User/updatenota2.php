@@ -72,7 +72,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan2->id_mesin?>">
+                            <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan2->id_mesin?>" readonly>
                         </td>
                     </tr>
 
@@ -84,7 +84,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="merk_m" required value="<?php echo $tb_perbaikan2->merk_m?>">
+                            <input type="text" name="merk_m" required value="<?php echo $tb_perbaikan2->merk_m?>" readonly>
                         </td>
                     </tr>
 

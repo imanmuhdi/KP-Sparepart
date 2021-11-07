@@ -72,7 +72,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan1->id_mesin?>">
+                            <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan1->id_mesin?>" readonly>
                         </td>
                     </tr>
 
@@ -84,7 +84,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="merk" required value="<?php echo $tb_perbaikan1->merk_m?>">
+                            <input type="text" name="merk" required value="<?php echo $tb_perbaikan1->merk_m?>" readonly>
                         </td>
                     </tr>
 
@@ -96,7 +96,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="kd_part" required value="<?php echo $tb_perbaikan1->kd_part?>">
+                            <input type="text" name="kd_part" required value="<?php echo $tb_perbaikan1->kd_part?>" readonly>
                         </td>
                     </tr>
 
@@ -108,7 +108,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="type" required value="<?php echo $tb_perbaikan1->type?>">
+                            <input type="text" name="type" required value="<?php echo $tb_perbaikan1->type?>" readonly>
                         </td>
                     </tr>
 
