@@ -90,8 +90,14 @@ class Nota extends CI_Controller {
         $nota2 = array(
             "no" => $this->input->post("no"),
             "id_mesin" => $this->input->post("id_mesin"),
+            "merk_m" => $this->input->post("merk_m"),
             "instansi" => $this->input->post("instansi"),
-            "deskripsi" => $this->input->post("deskripsi")
+            "d_kerusakan" => $this->input->post("d_kerusakan"),
+            "d_penyebab" => $this->input->post("d_penyebab"),
+            "d_perbaikan" => $this->input->post("d_perbaikan"),
+            "pengaju" => $this->input->post("pengaju"),
+            "tanggal" => $this->input->post("tanggal"),
+            "penyetuju" => $this->input->post("penyetuju")
         );
         if($this->NotaModel->updatenota2($nota2)) {
             redirect(site_url("Nota/cetakNota2"));
