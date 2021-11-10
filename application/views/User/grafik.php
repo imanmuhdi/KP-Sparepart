@@ -115,7 +115,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="<?php echo site_url("Grafik")?>" class="nav-link">
+				<a href="<?php echo site_url("Perbaikan")?>" class="nav-link">
 					<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M12.173,16.086c0.72,0,1.304-0.584,1.304-1.305V6.089c0-0.72-0.584-1.304-1.304-1.304c-0.721,0-1.305,0.584-1.305,1.304v8.692C10.868,15.502,11.452,16.086,12.173,16.086z M11.738,6.089c0-0.24,0.194-0.435,0.435-0.435s0.435,0.194,0.435,0.435v8.692c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V6.089zM16.52,16.086c0.72,0,1.304-0.584,1.304-1.305v-11.3c0-0.72-0.584-1.304-1.304-1.304c-0.721,0-1.305,0.584-1.305,1.304v11.3C15.215,15.502,15.799,16.086,16.52,16.086z M16.085,3.481c0-0.24,0.194-0.435,0.435-0.435s0.435,0.195,0.435,0.435v11.3c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V3.481z M3.48,16.086c0.72,0,1.304-0.584,1.304-1.305v-3.477c0-0.72-0.584-1.304-1.304-1.304c-0.72,0-1.304,0.584-1.304,1.304v3.477C2.176,15.502,2.76,16.086,3.48,16.086z M3.045,11.305c0-0.24,0.194-0.435,0.435-0.435c0.24,0,0.435,0.194,0.435,0.435v3.477c0,0.24-0.195,0.436-0.435,0.436c-0.24,0-0.435-0.195-0.435-0.436V11.305z M18.258,16.955H1.741c-0.24,0-0.435,0.194-0.435,0.435s0.194,0.435,0.435,0.435h16.517c0.24,0,0.435-0.194,0.435-0.435S18.498,16.955,18.258,16.955z M7.826,16.086c0.72,0,1.304-0.584,1.304-1.305V8.696c0-0.72-0.584-1.304-1.304-1.304S6.522,7.977,6.522,8.696v6.085C6.522,15.502,7.106,16.086,7.826,16.086z M7.392,8.696c0-0.239,0.194-0.435,0.435-0.435s0.435,0.195,0.435,0.435v6.085c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V8.696z"/></svg>
 					<span class="link-text">Laporan Grafik</span>
 				</a>
@@ -130,8 +130,65 @@
 	</nav>
 	<main>
 		<div class="display-flex">
-			<div><h1>Laporan Down Time</h1></div>
+			<div><h1><?php
+			if($input == NULL){
+				echo "Silahkan Pilih Bulan";
+			}else{
+				echo "Data Mesin Bulan ".$input;
+			}?>
+			</h1></div>
 		</div>
+		<div class="content-wrapper">
+   		<div class="container" style="padding-bottom: 50px">
+   			<form  action="<?php echo site_url('Grafik/aturBulan'); ?>" method="post" enctype="multipart/form-data">
+   				<select name="bulan" required>
+   					<option value="1" <?php if($input == 1){ echo "selected";}?> >Januari</option>
+   					<option value="2" <?php if($input == 2){ echo "selected";}?> >Februari</option>
+   					<option value="3" <?php if($input == 3){ echo "selected";}?> >Maret</option>
+   					<option value="4" <?php if($input == 4){ echo "selected";}?> >April</option>
+   					<option value="5" <?php if($input == 5){ echo "selected";}?> >Mei</option>
+   					<option value="6" <?php if($input == 6){ echo "selected";}?> >Juni</option>
+   					<option value="7" <?php if($input == 7){ echo "selected";}?> >Juli</option>
+   					<option value="8" <?php if($input == 8){ echo "selected";}?> >Agustus</option>
+   					<option value="9" <?php if($input == 9){ echo "selected";}?> >September</option>
+   					<option value="10" <?php if($input == 10){ echo "selected";}?> >Oktober</option>
+   					<option value="11" <?php if($input == 11){ echo "selected";}?> >November</option>
+   					<option value="12" <?php if($input == 12){ echo "selected";}?> >Desember</option>
+   				</select>
+   				 <input type="submit" value="Cari">
+   			</form>
+      		<?php
+      			if($input != NULL){
+				$template = array( 
+					'table_open' => '<table id="myTable" border=1>'
+				);
+				$this->table->set_template($template); 
+				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
+				$tampung = 0;
+				foreach($tb_mesin->result() as $r ){
+					foreach($tb_perbaikan1->result() as $a){
+
+						if(preg_match('/^(\d{4})-(\d{1,2})-(\d{1,2})([^\d].*)?$/', $a->tgl, $parts)) {
+                    		if (isset($parts[2])) {
+                       			 $bulan = $parts[2];
+                    		}
+                    		if($input == $bulan){	
+								if($r->id_mesin == $a->id_mesin){
+								$tampung = $tampung + $a->d_time;
+            					}
+                			}
+						}
+					}
+					$this->table->add_row($r->id_mesin,$r->jam_op,$tampung,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
+					$tampung = 0;
+				}
+				echo $this->table->generate();
+				}else{
+
+				}
+			?>
+   		</div>
+	</div>
 	</main>
 </body>
 </html>
