@@ -131,10 +131,11 @@
 	<main>
 		<div class="display-flex">
 			<div><h1><?php
-			if($input == NULL){
-				echo "Silahkan Pilih Bulan";
+			$perbulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+			if($input == NULL && $input2 == NULL){
+				echo "Silahkan Pilih Bulan dan Tahun";
 			}else{
-				echo "Data Mesin Bulan ".$input;
+				echo "Data Mesin Bulan ".$perbulan[$input-1]." Tahun ".$input2;
 			}?>
 			</h1></div>
 		</div>
@@ -155,6 +156,7 @@
    					<option value="11" <?php if($input == 11){ echo "selected";}?> >November</option>
    					<option value="12" <?php if($input == 12){ echo "selected";}?> >Desember</option>
    				</select>
+   				<input name="tahun" type="number" required value=<?php echo '"'.$input2.'"'; ?>>
    				 <input type="submit" value="Cari">
    			</form>
       		<?php
@@ -172,10 +174,15 @@
                     		if (isset($parts[2])) {
                        			 $bulan = $parts[2];
                     		}
-                    		if($input == $bulan){	
-								if($r->id_mesin == $a->id_mesin){
-								$tampung = $tampung + $a->d_time;
-            					}
+                    		if (isset($parts[1])) {
+                       			 $tahun = $parts[1];
+                    		}
+                    		if($input == $bulan){
+                    			if($input2 == $tahun){
+                    				if($r->id_mesin == $a->id_mesin){
+										$tampung = $tampung + $a->d_time;
+            						}
+                    			}	
                 			}
 						}
 					}
