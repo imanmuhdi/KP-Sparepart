@@ -1,92 +1,40 @@
 <!DOCTYPE HTML>
 <html>
 <head>  
-<script type="text/javascript">
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title:{
-		text: "Laporan Down Time Mesin Weaving"
-	},
-	axisY: {
-		title: "Jam",
-		includeZero: true
-	},
-	legend: {
-		cursor:"pointer",
-		itemclick : toggleDataSeries
-	},
-	toolTip: {
-		shared: true,
-		content: toolTipFormatter
-	},
-	data: [{
-		type: "column",
-		showInLegend: true,
-		name: "Jam Operasi",
-		color: "gold",
-		dataPoints: [
-		<?php foreach($tb_mesin->result() as $r ){
-			echo "{ y: ".$r->jam_op.", label: ".'"'.$r->id_mesin.'"'." }";
-			if ($r->id_mesin == NULL) {
-    		
-    		}else{
-    			echo ",";
-    		}
-		} ?>
-			
-		]
-	},
-	{
-		type: "column",
-		showInLegend: true,
-		name: "Down Time",
-		color: "silver",
-		dataPoints: [
-			<?php foreach($tb_mesin->result() as $r ){
-			echo "{ y: ".$r->down_time.", label: ".'"'.$r->id_mesin.'"'." }";
-			if ($r->id_mesin == NULL) {
-    		}else{
-    			echo ",";
-    		}
-    	} ?> 
-			
-		]
-	}]
-});
-chart.render();
-
-function toolTipFormatter(e) {
-	var str = "";
-	var total = 0 ;
-	var str3;
-	var str2 ;
-	for (var i = 0; i < e.entries.length; i++){
-		var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
-		total = (e.entries[i].dataPoint.y/total)*100 ;
-		str = str.concat(str1);
-	}
-	str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
-	str3 = "<span style = \"color:Tomato\">Persentase: </span><strong>" + total+"%" + "</strong><br/>";
-	return (str2.concat(str)).concat(str3);
-}
-
-function toggleDataSeries(e) {
-	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else {
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
-
-}
-</script>
 </head>
 <body>
-<div id="chartContainer" style="height: 720px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+			<?php
+      			if($input != NULL){
+				$template = array( 
+					'table_open' => '<table id="myTable" border=1>'
+				);
+				$this->table->set_template($template); 
+				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Persentase","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
+				$tampung = 0;
+				foreach($tb_mesin->result() as $r ){
+					foreach($tb_perbaikan1->result() as $a){
+						if(preg_match('/^(\d{4})-(\d{1,2})-(\d{1,2})([^\d].*)?$/', $a->tgl, $parts)) {
+                    		if (isset($parts[2])) {
+                       			 $bulan = $parts[2];
+                    		}
+                    		if (isset($parts[1])) {
+                       			 $tahun = $parts[1];
+                    		}
+                    		if($input == $bulan){
+                    			if($input2 == $tahun){
+                    				if($r->id_mesin == $a->id_mesin){
+										$tampung = $tampung + $a->d_time;
+            						}
+                    			}	
+                			}
+						}
+					}
+					$pres = ($tampung/$r->target_down)*100; 
+					$this->table->add_row($r->id_mesin,$r->jam_op,$tampung,$r->target_down,$pres,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
+					$tampung = 0;
+				}
+				echo $this->table->generate();
+				}
+			?>
 </body>
 </html>

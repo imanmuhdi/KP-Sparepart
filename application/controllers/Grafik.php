@@ -29,10 +29,6 @@ class Grafik extends CI_Controller {
         $this->load->view("User/grafik",$data);
         }
 
-    public function grafikbar(){
-        $this->load->model("PerbaikanModel","",TRUE);
-        
-    }
 
     /*function date_parts_iso($date) { //pemisah tahun,bulan,hari
 

@@ -166,7 +166,10 @@
 		var str2 ;
 		for (var i = 0; i < e.entries.length; i++){
 			var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
-			total = (e.entries[i].dataPoint.y/total)*100 ;
+			if(i%2 != 0){
+				total = (e.entries[i].dataPoint.y/simpan)*100;
+			}
+			simpan = e.entries[i].dataPoint.y
 			str = str.concat(str1);
 		}
 		str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
@@ -295,14 +298,15 @@
 					$tampung = 0;
 				}
 				echo $this->table->generate();
-				}else{
-
 				}
 			?>
    		</div>
 	</div>
-	<div id="chartContainer" style="height: 720px; width: 100%;"></div>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<?php if($input != NULL){
+		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."height: 720px; width: 100%;".'"'."></div>";
+		echo "<script src=".'"'."https://canvasjs.com/assets/script/canvasjs.min.js".'"'."></script>";
+			}?>
+	
 	</main>
 </body>
 </html>
