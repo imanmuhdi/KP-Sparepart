@@ -9,6 +9,18 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{
+			background: #DCDCDC;
+			color: black;
+		}
+		.font{
+			align-self: center;
+			padding-top: 25px;
+			font-family: cursive;
+			font-size: 35px;
+		}
+	</style>
 </head>
 <body>
 	<nav class="navbar">
@@ -73,11 +85,14 @@
 
 	<main>
 		<br>
-		<h1 align="center" style="padding-top: 40px">Selamat Datang!</h1>
+		<h1 align="center" style="padding-top: 40px; font-family: cursive;">PENGELOLAAN DATA PERBAIKAN <br>DAN PENYEDIAN SPAREPART MESIN KAIN TEKSTIL</h1>
+		<h1 align="center" style="padding-top: 40px; font-family: cursive;">ANDA LOGIN SEBAGAI PETUGAS PERBAIKAN</h1>
+		<h1 align="center" style="padding-top: 40px; font-family: cursive;">SELAMAT DATANG!</h1>
 		<br>
 		<?php
-		echo "<center><h2>".$nama."<br>";
+		echo "<center><h2 class=font>".$nama."";
 		?>
+		<center><img src="<?php echo site_url('../assets/image/logo.png')?>" style="padding-top: 130px" width="400" height="120"></center>
 	</main>
 </body>
 </html>

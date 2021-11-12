@@ -14,6 +14,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<style>
+		body{
+			background: #DCDCDC;
+			color: black;
+		}
 		.display-flex{
 			display: flex;
 			justify-content: center;
@@ -27,57 +31,11 @@
 			align-items: center;
 			padding-top: 40px;
 		}
-		.btn {
-			box-sizing: border-box;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			background-color: transparent;
-			border: 2px solid black;
-			border-radius: 0.6em;
-			color: black;
-			cursor: pointer;
-			display: flex;
+		.font{
 			align-self: center;
-			font-size: 1rem;
-			font-weight: 400;
-			line-height: 1;
-			margin: 20px;
-			padding: 1.2em 2.8em;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.btn1 {
-			border: 1px solid black;
-			color: black;
-			cursor: pointer;
-			display: flex;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.btn2 {
-			border: 1px solid black;
-			color: black;
-			cursor: pointer;
-			display: flex;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.oke {
-		  	box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-		  	transition: all 150ms ease-in-out;
-		}
-		.oke:hover {
-		  	box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+			padding-top: 25px;
+			font-family: cursive;
+			font-size: 35px;
 		}
 	</style>
 </head>
@@ -144,15 +102,16 @@
 
 	<main>
 		<div class="display-flex">
-			<div><h1>Data Sparepart</h1></div>
+			<div><h1 class="font">PT SINAR CONTINENTAL</h1></div>
+			<div><h1 class="font">DATA SPAREPART</h1></div>
 		</div>
 		<div class="content-wrapper">
    		<div class="container" style="padding-bottom: 50px">
       		<?php
 				$template = array(
-					'table_open' => '<table id="myTable" border=1>' 
+					'table_open' => '<table id="myTable" border=1>'
 				);
-				$this->table->set_template($template); 
+				$this->table->set_template($template);
 				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan");
 				foreach($tb_sparepart->result() as $r){
 					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan);
@@ -165,7 +124,7 @@
 </body>
 <script>
 	$(document).ready(function() {
-		$('#myTable').DataTable(); 
+		$('#myTable').DataTable();
 	});
 </script>
 </html>
