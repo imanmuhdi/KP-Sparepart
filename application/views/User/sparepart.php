@@ -32,8 +32,14 @@
 			padding-top: 40px;
 		}
 		.font{
-			align-self: center;
-			padding-top: 25px;
+			padding-right: 300px;
+			font-family: cursive;
+			font-size: 35px;
+		}
+		.font2{
+			align-items: :center;
+			padding-top: 10px;
+			padding-bottom: 25px;
 			font-family: cursive;
 			font-size: 35px;
 		}
@@ -102,8 +108,8 @@
 
 	<main>
 		<div class="display-flex">
-			<div><h1 class="font">PT SINAR CONTINENTAL</h1></div>
-			<div><h1 class="font">DATA SPAREPART</h1></div>
+			<div><h1 class="font"><img src="<?php echo site_url('../assets/image/logo.png')?>" style="padding-top: 80px; padding-right: 80px;" width="200" height="60">PT SINAR CONTINENTAL</h1></div>
+			<div><h1 class="font2">DATA SPAREPART</h1></div>
 		</div>
 		<div class="content-wrapper">
    		<div class="container" style="padding-bottom: 50px">

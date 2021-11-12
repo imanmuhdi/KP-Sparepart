@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
+        body{
+            background: #DCDCDC;
+            color: black;
+        }
         .display-flex{
             display: flex;
             justify-content: center;
@@ -26,6 +30,18 @@
             justify-content: center;
             align-items: center;
             padding-top: 40px;
+        }
+        .font{
+            padding-right: 300px;
+            font-family: cursive;
+            font-size: 35px;
+        }
+        .font2{
+            align-items: :center;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            font-family: cursive;
+            font-size: 35px;
         }
         .btn {
             box-sizing: border-box;
@@ -130,9 +146,10 @@
     </nav>
     <main>
         <div class="display-flex">
-            <div><h1>Nota Perbaikan</h1></div>
+            <div><h1 class="font"><img src="<?php echo site_url('../assets/image/logo.png')?>" style="padding-top: 80px; padding-right: 80px;" width="200" height="60">PT SINAR CONTINENTAL</h1></div>
+            <div><h1 class="font2">NOTA PERBAIKAN</h1></div>
         </div>
-        <div class="container" style="padding-top: 100px; padding-left: 40%; padding-right: 40%">
+        <div class="container" style="padding-top: 80px; padding-left: 40%; padding-right: 40%">
             <a class="btn oke" href="<?php echo site_url('Nota/cetakNota1');?>">Nota Dengan Sparepart</a>
         </div>
         <div class="container" style="padding-left: 40%; padding-right: 40%">

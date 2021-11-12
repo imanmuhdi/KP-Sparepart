@@ -14,6 +14,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<style>
+		body{
+            background: #DCDCDC;
+            color: black;
+        }
 		.display-flex{
 			display: flex;
 			justify-content: center;
@@ -27,58 +31,24 @@
 			align-items: center;
 			padding-top: 40px;
 		}
-		.btn {
-			box-sizing: border-box;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			background-color: transparent;
-			border: 2px solid black;
-			border-radius: 0.6em;
-			color: black;
-			cursor: pointer;
-			display: flex;
-			align-self: center;
-			font-size: 1rem;
-			font-weight: 400;
-			line-height: 1;
-			margin: 20px;
-			padding: 1.2em 2.8em;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.btn1 {
-			border: 1px solid black;
-			color: black;
-			cursor: pointer;
-			display: flex;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.btn2 {
-			border: 1px solid black;
-			color: black;
-			cursor: pointer;
-			display: flex;
-			text-decoration: none;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-		}
-		.oke {
-		  	box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-		  	transition: all 150ms ease-in-out;
-		}
-		.oke:hover {
-		  	box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
-		}
+		.font{
+            padding-right: 300px;
+            font-family: cursive;
+            font-size: 35px;
+        }
+        .font2{
+            align-items: :center;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            font-family: cursive;
+            font-size: 35px;
+        }
+        .font3{
+            align-items: :center;
+            padding-top: 120px;
+            font-family: cursive;
+            font-size: 15px;
+        }
 	</style>
 	<script type="text/javascript">
 	window.onload = function () {
@@ -224,7 +194,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="<?php echo site_url("Perbaikan")?>" class="nav-link">
+				<a href="<?php echo site_url("Grafik")?>" class="nav-link">
 					<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M12.173,16.086c0.72,0,1.304-0.584,1.304-1.305V6.089c0-0.72-0.584-1.304-1.304-1.304c-0.721,0-1.305,0.584-1.305,1.304v8.692C10.868,15.502,11.452,16.086,12.173,16.086z M11.738,6.089c0-0.24,0.194-0.435,0.435-0.435s0.435,0.194,0.435,0.435v8.692c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V6.089zM16.52,16.086c0.72,0,1.304-0.584,1.304-1.305v-11.3c0-0.72-0.584-1.304-1.304-1.304c-0.721,0-1.305,0.584-1.305,1.304v11.3C15.215,15.502,15.799,16.086,16.52,16.086z M16.085,3.481c0-0.24,0.194-0.435,0.435-0.435s0.435,0.195,0.435,0.435v11.3c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V3.481z M3.48,16.086c0.72,0,1.304-0.584,1.304-1.305v-3.477c0-0.72-0.584-1.304-1.304-1.304c-0.72,0-1.304,0.584-1.304,1.304v3.477C2.176,15.502,2.76,16.086,3.48,16.086z M3.045,11.305c0-0.24,0.194-0.435,0.435-0.435c0.24,0,0.435,0.194,0.435,0.435v3.477c0,0.24-0.195,0.436-0.435,0.436c-0.24,0-0.435-0.195-0.435-0.436V11.305z M18.258,16.955H1.741c-0.24,0-0.435,0.194-0.435,0.435s0.194,0.435,0.435,0.435h16.517c0.24,0,0.435-0.194,0.435-0.435S18.498,16.955,18.258,16.955z M7.826,16.086c0.72,0,1.304-0.584,1.304-1.305V8.696c0-0.72-0.584-1.304-1.304-1.304S6.522,7.977,6.522,8.696v6.085C6.522,15.502,7.106,16.086,7.826,16.086z M7.392,8.696c0-0.239,0.194-0.435,0.435-0.435s0.435,0.195,0.435,0.435v6.085c0,0.24-0.194,0.436-0.435,0.436s-0.435-0.195-0.435-0.436V8.696z"/></svg>
 					<span class="link-text">Laporan Grafik</span>
 				</a>
@@ -239,7 +209,11 @@
 	</nav>
 	<main>
 		<div class="display-flex">
-			<div><h1><?php
+			<div class="display-flex">
+	            <div><h1 class="font"><img src="<?php echo site_url('../assets/image/logo.png')?>" style="padding-top: 241px; padding-right: 80px;" width="200" height="60">PT SINAR CONTINENTAL</h1></div>
+	            <div><h1 class="font2">LAPORAN GRAFIK</h1></div>
+        	</div>
+			<div class="font3"><h1><?php
 			$perbulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
 			if($input == NULL && $input2 == NULL){
 				echo "Silahkan Pilih Bulan dan Tahun";
@@ -251,6 +225,9 @@
 		<div class="content-wrapper">
    		<div class="container" style="padding-bottom: 50px">
    			<form  action="<?php echo site_url('Grafik/aturBulan'); ?>" method="post" enctype="multipart/form-data">
+   				<br>
+   				<br>
+   				<br>
    				<select name="bulan" required>
    					<option value="1" <?php if($input == 1){ echo "selected";}?> >Januari</option>
    					<option value="2" <?php if($input == 2){ echo "selected";}?> >Februari</option>
@@ -303,10 +280,9 @@
    		</div>
 	</div>
 	<?php if($input != NULL){
-		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."height: 720px; width: 100%;".'"'."></div>";
+		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."padding-left: 235px; height: 500px; width: 50%;".'"'."></div>";
 		echo "<script src=".'"'."https://canvasjs.com/assets/script/canvasjs.min.js".'"'."></script>";
 			}?>
-	
 	</main>
 </body>
 </html>
