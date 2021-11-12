@@ -15,11 +15,13 @@
         }
         .card{
             border-radius: 0;
-            color: #0061a8;
+            color: white;
             height: 100vh;
             width: 30%;
         }
-
+        input{
+             color: white;
+        }
         .card img{
             height: 100vh;
             width: 100%;
@@ -27,6 +29,7 @@
 
         .card{
             width: 100%;
+            background-color: #161616;
         }
         
         .login{
@@ -40,6 +43,7 @@
         .login p{
             font-size: 20px;
             font-weight: lighter; 
+
         }
 
         form label{
@@ -57,23 +61,23 @@
         }
 
         .btn-daftar{
-            border: 1px solid #0061a8;
-            color: #0061a8;
+            border: 1px solid #1946b9;
+            color: #1946b9;
             margin-left: 20px;
         }
 
         .btn-daftar:hover{
-            background-color: #0061a8;
+            background-color: #1946b9;
             color: white;
         }
 
         .btn-login{
-            background-color: #0061a8;
+            background-color: #282828;
             color: white;
         }
 
         .btn-login:hover{
-            background-color: #0061a9;
+            background-color: #1946b9;
             color: white;
         }
 
@@ -99,16 +103,16 @@
         <p>Silahkan masukkan username dan password Anda!</p>
         <form action="<?php echo site_url('home/proseslogin')?>" method="post">
             <label>Username</label>
-            <input type="name" class="form-control" name="username" required>
+            <input type="name" class="form-control" name="username" required style="color: white; background-color: #282828">
             <label>Password</label>
-            <input type="password" class="form-control" name="password" required>
+            <input type="password" class="form-control" name="password" required style="color: white; background-color: #282828">
             <div class="tombol">
                 <input type="submit" class="btn btn-login" value="Masuk">
             </div>
         </form>
     </div>
     <div class="card">
-       <img src="<?php echo site_url('../assets/image/bg_login.png')?>">
+       <img src="<?php echo site_url('../assets/image/bg_login2.png')?>">
     </div>
     <div class="about">
         <a href="<?php echo site_url('Home/aboutus')?>" class="btn btn-primary">Hubungi Kami</a>
