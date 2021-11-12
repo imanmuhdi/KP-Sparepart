@@ -14,15 +14,17 @@
             justify-content: space-around;
             align-items: center;
             position: fixed;
+            background-color: #282828
         }
 
         .pp{
             max-height: 280px;
-            height: 100%;
+            height: 280px;
         }
 
         .card{
             text-align: center;
+            color: black;
         }
 
         .icon{
@@ -30,6 +32,7 @@
         }
 
         nav{
+            background-color: white;
             padding: 10px 20px;
         }
 
@@ -44,9 +47,10 @@
         }
 
         nav a:hover{
-            color: black;
+            color: gray;
             text-decoration: none;
         }
+
     </style>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
 </head>

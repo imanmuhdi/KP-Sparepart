@@ -34,12 +34,14 @@
 		td{
 			text-align: center;
 		}
-
+		nav{
+			background-color: #282828;
+		}
 		
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark">
 		<img src="<?php echo site_url('../assets/image/logo.png')?>" >
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Utama</a>

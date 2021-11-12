@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         body{
-            background: #DCDCDC;
+            background-image: linear-gradient(180deg, purple, #1946b9);
             color: black;
         }
         .content-wrapper{
@@ -50,9 +50,19 @@
             margin-top: 20px;
             margin-bottom: 40px;
         }
+        label, h3{
+            color:white;
+        }
+        .container{
+            background-color: #161616;
+        }
+        .form-control{
+            color: white;
+            background-color: #282828;
+        }
     </style>
 </head>
-<body>
+<body >
     <div class="container" style="padding:40px 0; text-align: center;">
         <h3>Tambah Sparepart</h3>
     </div>

@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         body{
-            background: #DCDCDC;
+            background-image: linear-gradient(180deg, purple, #1946b9);
             color: black;
         }
         
@@ -50,6 +50,19 @@
         .btn{
             margin-top: 20px;
             margin-bottom: 40px;
+        }
+        .container{
+            background-color: white;
+        }
+        label, h3{
+            color:white;
+        }
+        .container{
+            background-color: #161616;
+        }
+        .form-control{
+            color: white;
+            background-color: #282828;
         }
     </style>
 </head>
