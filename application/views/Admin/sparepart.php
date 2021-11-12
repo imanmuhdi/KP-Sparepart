@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
+    body{
+			background: #DCDCDC;
+			color: black;
+		}
 		.content-wrapper{
 			display: flex;
 			justify-content: center;
@@ -34,8 +38,9 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<img src="<?php echo site_url('../assets/image/logo.png')?>" >
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Admin</a>
+			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Utama</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -54,12 +59,6 @@
 					echo $admin;
 					?>
 				</li>
-				<li>
-					<?php
-						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
-						echo $admin;
-					?>
-				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
@@ -74,6 +73,7 @@
       		<a class="btn btn-primary btn1" href="<?php echo site_url('Admin/tambahSparepart');?>">Tambah Sparepart</a>
    	</div>
 	<div class="content-wrapper">
+
    		<div class="container">
       		<h3>Daftar Sparepart</h3>
       		<?php

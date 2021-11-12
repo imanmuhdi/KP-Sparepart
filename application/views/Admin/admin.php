@@ -7,6 +7,16 @@
     <title>Home : P.Mesin</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <style>
+    body{
+			background: #DCDCDC;
+			color: black;
+		}
+		.font{
+			align-self: center;
+			padding-top: 25px;
+			font-family: cursive;
+			font-size: 35px;
+		}
         .logout{
 			color: grey;
 		}
@@ -15,12 +25,18 @@
 			text-decoration: none;
 			color: rgb(200,200,200);
 		}
+		.img{
+			padding-top: 130px;
+			width="400";
+			height="120";
+		}
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    	<img src="<?php echo site_url('../assets/image/logo.png')?>" width=200 >
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Admin</a>
+			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Utama</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -39,12 +55,6 @@
 						echo $admin;
 					?>
 				</li>
-				<li>
-					<?php
-						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
-						echo $admin;
-					?>
-				</li>
 				</ul>
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
@@ -57,9 +67,14 @@
 
     <div class="top-wrapper">
         <div class="container">
-            <h1 class="d-flex justify-content-center align-items-center mt-5">
-                Hallo <?php echo $nama; ?>
-            </h1>
+            <br>
+			<h1 align="center" style="padding-top: 40px; font-family: cursive;">PENGELOLAAN DATA PERBAIKAN <br>DAN PENYEDIAN SPAREPART MESIN KAIN TEKSTIL</h1>
+			<h1 align="center" style="padding-top: 40px; font-family: cursive;">ANDA LOGIN SEBAGAI PETUGAS MESIN</h1>
+			<h1 align="center" style="padding-top: 40px; font-family: cursive;">SELAMAT DATANG!</h1>
+			<?php
+			echo "<center><h2 class=font>".$nama."";
+			?>
+			<center><img src="<?php echo site_url('../assets/image/logo.png')?>" class="img"></center>
         </div>
     </div>
 </body>

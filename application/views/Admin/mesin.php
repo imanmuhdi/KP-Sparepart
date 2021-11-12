@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
+    	body{
+			background: #DCDCDC;
+			color: black;
+		}
 		.content-wrapper{
 			display: flex;
 			justify-content: center;
@@ -30,13 +34,15 @@
 		td{
 			text-align: center;
 		}
+
 		
 	</style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<img src="<?php echo site_url('../assets/image/logo.png')?>" >
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Admin</a>
+			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Utama</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -53,12 +59,6 @@
 				<?php
 					$admin = '<a class="nav-link" href="'.site_url("Admin/pindahMesin/").'">Mesin</a>';
 					echo $admin;
-					?>
-				</li>
-				<li>
-					<?php
-						$admin = '<a class="nav-link" href="'.site_url("Admin/pindahGrafik/").'">Grafik</a>';
-						echo $admin;
 					?>
 				</li>
 				</ul>
@@ -79,7 +79,7 @@
       		<h3>Daftar Mesin</h3>
       		<?php
 				$template = array( 
-					'table_open' => '<table id="myTable" border=1>' 
+					'table_open' => '<table id="myTable" border=1 >' 
 				);
 				$this->table->set_template($template); 
 				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun","Aksi"); 

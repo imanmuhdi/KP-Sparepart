@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
+            body{
+            background: #DCDCDC;
+            color: black;
+        }
         .content-wrapper{
             display: flex;
             justify-content: center;
@@ -28,6 +32,9 @@
 
         .content{
             padding: 0 20%;
+        }
+        label{
+            font-size: 20px;
         }
 
         table{
@@ -60,7 +67,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="idm" required="Kode Sparepart">
+                            <input type="text" name="idm" required="Kode Sparepart" class="form-control">
                         </td>
                     </tr>
 
@@ -72,7 +79,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="jom" required="Nama Sparepart">
+                            <input type="number" name="jom" required="Nama Sparepart" class="form-control">
                         </td>
                     </tr>
 
@@ -84,7 +91,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="dtm" required>
+                            <input type="number" name="dtm" required class="form-control">
                         </td>
                     </tr>
 
@@ -95,7 +102,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="tdm" required>
+                            <input type="number" name="tdm" required class="form-control">
                         </td>
                     </tr>
 
@@ -106,7 +113,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="tmm" required>
+                            <input type="text" name="tmm" required class="form-control">
                         </td>
                     </tr>
 
@@ -117,7 +124,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="mmm" required>
+                            <input type="text" name="mmm" required class="form-control">
                         </td>
                     </tr>
 
@@ -128,7 +135,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="nmm" required">
+                            <input type="text" name="nmm" required" class="form-control"> 
                         </td>
                     </tr>
 
@@ -139,13 +146,13 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="tm" required>
+                            <input type="number" name="tm" required class="form-control">
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <input type="submit" value="Tambah Mesin" class="btn btn-success">
+                            <input type="submit" value="Tambah Mesin" class="btn btn-success" class="form-control">
                         </td>
                         <td>
                             <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
+        body{
+            background: #DCDCDC;
+            color: black;
+        }
+        
         .content-wrapper{
             display: flex;
             justify-content: center;
@@ -32,6 +37,10 @@
 
         table{
             width: 100%;
+        }
+
+        label{
+            font-size: 20px;
         }
 
         td, input[type="text"], textarea{
@@ -60,7 +69,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="idm" required="Kode Sparepart" value="<?php echo $tb_mesin->id_mesin?>">
+                            <input type="text" name="idm" required="Kode Sparepart" value="<?php echo $tb_mesin->id_mesin?>" class="form-control" readonly>
                         </td>
                     </tr>
 
@@ -72,7 +81,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="jom" required="Nama Sparepart" value="<?php echo $tb_mesin->jam_op?>">
+                            <input type="number" name="jom" required="Nama Sparepart" value="<?php echo $tb_mesin->jam_op?>" class="form-control">
                         </td>
                     </tr>
 
@@ -84,7 +93,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="dtm" required value="<?php echo $tb_mesin->down_time?>">
+                            <input type="number" name="dtm" required value="<?php echo $tb_mesin->down_time?>" class="form-control">
                         </td>
                     </tr>
 
@@ -95,7 +104,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="tdm" required value="<?php echo $tb_mesin->target_down?>">
+                            <input type="number" name="tdm" required value="<?php echo $tb_mesin->target_down?>" class="form-control">
                         </td>
                     </tr>
 
@@ -106,7 +115,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="tmm" required value="<?php echo $tb_mesin->type_m?>">
+                            <input type="text" name="tmm" required value="<?php echo $tb_mesin->type_m?>" class="form-control">
                         </td>
                     </tr>
 
@@ -117,7 +126,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="mmm" required value="<?php echo $tb_mesin->merk_m?>">
+                            <input type="text" name="mmm" required value="<?php echo $tb_mesin->merk_m?>" class="form-control">
                         </td>
                     </tr>
 
@@ -128,7 +137,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="nmm" required" value="<?php echo $tb_mesin->no_m?>">
+                            <input type="text" name="nmm" required" value="<?php echo $tb_mesin->no_m?>" class="form-control">
                         </td>
                     </tr>
 
@@ -139,7 +148,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="tm" required value="<?php echo $tb_mesin->tahun?>">
+                            <input type="number" name="tm" required value="<?php echo $tb_mesin->tahun?>" class="form-control">
                         </td>
                     </tr>
 

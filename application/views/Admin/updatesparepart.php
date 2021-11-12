@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
+        body{
+            background: #DCDCDC;
+            color: black;
+        }
         .content-wrapper{
             display: flex;
             justify-content: center;
@@ -29,7 +33,9 @@
         .content{
             padding: 0 20%;
         }
-
+        label{
+            font-size: 20px;
+        }
         table{
             width: 100%;
         }
@@ -61,7 +67,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="kodesp" required="Kode Sparepart" value="<?php echo $tb_sparepart->kd_part?>">
+                            <input type="text" name="kodesp" required="Kode Sparepart" value="<?php echo $tb_sparepart->kd_part?>" class="form-control" readonly>
                         </td>
                     </tr>
 
@@ -73,7 +79,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="namasp" required="Nama Sparepart" value="<?php echo $tb_sparepart->nama_part?>">
+                            <input type="text" name="namasp" required="Nama Sparepart" value="<?php echo $tb_sparepart->nama_part?>" class="form-control">
                         </td>
                     </tr>
 
@@ -85,7 +91,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="tipesp" required value="<?php echo $tb_sparepart->type?>">
+                            <input type="text" name="tipesp" required value="<?php echo $tb_sparepart->type?>" class="form-control">
                         </td>
                     </tr>
 
@@ -96,7 +102,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoawal" required value="<?php echo $tb_sparepart->saldo_awal?>">
+                            <input type="number" name="saldoawal" required value="<?php echo $tb_sparepart->saldo_awal?>" class="form-control">
                         </td>
                     </tr>
 
@@ -107,7 +113,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="masuk" required value="<?php echo $tb_sparepart->masuk?>">
+                            <input type="number" name="masuk" required value="<?php echo $tb_sparepart->masuk?>" class="form-control">
                         </td>
                     </tr>
 
@@ -118,7 +124,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="keluar" required value="<?php echo $tb_sparepart->keluar?>">
+                            <input type="number" name="keluar" required value="<?php echo $tb_sparepart->keluar?>" class="form-control">
                         </td>
                     </tr>
 
@@ -129,7 +135,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoakhir" required value="<?php echo $tb_sparepart->saldo_akhir?>">
+                            <input type="number" name="saldoakhir" required value="<?php echo $tb_sparepart->saldo_akhir?>" class="form-control">
                         </td>
                     </tr>
 
@@ -140,7 +146,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="minimal" required value="<?php echo $tb_sparepart->stock_minimal?>">
+                            <input type="number" name="minimal" required value="<?php echo $tb_sparepart->stock_minimal?>" class="form-control">
                         </td>
                     </tr>
 
@@ -151,7 +157,12 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="foto" required>
+                            <div class="input-group mb-3">
+                              <div class="custom-file">
+                                <input name="foto" type="file" class="custom-file-input" id="inputGroupFile02">
+                                <label class="custom-file-label" for="inputGroupFile02">Pilih foto</label>
+                              </div>
+                            </div>
                         </td>
                     </tr>
 

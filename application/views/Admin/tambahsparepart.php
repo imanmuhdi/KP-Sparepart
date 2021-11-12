@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
+        body{
+            background: #DCDCDC;
+            color: black;
+        }
         .content-wrapper{
             display: flex;
             justify-content: center;
@@ -28,6 +32,10 @@
 
         .content{
             padding: 0 20%;
+        }
+
+        label{
+            font-size: 20px;
         }
 
         table{
@@ -60,7 +68,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="kodesp" required="Kode Sparepart">
+                            <input type="text" name="kodesp" required="Kode Sparepart" class="form-control">
                         </td>
                     </tr>
 
@@ -72,7 +80,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="namasp" required="Nama Sparepart">
+                            <input type="text" name="namasp" required="Nama Sparepart" class="form-control">
                         </td>
                     </tr>
 
@@ -84,7 +92,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="text" name="tipesp" required>
+                            <input type="text" name="tipesp" required class="form-control">
                         </td>
                     </tr>
 
@@ -95,7 +103,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoawal" required>
+                            <input type="number" name="saldoawal" required class="form-control">
                         </td>
                     </tr>
 
@@ -106,7 +114,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="masuk" required>
+                            <input type="number" name="masuk" required class="form-control">
                         </td>
                     </tr>
 
@@ -117,7 +125,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="keluar" required>
+                            <input type="number" name="keluar" required class="form-control">
                         </td>
                     </tr>
 
@@ -128,7 +136,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="saldoakhir" required>
+                            <input type="number" name="saldoakhir" required class="form-control">
                         </td>
                     </tr>
 
@@ -139,7 +147,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="number" name="minimal" required>
+                            <input type="number" name="minimal" required class="form-control">
                         </td>
                     </tr>
 
@@ -150,7 +158,12 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="foto" required>
+                            <div class="input-group mb-3">
+                              <div class="custom-file">
+                                <input name="foto" type="file" class="custom-file-input" id="inputGroupFile02">
+                                <label class="custom-file-label" for="inputGroupFile02">Pilih foto</label>
+                              </div>
+                            </div>
                         </td>
                     </tr>
 
