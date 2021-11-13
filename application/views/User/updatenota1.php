@@ -8,253 +8,125 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
-        .content-wrapper{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 50px;
+        body{
+            background: #00FFFF;
+            color: black;
         }
-        .pad{
-            padding-top: 20px;
+        label{
+            width:160px;
+            clear:left;
+            text-align:left;
+            padding-right:10px;
         }
-        .logout{
-            color: grey;
+        .font{
+            align-self: center;
+            padding-top: 25px;
+            font-family: cursive;
+            font-size: 35px;
+            font-weight: bold;
         }
-
-        .logout:hover{
-            text-decoration: none;
-            color: rgb(200,200,200);
-        }
-
-        .content{
-            padding: 0 20%;
-        }
-
-        table{
-            width: 100%;
-        }
-
-        td, input[type="text"], textarea{
-            width: 100%;
-        }
-
-        .btn{
-            margin-top: 20px;
-            margin-bottom: 40px;
+        .container{
+            background: #E0FFFF;
         }
     </style>
 </head>
 <body>
     <div class="container" style="padding:40px 0; text-align: center;">
-        <h3>Edit Nota</h3>
+        <h3 class="font">EDIT NOTA</h3>
     </div>
     <div class="container">
         <div class="content">
             <form action="<?php echo site_url('Nota/prosesUpdate1'); ?>" method="post" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td>
+                <div class="card text-white">
+                    <div class="card-header bg-dark" style="font-weight: bold;">Nomor Nota</div>
+                        <div class="card-body text-dark">
                             <label>Nomor</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="no" required value="<?php echo $tb_perbaikan1->no?>" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="no" required value="<?php echo $tb_perbaikan1->no?>" readonly>
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-primary" style="font-weight: bold;">ID dan Merk Mesin</div>
+                        <div class="card-body text-dark">
                             <label>ID Mesin</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan1->id_mesin?>" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan1->id_mesin?>" readonly>
+                            <br>
                             <label>Merk Mesin</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="merk" required value="<?php echo $tb_perbaikan1->merk_m?>" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="merk" required value="<?php echo $tb_perbaikan1->merk_m?>" readonly>
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-success" style="font-weight: bold;">Kode, Type dan Jumlah Sparepart</div>
+                        <div class="card-body text-dark">
                             <label>Kode Sparepart</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="kd_part" required value="<?php echo $tb_perbaikan1->kd_part?>" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="kd_part" required value="<?php echo $tb_perbaikan1->kd_part?>" readonly>
+                            <br>
                             <label>Type Sparepart</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="type" required value="<?php echo $tb_perbaikan1->type?>" readonly>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="type" required value="<?php echo $tb_perbaikan1->type?>" readonly>
+                            <br>
                             <label>Jumlah Sparepart</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="jml_part" required value="<?php echo $tb_perbaikan1->jml_part?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="number" name="jml_part" required value="<?php echo $tb_perbaikan1->jml_part?>">
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-info" style="font-weight: bold;">Masalah, Penyebab dan Solusi Perbaikan Kerusakan</div>
+                        <div class="card-body text-dark">
                             <label>Kerusakan Masalah</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan1->deskripsi?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="deskripsi" required value="<?php echo $tb_perbaikan1->deskripsi?>">
+                            <br>
                             <label class="pad">Penyebab Kerusakan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="deskripsi2" required value="<?php echo $tb_perbaikan1->deskripsi2?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="deskripsi2" required value="<?php echo $tb_perbaikan1->deskripsi2?>">
+                            <br>
                             <label class="pad">Perbaikan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="perbaikan" required value="<?php echo $tb_perbaikan1->perbaikan?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="perbaikan" required value="<?php echo $tb_perbaikan1->perbaikan?>">
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-warning" style="font-weight: bold;">Input Hasil dan Lokasi Perbaikan</div>
+                        <div class="card-body text-dark">
                             <label class="pad">Hasil Perbaikan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="hasil" required value="<?php echo $tb_perbaikan1->hasil?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="hasil" required value="<?php echo $tb_perbaikan1->hasil?>">
+                            <br>
                             <label>Lokasi</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="lokasi" required value="<?php echo $tb_perbaikan1->lokasi?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Diajukan Oleh</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="oleh" required value="<?php echo $tb_perbaikan1->oleh?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Tanggal</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="date" name="tgl" required value="<?php echo $tb_perbaikan1->tgl?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="lokasi" required value="<?php echo $tb_perbaikan1->lokasi?>">
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-danger" style="font-weight: bold;">Waktu Mulai dan Selesai Perbaikan</div>
+                        <div class="card-body text-dark">
                             <label>Mulai Perbaikan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="time" name="mulai" required value="<?php echo $tb_perbaikan1->mulai?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="time" name="mulai" required value="<?php echo $tb_perbaikan1->mulai?>">
+                            <br>
                             <label>Selesai Perbaikan</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="time" name="selesai" required value="<?php echo $tb_perbaikan1->selesai?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="time" name="selesai" required value="<?php echo $tb_perbaikan1->selesai?>">
+                        </div>
+                </div>
+                <br>
+                <div class="card text-white">
+                    <div class="card-header bg-secondary" style="font-weight: bold;">Input Nama Pengaju, Pelaksana, Penyetuju dan Tanggal</div>
+                        <div class="card-body text-dark">
+                            <label>Diajukan Oleh</label>
+                                <input type="text" name="oleh" required value="<?php echo $tb_perbaikan1->oleh?>">
+                            <br>
                             <label>Disetujui Oleh</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan1->penyetuju?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                                <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan1->penyetuju?>">
+                            <br>
                             <label>Dilaksanakan Oleh</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="pelaksana" required value="<?php echo $tb_perbaikan1->pelaksana?>">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <input type="submit" value="Edit Mesin" class="btn btn-success" >
-                        </td>
-                        <td>
-                            <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
-                        </td>
-                    </tr>
-                </table>
+                                <input type="text" name="pelaksana" required value="<?php echo $tb_perbaikan1->pelaksana?>">
+                            <br>
+                            <label>Tanggal</label>
+                                <input type="date" name="tgl" required value="<?php echo $tb_perbaikan1->tgl?>">
+                        </div>
+                </div>
+                <br>
+                    <input type="submit" value="Edit Mesin" class="btn btn-success float-right" >
+                    <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-left">Kembali</button>
+                    <br>
+                <br>
             </form>
         </div>
     </div>

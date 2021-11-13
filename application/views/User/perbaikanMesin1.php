@@ -13,6 +13,12 @@
             background: #00FFFF;
             color: black;
         }
+        label{
+            width:160px;
+            clear:left;
+            text-align:left;
+            padding-right:10px;
+        }
         .font{
             align-self: center;
             padding-top: 25px;
@@ -32,7 +38,6 @@
     <div class="container">
         <div class="content">
             <form action="<?php echo site_url('perbaikan/prosestambah'); ?>" method="post" enctype="multipart/form-data">
-                <table align="center">
                     <div class="card text-white">
                         <div class="card-header bg-primary" style="font-weight: bold;">Input ID dan Merk Mesin</div>
                             <div class="card-body text-dark">
@@ -45,7 +50,7 @@
                                         }
                                         ?>
                                     </select>
-                                    <br>
+                                <br>
                                 <label>Merk Mesin</label>
                                     <select name="merk" required>
                                         <option value='' disabled selected>Pilih Merk</option>
@@ -81,13 +86,12 @@
                                     </select>
                                 <br>
                                 <label>Jumlah Sparepart</label>
-                                <br>
                                     <input type="number" name="jml_part" required>
                             </div>
                     </div>
                     <br>
                     <div class="card text-white">
-                        <div class="card-header bg-info" style="font-weight: bold;">Input Masalah dan Penyebab Kerusakan</div>
+                        <div class="card-header bg-info" style="font-weight: bold;">Input Masalah, Penyebab dan Solusi Perbaikan Kerusakan</div>
                             <div class="card-body text-dark">
                                 <label class="pad">Kerusakan Masalah</label>
                                 <br>
@@ -96,16 +100,16 @@
                                 <label class="pad">Penyebab Kerusakan</label>
                                 <br>
                                     <textarea rows="3" cols="80" name="deskripsi2" required></textarea>
+                                <br>
+                                <label>Perbaikan</label>
+                                <br>
+                                    <textarea rows="3" cols="80" name="perbaikan" required></textarea>
                             </div>
                     </div>
                     <br>
                     <div class="card text-white">
-                        <div class="card-header bg-warning" style="font-weight: bold;">Input Perbaikan, Hasil dan Lokasi Perbaikan</div>
+                        <div class="card-header bg-warning" style="font-weight: bold;">Input Hasil dan Lokasi Perbaikan</div>
                             <div class="card-body text-dark">
-                                <label>Perbaikan</label>
-                                <br>
-                                    <textarea rows="3" cols="80" name="perbaikan" required></textarea>
-                                <br>
                                 <label>Hasil Perbaikan</label>
                                 <br>
                                     <input type="text" name="hasil" required>
@@ -150,18 +154,10 @@
                             </div>
                     </div>
                     <br>
-                    <tr>
-                        <td>
-                            <br>
-                            <input type="submit" value="Submit" class="btn btn-success">
-                        </td>
-                        <td>
-                            <br>
-                            <button type="button" onclick="window.history.go(-1)" class="btn btn-danger">Kembali</button>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+                        <input type="submit" value="Submit" class="btn btn-success float-right">
+                        <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-left">Kembali</button>
+                        <br>
+                    <br>
             </form>
         </div>
     </div>

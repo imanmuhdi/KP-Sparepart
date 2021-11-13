@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
+    	body{
+            background: #00FFFF;
+            color: black;
+        }
 		.display-flex{
 			display: flex;
 			justify-content: center;
@@ -23,12 +27,28 @@
 			align-items: center;
 			padding-top: 40px;
 		}
+		.font{
+			padding-right: 360px;
+            padding-top: 85px;
+            font-family: cursive;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .font2{
+        	padding-left: 80px;
+			padding-top: 10px;
+			padding-bottom: 25px;
+			font-family: cursive;
+			font-size: 35px;
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
 	<main>
 		<div class="display-flex">
-			<div><h1>Data Nota Tanpa Sparepart</h1></div>
+			<div><h1 class="font"><img src="<?php echo site_url('../assets/image/logo.png')?>" style="padding-bottom: 10px; padding-right: 240px" width="430" height="60">PT SINAR CONTINENTAL</h1></div>
+			<div><h1 class="font2">DATA NOTA TANPA SPAREPART</h1></div>
 		</div>
 		<div class="content-wrapper">
    		<div class="container" style="padding-bottom: 50px">
