@@ -59,8 +59,6 @@
                         <div class="card-body text-dark">
                             <label>Jam Operasi</label>
                                 <input type="number" name="jom" required class="form-control">
-                            <label>Down Time</label>
-                                <input type="number" name="dtm" required class="form-control">
                             <label>Target Down</label>
                                 <input type="number" name="tdm" required class="form-control">
                         </div>

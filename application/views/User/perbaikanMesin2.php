@@ -19,14 +19,14 @@
             padding-right:10px;
         }
         .font{
-            align-self: center;
+            color: white;
             padding-top: 25px;
             font-family: cursive;
             font-size: 35px;
             font-weight: bold;
         }
         .container{
-            background: #8CD0F4;
+            background: #1F2351;
         }
     </style>
 </head>
