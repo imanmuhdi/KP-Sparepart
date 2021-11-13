@@ -298,5 +298,10 @@
 			}?>
 	</main>
 </body>
+<script>
+	$(document).ready(function() {
+		$('#myTable').DataTable();
+	});
+</script>
 <br>
 </html>
