@@ -11,8 +11,11 @@
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
     	body{
-            background: #00FFFF;
+            background: #8CD0F4;
             color: black;
+        }
+        tr{
+            background: cyan;
         }
 		.display-flex{
 			display: flex;

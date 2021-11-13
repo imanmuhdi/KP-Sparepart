@@ -11,9 +11,12 @@
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
     	body{
-			background: #00FFFF;
+			background: #8CD0F4;
 			color: black;
 		}
+		tr{
+            background: cyan;
+        }
 		.content-wrapper{
 			display: flex;
 			justify-content: center;
@@ -32,7 +35,7 @@
 			width: 100%;
 		}
 		nav{
-			background-color: #282828;
+			background-color: #1F2351;
 		}
 	</style>
 </head>

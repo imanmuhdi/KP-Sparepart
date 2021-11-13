@@ -15,8 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
         body{
-            background: #00FFFF;
+            background: #8CD0F4;
             color: black;
+        }
+        .navbar{
+            background: #1F2351;
         }
         .display-flex{
             display: flex;

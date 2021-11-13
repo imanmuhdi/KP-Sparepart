@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <style type="text/css">
+    <style>
         body{
-            background: #00FFFF;
+            background: #8CD0F4;
             color: black;
         }
         label{
@@ -27,7 +27,7 @@
             font-weight: bold;
         }
         .container{
-            background: #E0FFFF;
+            background: #8CD0F4;
         }
     </style>
 </head>

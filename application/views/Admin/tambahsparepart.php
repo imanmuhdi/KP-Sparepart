@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         body{
-            background: #00FFFF;
+            background: #8CD0F4;
             color: black;
         }
         label{
@@ -26,7 +26,8 @@
             font-weight: bold;
         }
         .container{
-            background: #E0FFFF;
+            color: white;
+            background: #1F2351;
         }
     </style>
 </head>

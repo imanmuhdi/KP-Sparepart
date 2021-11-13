@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <style>
     	body{
-			background: #00FFFF;
+			background: #8CD0F4;
 			color: black;
 		}
 		.font{
@@ -32,7 +32,7 @@
 			height="120";
 		}
 		nav{
-			background-color: #282828;
+			background-color: #1F2351;
 		}
     </style>
 </head>

@@ -7,16 +7,16 @@
     <title>Perbaikan Mesin Tanpa Sparepart</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <style type="text/css">
+    <style>
+        body{
+            background: #8CD0F4;
+            color: black;
+        }
         label{
             width:160px;
             clear:left;
             text-align:left;
             padding-right:10px;
-        }
-        body{
-            background: #00FFFF;
-            color: black;
         }
         .font{
             align-self: center;
@@ -26,7 +26,7 @@
             font-weight: bold;
         }
         .container{
-            background: #E0FFFF;
+            background: #8CD0F4;
         }
     </style>
 </head>
