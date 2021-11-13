@@ -41,7 +41,7 @@
                     <div class="card-header bg-dark" style="font-weight: bold;">Nomor Nota</div>
                         <div class="card-body text-dark">
                             <label>Nomor</label>
-                                <input type="text" name="no" required value="<?php echo $tb_perbaikan2->no?>" readonly>
+                                <input type="text" name="no" required class="form-control" value="<?php echo $tb_perbaikan2->no?>" readonly>
                         </div>
                 </div>
                 <br>
@@ -49,10 +49,10 @@
                     <div class="card-header bg-primary" style="font-weight: bold;">ID dan Merk Mesin</div>
                         <div class="card-body text-dark">
                             <label>ID Mesin</label>
-                                <input type="text" name="id_mesin" required value="<?php echo $tb_perbaikan2->id_mesin?>" readonly>
+                                <input type="text" name="id_mesin" required class="form-control" value="<?php echo $tb_perbaikan2->id_mesin?>" readonly>
                             <br>
                             <label>Merk Mesin</label>
-                                <input type="text" name="merk_m" required value="<?php echo $tb_perbaikan2->merk_m?>" readonly>
+                                <input type="text" name="merk_m" required class="form-control" value="<?php echo $tb_perbaikan2->merk_m?>" readonly>
                         </div>
                 </div>
                 <br>
@@ -60,7 +60,7 @@
                     <div class="card-header bg-success" style="font-weight: bold;">Nama Instansi</div>
                         <div class="card-body text-dark">
                             <label>Nama Instansi</label>
-                                <input type="text" name="instansi" required value="<?php echo $tb_perbaikan2->instansi?>">
+                                <input type="text" name="instansi" required class="form-control" value="<?php echo $tb_perbaikan2->instansi?>">
                         </div>
                 </div>
                 <br>
@@ -68,13 +68,13 @@
                     <div class="card-header bg-info" style="font-weight: bold;">Masalah, Penyebab dan Solusi Perbaikan Kerusakan</div>
                         <div class="card-body text-dark">
                             <label>Kerusakan Masalah</label>
-                                <input type="text" name="d_kerusakan" required value="<?php echo $tb_perbaikan2->d_kerusakan?>">
+                                <input type="text" name="d_kerusakan" required class="form-control" value="<?php echo $tb_perbaikan2->d_kerusakan?>">
                             <br>
                             <label class="pad">Penyebab Kerusakan</label>
-                                <input type="text" name="d_penyebab" required value="<?php echo $tb_perbaikan2->d_penyebab?>">
+                                <input type="text" name="d_penyebab" required class="form-control" value="<?php echo $tb_perbaikan2->d_penyebab?>">
                             <br>
                             <label class="pad">Perbaikan</label>
-                                <input type="text" name="d_perbaikan" required value="<?php echo $tb_perbaikan2->d_perbaikan?>">
+                                <input type="text" name="d_perbaikan" required class="form-control" value="<?php echo $tb_perbaikan2->d_perbaikan?>">
                         </div>
                 </div>
                 <br>
@@ -82,13 +82,13 @@
                     <div class="card-header bg-secondary" style="font-weight: bold;">Nama Pengaju, Penyetuju dan Tanggal</div>
                         <div class="card-body text-dark">
                             <label>Diajukan Oleh</label>
-                                <input type="text" name="pengaju" required value="<?php echo $tb_perbaikan2->pengaju?>">
+                                <input type="text" name="pengaju" required class="form-control" value="<?php echo $tb_perbaikan2->pengaju?>">
                             <br>
                             <label>Disetujui Oleh</label>
-                                <input type="text" name="penyetuju" required value="<?php echo $tb_perbaikan2->penyetuju?>">
+                                <input type="text" name="penyetuju" required class="form-control" value="<?php echo $tb_perbaikan2->penyetuju?>">
                             <br>
                             <label>Tanggal</label>
-                                <input type="date" name="tanggal" required value="<?php echo $tb_perbaikan2->tanggal?>">
+                                <input type="date" name="tanggal" required class="form-control" value="<?php echo $tb_perbaikan2->tanggal?>">
                         </div>
                 </div>
                 <br>

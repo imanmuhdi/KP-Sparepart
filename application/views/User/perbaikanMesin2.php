@@ -41,7 +41,7 @@
                         <div class="card-header bg-primary" style="font-weight: bold;">Input ID dan Merk Mesin</div>
                             <div class="card-body text-dark">
                                 <label>ID Mesin</label>
-                                    <select name="id" required>
+                                    <select name="id" required class="form-control">
                                         <option value='' disabled selected>Pilih Mesin</option>";
                                         <?php
                                         foreach ($tb_mesin->result() as $tbm) {
@@ -51,7 +51,7 @@
                                     </select>
                                 <br>
                                 <label>Merk Mesin</label>
-                                    <select name="merk" required>
+                                    <select name="merk" required class="form-control">
                                         <option value='' disabled selected>Pilih Merk</option>
                                         <option value="Somet">Somet</option>
                                         <option value="Optimax">Optimax</option>
@@ -65,7 +65,7 @@
                         <div class="card-header bg-success" style="font-weight: bold;">Input Nama Instansi</div>
                             <div class="card-body text-dark">
                                 <label>Nama Instansi</label>
-                                    <input type="text" name="instansi" required>
+                                    <input type="text" name="instansi" required class="form-control">
                             </div>
                     </div>
                     <br>
@@ -74,15 +74,15 @@
                             <div class="card-body text-dark">
                                 <label class="pad">Kerusakan Masalah</label>
                                 <br>
-                                    <textarea rows="3" cols="80" name="d_kerusakan" required></textarea>
+                                    <textarea rows="3" cols="80" name="d_kerusakan" required class="form-control"></textarea>
                                 <br>
                                 <label class="pad">Penyebab Kerusakan</label>
                                 <br>
-                                    <textarea rows="3" cols="80" name="d_penyebab" required></textarea>
+                                    <textarea rows="3" cols="80" name="d_penyebab" required class="form-control"></textarea>
                                 <br>
                                 <label>Perbaikan</label>
                                 <br>
-                                    <textarea rows="3" cols="80" name="d_perbaikan" required></textarea>
+                                    <textarea rows="3" cols="80" name="d_perbaikan" required class="form-control"></textarea>
                             </div>
                     </div>
                     <br>
@@ -91,15 +91,15 @@
                             <div class="card-body text-dark">
                                 <label>Diajukan Oleh</label>
                                 <br>
-                                    <input type="text" name="oleh" required>
+                                    <input type="text" name="oleh" required class="form-control">
                                 <br>
                                 <label>Disetujui Oleh</label>
                                 <br>
-                                    <input type="text" name="penyetuju" required>
+                                    <input type="text" name="penyetuju" required class="form-control">
                                 <br>
                                 <label>Tanggal</label>
                                 <br>
-                                    <input type="date" name="tanggal" required>
+                                    <input type="date" name="tanggal" required class="form-control">
                             </div>
                     </div>
                     <br>

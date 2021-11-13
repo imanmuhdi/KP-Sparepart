@@ -7,13 +7,14 @@
     <title>Home : P.Mesin</title>
     <link rel="stylesheet" href="<?php echo site_url('../assets/css/bootstrap.css')?>">
     <style>
-    body{
-			background: #DCDCDC;
+    	body{
+			background: #00FFFF;
 			color: black;
 		}
 		.font{
 			align-self: center;
 			padding-top: 25px;
+			font-weight: bold;
 			font-family: cursive;
 			font-size: 35px;
 		}
@@ -26,7 +27,7 @@
 			color: rgb(200,200,200);
 		}
 		.img{
-			padding-top: 130px;
+			padding-top: 80px;
 			width="400";
 			height="120";
 		}
@@ -37,14 +38,13 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-    	<img src="<?php echo site_url('../assets/image/logo.png')?>" width=200 >
+    	<img src="<?php echo site_url('../assets/image/logo.png')?>" width=200>
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo site_url("Admin"); ?>">Halaman Utama</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
-
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
@@ -67,7 +67,6 @@
 			</div>
 		</div>
 	</nav>
-
     <div class="top-wrapper">
         <div class="container">
             <br>

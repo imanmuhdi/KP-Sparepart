@@ -10,8 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
-    body{
-			background: #DCDCDC;
+    	body{
+			background: #00FFFF;
 			color: black;
 		}
 		.content-wrapper{
@@ -31,9 +31,6 @@
 			max-width: 200px;
 			width: 100%;
 		}
-		td{
-			text-align: center;
-		}
 		nav{
 			background-color: #282828;
 		}
@@ -48,7 +45,6 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
-
 				<ul class="navbar-nav mr-auto ">
 				<li>
 					<?php
@@ -68,7 +64,6 @@
 						<a href="<?php echo site_url('Admin/logout');?>" class="logout">Logout</a>
 					</li>
 				</ul>
-
 			</div>
 		</div>
 	</nav>
@@ -76,9 +71,8 @@
       		<a class="btn btn-primary btn1" href="<?php echo site_url('Admin/tambahSparepart');?>">Tambah Sparepart</a>
    	</div>
 	<div class="content-wrapper">
-
    		<div class="container">
-      		<h3>Daftar Sparepart</h3>
+      		<h3>DAFTAR SPAREPART</h3>
       		<?php
 				$template = array( 
 					'table_open' => '<table id="myTable" border=1 >'
@@ -95,18 +89,17 @@
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
 					$foto = '<img src="'.$r->foto.'">';
 					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$foto,$aksi);
-
 				}
 				if($count != 0){
 					echo "Terdapat ".$count." Sparepart yang perlu dipesan ulang";	
 				}
-				
 				$this->table->set_template($template); 
 				echo $this->table->generate();
 			?>
    		</div>
 	</div>
 </body>
+<br>
 <script>
 	$(document).ready(function() {
 		$('#myTable').DataTable(); 

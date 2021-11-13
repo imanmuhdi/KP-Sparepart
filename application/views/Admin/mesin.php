@@ -11,7 +11,7 @@
     <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <style>
     	body{
-			background: #DCDCDC;
+			background: #00FFFF;
 			color: black;
 		}
 		.content-wrapper{
@@ -31,9 +31,6 @@
 			max-width: 200px;
 			width: 100%;
 		}
-		td{
-			text-align: center;
-		}
 		nav{
 			background-color: #282828;
 		}
@@ -49,7 +46,6 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
-
 				<ul class="navbar-nav mr-auto">
 				<li>
 					<?php
@@ -69,7 +65,6 @@
 						<a href="<?php echo site_url('Admin/logout');?>" class="logout">Logout</a>
 					</li>
 				</ul>
-
 			</div>
 		</div>
 	</nav>
@@ -78,26 +73,26 @@
    	</div>
 	<div class="content-wrapper">
    		<div class="container">
-      		<h3>Daftar Mesin</h3>
+      		<h3>DAFTAR MESIN</h3>
       		<?php
 				$template = array( 
 					'table_open' => '<table id="myTable" border=1 >' 
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun","Aksi"); 
+				$this->table->set_heading("ID Mesin","Jam Operasi","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun","Aksi"); 
 				foreach($tb_mesin->result() as $r){
 					$id = urldecode($r->id_mesin);
 					$edit = '<a href="'.site_url("mesin/update/".$id).'" class="btn btn-primary">Edit</a>';
 					$hapus = '<a href="'.site_url("mesin/hapus/".$id).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Mesin dengan Id : ".$id."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
-					
-					$this->table->add_row($r->id_mesin,$r->jam_op,$r->down_time,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun,$aksi);
+					$this->table->add_row($r->id_mesin,$r->jam_op,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun,$aksi);
 				}
 				echo $this->table->generate();
 			?>
    		</div>
 	</div>
 </body>
+<br>
 <script>
 	$(document).ready(function() {
 		$('#myTable').DataTable(); 

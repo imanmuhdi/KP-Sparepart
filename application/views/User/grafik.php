@@ -62,6 +62,10 @@
 			title: "Jam",
 			includeZero: true
 		},
+		axisX: {
+			title: "ID Mesin",
+			includeZero: true
+		},
 		legend: {
 			cursor:"pointer",
 			itemclick : toggleDataSeries
@@ -223,7 +227,7 @@
 			</h1></div>
 		</div>
 		<div class="content-wrapper">
-   		<div class="container" style="padding-bottom: 50px">
+   		<div class="container" style="padding-bottom: 20px">
    			<form  action="<?php echo site_url('Grafik/aturBulan'); ?>" method="post" enctype="multipart/form-data">
    				<br>
    				<br>
@@ -280,9 +284,10 @@
    		</div>
 	</div>
 	<?php if($input != NULL){
-		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."padding-left: 235px; height: 500px; width: 50%;".'"'."></div>";
+		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."padding-left: 190px; height: 500px; width: 60%;".'"'."></div>";
 		echo "<script src=".'"'."https://canvasjs.com/assets/script/canvasjs.min.js".'"'."></script>";
 			}?>
 	</main>
 </body>
+<br>
 </html>
