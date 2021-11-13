@@ -98,7 +98,7 @@
                                     <label>Down Time</label>
                                     <input type="number" name="dtm" required class="form-control">
                                     <label>Target Down</label>
-                                    <input type="number" name="tdm" required class="form-control">
+                                    <input type="number" name="tdm" required class="form-control" step="0.01">
                                 </div>
                             </div>
                             <input type="submit" value="Tambah Mesin" class="btn btn-success" class="form-control">

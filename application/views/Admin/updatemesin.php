@@ -100,7 +100,7 @@
                                     <label>Down Time</label>
                                     <input type="number" name="dtm" required class="form-control" value="<?php echo $tb_mesin->down_time?>">
                                     <label>Target Down</label>
-                                    <input type="number" name="tdm" required class="form-control" value="<?php echo $tb_mesin->target_down?>">
+                                    <input type="number" name="tdm" required class="form-control" value="<?php echo $tb_mesin->target_down?>" step="0.01">
                                 </div>
                             </div>
   
