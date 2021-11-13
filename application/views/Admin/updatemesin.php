@@ -66,7 +66,24 @@
                     <input type="submit" value="Edit Mesin" class="btn btn-success float-right" >
                     <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-left">Kembali</button>
                     <br>
+<<<<<<< HEAD
                 <br>
+=======
+                        <div class="card text-white">
+                            <div class="card-header bg-success" style="font-weight: bold;">Input Jam Operasi, Down Time dan Target Down Time Mesin</div>
+                                <div class="card-body text-dark">
+                                    <label>Jam Operasi</label>
+                                    <input type="number" name="jom" required="Nama Sparepart" class="form-control" value="<?php echo $tb_mesin->jam_op?>">
+                                    <label>Down Time</label>
+                                    <input type="number" name="dtm" required class="form-control" value="<?php echo $tb_mesin->down_time?>">
+                                    <label>Target Down</label>
+                                    <input type="number" name="tdm" required class="form-control" value="<?php echo $tb_mesin->target_down?>" step="0.01">
+                                </div>
+                            </div>
+  
+                            <input type="submit" value="Edit Mesin" class="btn btn-success" >
+                            <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
+>>>>>>> 9416472c849d372554bc16b2f8c3d6f5dbdf3ecb
             </form>
         </div>
     </div>

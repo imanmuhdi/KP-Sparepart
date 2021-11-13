@@ -42,6 +42,9 @@ class Mesin extends CI_Controller{
 
     public function hapus($id) {
         echo $id;
+        $this->load->model("PerbaikanModel","",TRUE);
+        $this->PerbaikanModel->deleteIDmesin1($id);
+        $this->PerbaikanModel->deleteIDmesin2($id);
         $this->MesinModel->deleteMesin($id);
         redirect(site_url("admin/pindahMesin"));
     }
