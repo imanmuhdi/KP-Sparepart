@@ -38,9 +38,6 @@
             font-size: 20px;
         }
 
-        table{
-            width: 100%;
-        }
 
         td, input[type="text"], textarea{
             width: 100%;
@@ -60,6 +57,10 @@
             color: white;
             background-color: #282828;
         }
+        .card-body{
+            background-color: #161616;
+        }
+
     </style>
 </head>
 <body >
@@ -69,123 +70,48 @@
     <div class="container">
         <div class="content">
             <form action="<?php echo site_url('sparepart/prosestambah'); ?>" method="post" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td>
-                            <label>Kode Part</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="kodesp" required="Kode Sparepart" class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Nama Part</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="namasp" required="Nama Sparepart" class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Tipe</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="tipesp" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Saldo Awal</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="saldoawal" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Masuk</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="masuk" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Keluar</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="keluar" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Saldo Akhir</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="saldoakhir" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Stok Minimal</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="minimal" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label class="pad">Foto Part</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="input-group mb-3">
-                              <div class="custom-file">
-                                <input name="foto" type="file" class="custom-file-input" id="inputGroupFile02">
-                                <label class="custom-file-label" for="inputGroupFile02">Pilih foto</label>
-                              </div>
+                     <div class="card text-white">
+                        <div class="card-header bg-primary" style="font-weight: bold;">Input Kode, Nama dan Tipe Sparepart</div>
+                            <div class="card-body text-dark">
+                                <label>Kode Part</label>
+                                <input type="text" name="kodesp" required="Kode Sparepart" class="form-control">
+                                <label>Nama Part</label>
+                                <input type="text" name="namasp" required="Nama Sparepart" class="form-control">
+                                <label>Tipe</label>
+                                <input type="text" name="tipesp" required class="form-control">
                             </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <input type="submit" value="Tambah Sparepart" class="btn btn-success">
-                        </td>
-                        <td>
-                            <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    <br>
+                        <div class="card text-white">
+                        <div class="card-header bg-success" style="font-weight: bold;">Input Saldo Awal, Masuk, Keluar, Saldo Akhir, Stok Minimal Sparepart</div>
+                            <div class="card-body text-dark">
+                                <label>Saldo Awal</label>
+                                <input type="number" name="saldoawal" required class="form-control">
+                                <label>Masuk</label>
+                                <input type="number" name="masuk" required class="form-control">
+                                <label>Keluar</label>
+                                <input type="number" name="keluar" required class="form-control">
+                                <label>Saldo Akhir</label>
+                                <input type="number" name="saldoakhir" required class="form-control">
+                                <label>Stok Minimal</label>
+                                <input type="number" name="minimal" required class="form-control">
+                            </div>
+                        </div>
+                    <br>
+                        <div class="card text-white">
+                        <div class="card-header bg-warning" style="font-weight: bold;">Input Foto Sparepart</div>
+                            <div class="card-body text-dark">
+                                <label>Foto Part</label>
+                                <div class="input-group mb-3">
+                                  <div class="custom-file">
+                                    <input name="foto" type="file" class="custom-file-input" id="inputGroupFile02">
+                                    <label class="custom-file-label" for="inputGroupFile02">Pilih foto</label>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>    
+            <input type="submit" value="Tambah Sparepart" class="btn btn-success">
+            <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
             </form>
         </div>
     </div>

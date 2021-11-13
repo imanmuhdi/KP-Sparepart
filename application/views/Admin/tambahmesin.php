@@ -62,6 +62,9 @@
             color: white;
             background-color: #282828;
         }
+        .card-body{
+            background-color: #161616;
+        }
     </style>
 </head>
 <body>
@@ -71,107 +74,35 @@
     <div class="container">
         <div class="content">
             <form action="<?php echo site_url('mesin/prosestambah'); ?>" method="post" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td>
-                            <label>ID Mesin</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="idm" required="Kode Sparepart" class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Jam Operasi</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="jom" required="Nama Sparepart" class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Down Time</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="dtm" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Target Down</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="tdm" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Tipe Mesin</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="tmm" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Merk Mesin</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="mmm" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>No Mesin</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="text" name="nmm" required" class="form-control"> 
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Tahun</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="number" name="tm" required class="form-control">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
+                <div class="card text-white">
+                        <div class="card-header bg-primary" style="font-weight: bold;">Input ID, Tipe, Merk, No, Tahun Mesin</div>
+                            <div class="card-body text-dark">
+                                <label>ID Mesin</label>
+                                <input type="text" name="idm" required="Kode Sparepart" class="form-control">
+                                <label>Tipe Mesin</label>
+                                <input type="text" name="tmm" required class="form-control">
+                                <label>Merk Mesin</label>
+                                <input type="text" name="mmm" required class="form-control">
+                                <label>No Mesin</label>
+                                <input type="text" name="nmm" required" class="form-control"> 
+                                <label>Tahun</label>
+                                <input type="number" name="tm" required class="form-control">
+                            </div>
+                        </div>
+                    <br>
+                        <div class="card text-white">
+                            <div class="card-header bg-success" style="font-weight: bold;">Input Jam Operasi, Down Time dan Target Down Time Mesin</div>
+                                <div class="card-body text-dark">
+                                    <label>Jam Operasi</label>
+                                    <input type="number" name="jom" required="Nama Sparepart" class="form-control">
+                                    <label>Down Time</label>
+                                    <input type="number" name="dtm" required class="form-control">
+                                    <label>Target Down</label>
+                                    <input type="number" name="tdm" required class="form-control">
+                                </div>
+                            </div>
                             <input type="submit" value="Tambah Mesin" class="btn btn-success" class="form-control">
-                        </td>
-                        <td>
                             <button type="button" onclick="window.history.go(-1)" class="btn btn-danger float-right">Kembali</button>
-                        </td>
-                    </tr>
-                </table>
             </form>
         </div>
     </div>
