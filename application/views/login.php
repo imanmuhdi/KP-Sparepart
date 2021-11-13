@@ -20,7 +20,7 @@
             width: 30%;
         }
         input{
-             color: white;
+             color: black;
         }
         .card img{
             height: 100vh;
@@ -29,7 +29,7 @@
 
         .card{
             width: 100%;
-            background-color: #161616;
+            background-color: #1f2351;
         }
         
         .login{
@@ -72,8 +72,8 @@
         }
 
         .btn-login{
-            background-color: #282828;
-            color: white;
+            background-color: #8cd0f4;
+            color: black;
         }
 
         .btn-login:hover{
@@ -103,16 +103,16 @@
         <p>Silahkan masukkan username dan password Anda!</p>
         <form action="<?php echo site_url('home/proseslogin')?>" method="post">
             <label>Username</label>
-            <input type="name" class="form-control" name="username" required style="color: white; background-color: #282828">
+            <input type="name" class="form-control" name="username" required style="color: black; background-color: #8cd0f4">
             <label>Password</label>
-            <input type="password" class="form-control" name="password" required style="color: white; background-color: #282828">
+            <input type="password" class="form-control" name="password" required style="color: black; background-color: #8cd0f4">
             <div class="tombol">
                 <input type="submit" class="btn btn-login" value="Masuk">
             </div>
         </form>
     </div>
     <div class="card">
-       <img src="<?php echo site_url('../assets/image/bg_login2.png')?>">
+       <img src="<?php echo site_url('../assets/image/bg_login1.png')?>">
     </div>
     <div class="about">
         <a href="<?php echo site_url('Home/aboutus')?>" class="btn btn-primary">Hubungi Kami</a>

@@ -53,6 +53,8 @@
                 <div class="card text-white">
                     <div class="card-header bg-success" style="font-weight: bold;">Input Saldo Awal, Masuk, Keluar, Saldo Akhir, Stok Minimal Sparepart</div>
                         <div class="card-body text-dark">
+                            <label>Stok Minimal</label>
+                                <input type="number" name="minimal" required class="form-control">
                             <label>Saldo Awal</label>
                                 <input type="number" name="saldoawal" required class="form-control">
                             <label>Masuk</label>
@@ -61,8 +63,6 @@
                                 <input type="number" name="keluar" required class="form-control">
                             <label>Saldo Akhir</label>
                                 <input type="number" name="saldoakhir" required class="form-control">
-                            <label>Stok Minimal</label>
-                                <input type="number" name="minimal" required class="form-control">
                         </div>
                 </div>
                 <br>

@@ -81,7 +81,7 @@
 					'table_open' => '<table id="myTable" border=1 >'
 				);
 				$count = 0;
-				$this->table->set_heading("Kode Part","Nama Part","Tipe","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Stock Minimal","Keterangan","Foto","Aksi"); 
+				$this->table->set_heading("Kode Part","Nama Part","Tipe","Stock Minimal","Saldo Awal","Masuk", "Keluar", "Saldo Akhir","Keterangan","Foto","Aksi"); 
 				foreach($tb_sparepart->result() as $r){
 					if($r->keterangan != "OK"){
 						$count = $count + 1;
@@ -91,7 +91,7 @@
 					$hapus = '<a href="'.site_url("sparepart/hapus/".$kode).'" class="btn btn-danger" onclick="return confirm('."'"."Hapus Sparepart dengan kode : ".$kode."'".');">Hapus</a>';
 					$aksi = "<div class='d-flex justify-content-between align-items-start'>".$edit.$hapus."</div>";
 					$foto = '<img src="'.$r->foto.'">';
-					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->stock_minimal,$r->keterangan,$foto,$aksi);
+					$this->table->add_row($r->kd_part,$r->nama_part,$r->type,$r->stock_minimal,$r->saldo_awal,$r->masuk,$r->keluar,$r->saldo_akhir,$r->keterangan,$foto,$aksi);
 				}
 				if($count != 0){
 					echo "Terdapat ".$count." Sparepart yang perlu dipesan ulang";	

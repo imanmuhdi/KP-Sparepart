@@ -65,7 +65,7 @@
 	var chart = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		title:{
-			text: "Laporan Down Time Mesin Weaving"
+			text: "Laporan Jam Operasi dan Down Time Mesin Weaving"
 		},
 		axisY: {
 			title: "Jam",
