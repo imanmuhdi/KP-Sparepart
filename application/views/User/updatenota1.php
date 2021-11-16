@@ -49,7 +49,7 @@
                     <div class="card-header bg-primary" style="font-weight: bold;">ID dan Merk Mesin</div>
                         <div class="card-body text-dark">
                             <label>ID Mesin</label>
-                                <input type="text" name="id_mesin" required class="form-control" value="<?php echo $tb_perbaikan1->id_mesin?>" readonly>
+                                <input type="text" name="id_mesin" required class="form-control" value="<?php echo $tb_perbaikan1->id_mesin?>" >
                             <br>
                             <label>Merk Mesin</label>
                                 <input type="text" name="merk" required class="form-control" value="<?php echo $tb_perbaikan1->merk_m?>" readonly>

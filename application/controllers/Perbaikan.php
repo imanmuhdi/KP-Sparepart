@@ -40,28 +40,6 @@ class Perbaikan extends CI_Controller {
 
     public function prosesTambah() {
         $this->load->model("PerbaikanModel","",TRUE);
-        $loop = false;
-        $loop2 = false;
-        $row1 = 0;
-        $row2 = 0;
-        $row3 = 0;
-        while($loop != TRUE && $loop2 != TRUE){
-            if($this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin == $this->input->post("id")){
-                    $loop = TRUE;
-                }else{
-                    $row1 = $row1 + 1;
-                }
-             if($this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part == $this->input->post("kd")){
-                    $loop2 = TRUE;
-                }else{
-                    $row2 = $row2 + 1;
-                }
-                if($this->PerbaikanModel->getPerbaikan1("type")->row($row3)->type == $this->input->post("type")){
-                    $loop2 = TRUE;
-                }else{
-                    $row2 = $row2 + 1;
-                }
-        }
         $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
         $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
         $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
@@ -69,10 +47,10 @@ class Perbaikan extends CI_Controller {
             $d_time = $d_time+24;
         }
         $perbaikan = array(
-            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
+            "id_mesin" => $this->input->post("id"),
             "merk_m" => $this->input->post("merk"),
-            "kd_part" => $this->PerbaikanModel->getPerbaikan1("kd_part")->row($row2)->kd_part,
-            "type" => $this->PerbaikanModel->getPerbaikan1("type")->row($row3)->type,
+            "kd_part" => $this->input->post("kd"),
+            "type" => $this->input->post("type"),
             "jml_part" => $this->input->post("jml_part"),
             "deskripsi" => $this->input->post("deskripsi"),
             "deskripsi2" => $this->input->post("deskripsi2"),
@@ -96,17 +74,8 @@ class Perbaikan extends CI_Controller {
 
     public function prosesTambah2() {
         $this->load->model("PerbaikanModel","",TRUE);
-        $loop = false;
-        $row1 = 0;
-        while($loop != TRUE){
-            if($this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin == $this->input->post("id")){
-                    $loop = TRUE;
-                }else{
-                    $row1 = $row1 + 1;
-                }
-        }
         $perbaikan = array(
-            "id_mesin" => $this->PerbaikanModel->getPerbaikan2("id_mesin")->row($row1)->id_mesin,
+            "id_mesin" => $this->input->post("id"),
             "merk_m" => $this->input->post("merk"),
             "instansi" => $this->input->post("instansi"),
             "d_kerusakan" => $this->input->post("d_kerusakan"),
