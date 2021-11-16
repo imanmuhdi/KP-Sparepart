@@ -91,7 +91,7 @@
                             <div class="card-body text-dark">
                                 <label>Diajukan Oleh</label>
                                 <br>
-                                    <input type="text" name="oleh" required class="form-control">
+                                    <input type="text" name="pengaju" required class="form-control">
                                 <br>
                                 <label>Disetujui Oleh</label>
                                 <br>
