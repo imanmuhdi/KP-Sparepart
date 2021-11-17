@@ -62,7 +62,7 @@
 	<script type="text/javascript">
 	window.onload = function () {
 
-	var chart = new CanvasJS.Chart("chartContainer", {
+	var chart = new CanvasJS.Chart("chartContainer1", {
 		animationEnabled: true,
 		title:{
 			text: "Laporan Jam Operasi dan Down Time Mesin Weaving"
@@ -90,7 +90,6 @@
 			color: "gold",
 			dataPoints: [
 			<?php 
-
 				foreach($tb_mesin->result() as $r ){
 				echo "{ y: ".$r->jam_op.", label: ".'"'.$r->id_mesin.'"'." }";
 				if ($r->id_mesin == NULL) {
@@ -98,8 +97,7 @@
 	    		}else{
 	    			echo ",";
 	    		}
-			} ?>
-				
+			} ?>	
 			]
 		},
 		{
@@ -142,6 +140,70 @@
 	});
 	chart.render();
 
+	var chart = new CanvasJS.Chart("chartContainer", {
+		animationEnabled: true,
+		title:{
+			text: "Detail Down Time Mesin Weaving"
+		},
+		axisY: {
+			title: "Jam",
+			includeZero: true
+		},
+		axisX: {
+			title: "ID Mesin",
+			includeZero: true
+		},
+		legend: {
+			cursor:"pointer",
+			itemclick : toggleDataSeries
+		},
+		toolTip: {
+			shared: true,
+			content: toolTipFormatter2
+		},
+		data: [
+		{
+			type: "column",
+			showInLegend: true,
+			name: "Down Time",
+			color: "silver",
+			dataPoints: [
+				<?php 
+				$tampung = 0;
+	    		foreach($tb_mesin->result() as $r ){
+					foreach($tb_perbaikan1->result() as $a){
+						if(preg_match('/^(\d{4})-(\d{1,2})-(\d{1,2})([^\d].*)?$/', $a->tgl, $parts)) {
+                    		if (isset($parts[2])) {
+                       			 $bulan = $parts[2];
+                    		}
+                    		if (isset($parts[1])) {
+                       			 $tahun = $parts[1];
+                    		}
+                    		if($input == $bulan){
+                    			if($input2 == $tahun){
+                    				if($r->id_mesin == $a->id_mesin){
+										$tampung = $tampung + $a->d_time;
+
+            						}
+                    			}	
+                			}
+						}
+					}
+					$hitung = $tampung/525*100;
+					echo "{ y: ".$tampung.", label: ".'"'.$r->id_mesin.'"'." , indexLabel: ".'"'.number_format((float)$hitung, 2, '.', '').'%"'."}";
+					$tampung = 0;
+					if ($r->id_mesin == NULL) {
+		    		}else{
+		    			echo ",";
+		    		}
+				}
+	    	?> 
+				
+			]
+		}]
+	});
+	chart.render();
+
 	function toolTipFormatter(e) {
 		var str = "";
 		var total = 0 ;
@@ -152,6 +214,24 @@
 			if(i%2 != 0){
 				total = (e.entries[i].dataPoint.y/simpan)*100;
 			}
+			simpan = e.entries[i].dataPoint.y
+			str = str.concat(str1);
+		}
+		str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+		str3 = "<span style = \"color:Tomato\">Persentase: </span><strong>" + total+"%" + "</strong><br/>";
+		return (str2.concat(str)).concat(str3);
+	}
+
+	function toolTipFormatter2(e) {
+		var str = "";
+		var total = 0 ;
+		var str3;
+		var str2 ;
+		for (var i = 0; i < e.entries.length; i++){
+			var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+			
+				total = (e.entries[i].dataPoint.y/525)*100;
+			
 			simpan = e.entries[i].dataPoint.y
 			str = str.concat(str1);
 		}
@@ -172,6 +252,8 @@
 
 	}
 	</script>
+
+
 </head>
 <body>
 	<nav class="navbar">
@@ -293,8 +375,9 @@
    		</div>
 	</div>
 	<?php if($input != NULL){
-		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."padding-left: 190px; height: 500px; width: 60%;".'"'."></div>";
+		echo "<div id=".'"'."chartContainer1".'"'." style=".'"'."padding-left: 190px; height: 500px; width: 60%;  padding-right: 190px;".'"'."></div>";
 		echo "<script src=".'"'."https://canvasjs.com/assets/script/canvasjs.min.js".'"'."></script>";
+		echo "<div id=".'"'."chartContainer".'"'." style=".'"'."padding-left: 190px; padding-top: 20px; height: 500px; width: 60%;  padding-right: 190px;".'"'."></div>";
 			}?>
 	</main>
 </body>
