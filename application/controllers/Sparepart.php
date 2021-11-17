@@ -83,7 +83,6 @@ class Sparepart extends CI_Controller {
             "saldo_akhir" => $this->input->post("saldoakhir"),
             "stock_minimal" => $this->input->post("minimal")
         );
-
         //foto
         if(!empty($_FILES['foto'])){
             $config['upload_path'] = './assets/image/sparepart'; //lokasi penyimpanan foto

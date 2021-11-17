@@ -25,7 +25,6 @@ class Mesin extends CI_Controller{
         $mesin = array(
             "id_mesin" => $this->input->post("idm"),
             "jam_op" => $this->input->post("jom"),
-            "down_time" => $this->input->post("dtm"),
             "target_down" => $this->input->post("tdm"),
             "type_m" => $this->input->post("tmm"),
             "merk_m" => $this->input->post("mmm"),

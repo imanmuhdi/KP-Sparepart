@@ -71,7 +71,7 @@
         <div class="container">
             <br>
 			<h1 align="center" style="padding-top: 40px; font-family: cursive;">PENGELOLAAN DATA PERBAIKAN <br>DAN PENYEDIAN SPAREPART MESIN KAIN TEKSTIL</h1>
-			<h1 align="center" style="padding-top: 40px; font-family: cursive;">ANDA LOGIN SEBAGAI PETUGAS MESIN</h1>
+			<h1 align="center" style="padding-top: 40px; font-family: cursive;">ANDA LOGIN SEBAGAI PETUGAS SPAREPART</h1>
 			<h1 align="center" style="padding-top: 40px; font-family: cursive;">SELAMAT DATANG!</h1>
 			<?php
 			echo "<center><h2 class=font>".$nama."";

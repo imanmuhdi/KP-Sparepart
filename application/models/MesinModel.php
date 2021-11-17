@@ -15,7 +15,6 @@ class MesinModel extends CI_Model {
 		$update = array(
 			"id_mesin" => $tb_mesin['id_mesin'],
 			"jam_op" => $tb_mesin['jam_op'],
-			"down_time" => $tb_mesin['down_time'],
 			"target_down" => $tb_mesin["target_down"],
 			"type_m" => $tb_mesin["type_m"],
 			"merk_m" => $tb_mesin["merk_m"],

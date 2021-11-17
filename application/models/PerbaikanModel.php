@@ -20,5 +20,17 @@ class PerbaikanModel extends CI_Model {
 		var_dump($perbaikan);
 		return $this->db->insert('tb_perbaikan2',$perbaikan);
 	}
+	function deleteKDsparepart1($kode){
+        $this->db->where("kd_part",$kode);
+        $this->db->delete('tb_perbaikan1');
+    }
+    function deleteIDmesin1($id){
+        $this->db->where("id_mesin",$id);
+        $this->db->delete('tb_perbaikan1');
+    }
+    function deleteIDmesin2($id){
+        $this->db->where("id_mesin",$id);
+        $this->db->delete('tb_perbaikan2');
+    }
 }
 ?>
