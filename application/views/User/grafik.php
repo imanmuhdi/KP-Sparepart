@@ -346,7 +346,7 @@
 					'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template); 
-				$this->table->set_heading("ID Mesin","Jam Operasi","Down Time","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
+				$this->table->set_heading("ID Mesin","Jam Operasi","Total Down Time (Jam)","Down Time (%)","Target Down (%)","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
 				$tampung = 0;
 				foreach($tb_mesin->result() as $r ){
 					foreach($tb_perbaikan1->result() as $a){
@@ -361,12 +361,13 @@
                     			if($input2 == $tahun){
                     				if($r->id_mesin == $a->id_mesin){
 										$tampung = $tampung + $a->d_time;
+										$dpersen = $tampung/$r->jam_op*100;
             						}
                     			}	
                 			}
 						}
 					}
-					$this->table->add_row($r->id_mesin,$r->jam_op,$tampung,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
+					$this->table->add_row($r->id_mesin,$r->jam_op,$tampung,number_format((float)$dpersen, 2, '.', ''),$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
 					$tampung = 0;
 				}
 				echo $this->table->generate();

@@ -59,8 +59,8 @@
                         <div class="card-body text-dark">
                             <label>Jam Operasi</label>
                                 <input type="number" name="jom" required="Nama Sparepart" class="form-control" value="<?php echo $tb_mesin->jam_op?>">
-                            <label>Target Down</label>
-                                <input type="number" name="tdm" required class="form-control" value="<?php echo $tb_mesin->target_down?>">
+                            <label>Target Down (%)</label>
+                                <input type="number" name="tdm" required class="form-control" value="<?php echo $tb_mesin->target_down?>" step="any">
                         </div>
                 </div>
                 <br>

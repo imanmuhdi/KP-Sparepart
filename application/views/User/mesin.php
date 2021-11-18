@@ -111,7 +111,7 @@
 					'table_open' => '<table id="myTable" border=1>'
 				);
 				$this->table->set_template($template);
-				$this->table->set_heading("ID Mesin","Jam Operasi","Target Down","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
+				$this->table->set_heading("ID Mesin","Jam Operasi","Target Down (%)","Tipe Mesin", "Merk Mesin", "No Mesin","Tahun");
 				foreach($tb_mesin->result() as $r){
 					$this->table->add_row($r->id_mesin,$r->jam_op,$r->target_down,$r->type_m,$r->merk_m,$r->no_m,$r->tahun);
 				}
