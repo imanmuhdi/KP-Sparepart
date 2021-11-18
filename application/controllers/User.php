@@ -26,5 +26,12 @@ class User extends CI_Controller{
         $data['tb_sperbaikan1'] = $this->PerbaikanModel->getPerbaikan1();
         $this->load->view("user/perbaikan",$data);
     }
+
+    public function invalidinput(){
+        if(!$this->session->userdata('User')){
+            redirect("Home");
+        }
+        $this->load->view("user/invalidinput");
+    }
 }
 ?>

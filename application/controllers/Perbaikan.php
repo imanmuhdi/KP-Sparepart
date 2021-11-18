@@ -39,10 +39,11 @@ class Perbaikan extends CI_Controller {
     }
 
     public function prosesTambah() {
+        $parts = false;
         $this->load->model("PerbaikanModel","",TRUE);
         $this->load->model("SparepartModel","",TRUE);
         $this->SparepartModel->ketcek($this->input->post("kd"),$this->input->post("jml_part"));
-        $this->SparepartModel->ceksaldo($this->input->post("kd"),$this->input->post("jml_part"));
+        $parts = $this->SparepartModel->ceksaldo($this->input->post("kd"),$this->input->post("jml_part"));
 
         $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
         $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
@@ -69,10 +70,11 @@ class Perbaikan extends CI_Controller {
             "penyetuju" => $this->input->post("penyetuju"),
             "pelaksana" => $this->input->post("pelaksana")
         );
-        if($this->PerbaikanModel->insertPerbaikan($perbaikan)) {
+
+        if($parts && $this->PerbaikanModel->insertPerbaikan($perbaikan)) {
             redirect(site_url("user/pindahPerbaikan1"));
         } else {
-            redirect(site_url('user/pindahPerbaikan1'));
+            redirect(site_url('user/invalidinput'));
         }
     }
 

@@ -61,9 +61,12 @@ class SparepartModel extends CI_Model {
 	function ceksaldo($kd,$jml){
 		$this->db->where("kd_part",$kd);
 		$query = $this->db->get('tb_sparepart');
-		$query->row()->saldo_akhir-$jml;
+		$query->row()->saldo_akhir= $query->row()->saldo_akhir -$jml;
 		if($query->row()->saldo_akhir <= 0){
-			$this->load->view("user/invalidinput");
+			return false;
+		}
+		if($query->row()->saldo_akhir > 0){
+			return true;
 		}
 	}
 }
