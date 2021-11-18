@@ -86,7 +86,7 @@
                                     </select>
                                 <br>
                                 <label>Jumlah Sparepart</label>
-                                    <input type="number" name="jml_part" required class="form-control">
+                                    <input type="number" name="jml_part" required class="form-control" min=1 max=999>
                             </div>
                     </div>
                     <br>

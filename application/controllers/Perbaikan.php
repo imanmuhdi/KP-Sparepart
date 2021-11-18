@@ -42,6 +42,7 @@ class Perbaikan extends CI_Controller {
         $this->load->model("PerbaikanModel","",TRUE);
         $this->load->model("SparepartModel","",TRUE);
         $this->SparepartModel->ketcek($this->input->post("kd"),$this->input->post("jml_part"));
+        $this->SparepartModel->ceksaldo($this->input->post("kd"),$this->input->post("jml_part"));
 
         $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
         $selesai = (float) $this->ambilmenit($this->input->post("selesai"));

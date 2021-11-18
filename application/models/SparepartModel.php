@@ -43,18 +43,27 @@ class SparepartModel extends CI_Model {
 	function ketcek($kd,$jml){
 		$this->db->where("kd_part",$kd);
 		$query = $this->db->get('tb_sparepart');
-		$query->row()->saldo_akhir-$jml;
+		$query->row()->saldo_akhir= $query->row()->saldo_akhir - $jml;
 		if($query->row()->saldo_akhir >= $query->row()->stock_minimal){
 			$query->row()->keterangan = "OK";
 			$this->db->where("kd_part",$kd);
-			$query->row()->saldo_akhir+$jml;
+			$query->row()->saldo_akhir= $query->row()->saldo_akhir + $jml;
 			$this->db->update("tb_sparepart",$query->row());
 		}
 		if(($query->row()->saldo_akhir < $query->row()->stock_minimal)){
 			$query->row()->keterangan = "PESAN ULANG";
 			$this->db->where("kd_part",$kd);
-			$query->row()->saldo_akhir+$jml;
+			$query->row()->saldo_akhir= $query->row()->saldo_akhir + $jml;
 			$this->db->update("tb_sparepart",$query->row());
+		}
+	}
+
+	function ceksaldo($kd,$jml){
+		$this->db->where("kd_part",$kd);
+		$query = $this->db->get('tb_sparepart');
+		$query->row()->saldo_akhir-$jml;
+		if($query->row()->saldo_akhir <= 0){
+			$this->load->view("user/invalidinput");
 		}
 	}
 }
