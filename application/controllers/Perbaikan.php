@@ -42,9 +42,9 @@ class Perbaikan extends CI_Controller {
         $parts = false;
         $this->load->model("PerbaikanModel","",TRUE);
         $this->load->model("SparepartModel","",TRUE);
-        $this->SparepartModel->ketcek($this->input->post("kd"),$this->input->post("jml_part"));
         $parts = $this->SparepartModel->ceksaldo($this->input->post("kd"),$this->input->post("jml_part"));
-
+        $this->SparepartModel->ketcek($this->input->post("kd"),$this->input->post("jml_part"));
+        
         $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
         $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
         $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
