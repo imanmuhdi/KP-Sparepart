@@ -36,6 +36,7 @@ class Nota extends CI_Controller {
     }
     public function update($no) {
         $this->load->model('NotaModel');
+        $this->load->model('SparepartModel');
         $data['tb_perbaikan1'] = $this->NotaModel->getNota1ByNo($no)->row();
         $this->load->view("user/updatenota1",$data);
     }
@@ -52,6 +53,11 @@ class Nota extends CI_Controller {
     }
     public function prosesUpdate1() {
         $this->load->model("NotaModel","",TRUE);
+        $this->load->model("SparepartModel","",TRUE);
+        $tb_perbaikan1 = $this->NotaModel->getNota1ByNo($this->input->post("no"));
+        
+        $ceknilai = false;
+        $ceknilai =$this->SparepartModel->editsaldo($this->input->post("kd_part"),$this->input->post("jml_part"),$tb_perbaikan1->row()->jml_part);
         $mulai = (float) $this->ambilmenit($this->input->post("mulai"));
         $selesai = (float) $this->ambilmenit($this->input->post("selesai"));
         $d_time = ($this->input->post("selesai")-$this->input->post("mulai"))+(($selesai-$mulai)/60);
@@ -78,11 +84,10 @@ class Nota extends CI_Controller {
             "penyetuju" => $this->input->post("penyetuju"),
             "pelaksana" => $this->input->post("pelaksana")
         );
-        if($this->NotaModel->updatenota1($nota1)) {
+        if($ceknilai && $this->NotaModel->updatenota1($nota1)) {
             redirect(site_url("Nota/cetakNota1"));
         } else {
-            echo "GAGAL UPDATE";
-            redirect(site_url('Nota/cetakNota1'));
+            redirect(site_url("user/invalidinput"));
         }
     }
     public function prosesUpdate2() {

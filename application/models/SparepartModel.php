@@ -69,5 +69,38 @@ class SparepartModel extends CI_Model {
 			return true;
 		}
 	}
+
+
+
+	function editsaldo($kd,$jml,$jmlawal){
+		$this->db->where("kd_part",$kd);
+		$query = $this->db->get('tb_sparepart');
+		if($jmlawal > $jml){#ini
+			$query->row()->saldo_akhir = $query->row()->saldo_akhir+($jmlawal-$jml);
+			$query->row()->keluar = $query->row()->keluar -($jmlawal-$jml);
+		}
+		if($jmlawal < $jml){
+			$query->row()->saldo_akhir = $query->row()->saldo_akhir-($jml-$jmlawal);
+			$query->row()->keluar = $query->row()->keluar +($jml-$jmlawal);
+
+		}
+		if($query->row()->saldo_akhir < $query->row()->stock_minimal){
+			$query->row()->keterangan = "PESAN ULANG";
+		}
+		if($query->row()->saldo_akhir >= $query->row()->stock_minimal){
+			$query->row()->keterangan = "OK";
+		}
+		
+
+		if($query->row()->saldo_akhir < 0){
+			return false;
+		}
+		if($query->row()->saldo_akhir >= 0){
+			$this->db->where("kd_part",$kd);
+			$this->db->update("tb_sparepart",$query->row());
+			return true;
+		}
+		
+	}
 }
 ?>

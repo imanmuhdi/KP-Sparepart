@@ -49,7 +49,7 @@
                     <div class="card-header bg-primary" style="font-weight: bold;">ID dan Merk Mesin</div>
                         <div class="card-body text-dark">
                             <label>ID Mesin</label>
-                                <input type="text" name="id_mesin" required class="form-control" value="<?php echo $tb_perbaikan1->id_mesin?>" >
+                                <input type="text" name="id_mesin" required class="form-control" value="<?php echo $tb_perbaikan1->id_mesin?>" readonly>
                             <br>
                             <label>Merk Mesin</label>
                                 <input type="text" name="merk" required class="form-control" value="<?php echo $tb_perbaikan1->merk_m?>" readonly>
@@ -66,7 +66,7 @@
                                 <input type="text" name="type" required class="form-control" value="<?php echo $tb_perbaikan1->type?>" readonly>
                             <br>
                             <label>Jumlah Sparepart</label>
-                                <input type="number" name="jml_part" required class="form-control" value="<?php echo $tb_perbaikan1->jml_part?>">
+                                <input type="number" name="jml_part" required class="form-control" value="<?php echo $tb_perbaikan1->jml_part?>" min=1 max=999>
                         </div>
                 </div>
                 <br>
